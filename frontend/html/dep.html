@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BITTS - dép</title>
+    <!-- Bootstrap 5 CSS -->
+<link rel="stylesheet" href="../css/bootstrap.min.css">
+    <!-- Font Awesome -->
+<link rel="stylesheet" href="../js/bootstrap.js">
+<link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+<script src="../js/bootstrap.js"></script>
+    <style>    
+        .header-hotline {
+            background-color: #f8f9fa;
+            font-size: 14px;
+            padding: 8px 0;
+        }
+        .navbar-custom {
+            background-color: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+             font-weight: bold;
+        }
+        .category-card {
+            border: none;
+            transition: all 0.3s;
+        }
+        .category-card:hover {
+            transform: translateY(-5px);
+        }
+        .category-img {
+            height: 100px;
+            object-fit: contain;
+        }
+        .product-card {
+            border: none;
+            transition: all 0.3s;
+            margin-bottom: 20px;
+        }
+        .product-card:hover {
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .product-img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .price {
+            color: #d63384;
+            font-weight: bold;
+        }
+        .banner-section {
+            margin: 20px 0;
+        }
+        .footer {
+            background-color: #343a40;
+            color: white;
+            padding: 30px 0;
+        }
+       
+.trang-chu-style {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 28px;
+    color: #d63384;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.cart-floating-button {
+    position: fixed;
+     bottom: 30px; 
+    right: 30px;
+    background-color: #3316b3;
+    color: white;
+    padding: 12px 16px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    transition: background-color 3s ease;    
+} 
+
+ .cart-floating-button:hover {
+    background-color: #c2185b;
+} 
+
+ .cart-floating-button i {
+    font-size: 20px;
+    margin-right: 8px;
+} 
+
+  .cart-count {
+    background-color: white;
+    color: #9727c7;
+    font-weight: bold;
+    border-radius: 50%;
+    padding: 2px 8px;
+    font-size: 14px;
+    margin-left: 5px;
+}  
+
+
+
+        
+    </style>
+    <script>
+        function addToCart(name, image, price) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    
+        // Kiểm tra nếu sản phẩm đã tồn tại thì tăng số lượng
+        let existing = cart.find(item => item.name === name);
+        if (existing) {
+            existing.quantity += 1;
+        } else {
+            cart.push({ name, image, price, quantity: 1 });
+        }
+    
+        localStorage.setItem('cart', JSON.stringify(cart));
+        updateCartCount();
+    }
+    
+    function updateCartCount() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        document.querySelector('.cart-count').innerText = cart.reduce((total, item) => total + item.quantity, 0);
+    }
+    function updateCartCount() {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  let count = cart.reduce((sum, item) => sum + item.quantity, 0);
+  let cartCount = document.querySelector('.cart-count');
+  if (cartCount) cartCount.innerText = count;
+}
+
+window.onload = function() {
+    updateCartCount(); // Gọi khi trang load xong
+};
+
+    </script>
+    <script>
+        function xemChiTiet(ten, hinhAnh, gia) {
+    const sanPham = {
+        name: ten,
+        image: hinhAnh,
+        price: gia,
+        sizes: ["38", "39", "40", "41", "42"],
+        colors: ["Đen", "Nâu", "Trắng"],
+        description: "Đôi dép Biti's thiết kế thời trang, chất liệu cao su siêu nhẹ, đế chống trượt, phù hợp cho cả nam và nữ trong các hoạt động hằng ngày."
+    };
+    localStorage.setItem("selectedProduct", JSON.stringify(sanPham));
+    window.location.href = "chitietsanpham.html";
+}
+
+
+    </script>
+</head>
+<body>
+    <div class="container-fluid">
+    <!-- Top Header -->
+    <div class="header-hotline">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666 (8h - 21h30) | Liên hệ hợp tác
+                </div>
+                <div class="col-md-6 text-end">
+                    <i class="fas fa-search me-1"></i> <input type="search" name="" id="" placeholder="nhập sản phẩm muốn tìm">
+                    <a href="../html/dangnhap.html" class="text-dark me-3"><i class="fas fa-clipboard-list me-1"></i> Kiểm tra đơn hàng</a>
+                    <a href="../html/dangnhap.html" class="text-dark"><i class="fas fa-user me-1"></i> Đăng nhập</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo & Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light navbar-custom">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span style="font-size: 24px; color: #d63384;">Dép thời trang</span>
+            </a>
+            
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
+                            DANH MỤC
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="giaytay.html">Giày Tây</a></li>
+                            <li><a class="dropdown-item" href="giaythethao.html">Giày thể thao</a></li>
+                            <li><a class="dropdown-item" href="giaydabanh.html">Giày đá banh</a></li>
+                            <li><a class="dropdown-item" href="sandal.html">Giày sandal</a></li>
+                            <li><a class="dropdown-item" href="Giaytreem.html">Giày trẻ em</a></li>
+                            <li><a class="dropdown-item" href="dep.html">Dép</a></li>
+                            <li><a class="dropdown-item" href="vo.html">Vớ</a></li>
+                            <li><a class="dropdown-item" href="sales.html">Sales</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">KHUYẾN MÃI</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">CHIA SẺ</a>
+                    </li>
+                </ul>
+                
+        
+            </div>
+        </div>
+        <div class="container d-flex justify-content-end">
+            <a class="navbar-brand fw-bold" href="home.html">
+                <span class="trang-chu-style">
+                    <i class="fa-solid fa-house-chimney me-2"></i> TRANG CHỦ
+                </span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <div class="banner-section">
+        <div class="container">
+            <img src="../img/dép/banner.webp" class="w-100" alt="Dép thời trang BITTS" class="img-fluid rounded">
+        </div>
+    </div>
+
+        <!-- Sản phẩm nổi bật -->
+        <h4 class="mb-4 mt-5">SẢN PHẨM NỔI BẬT</h4>
+        <!-- Sản phẩm nổi bật -->
+
+<div class="row">
+    <!-- Hàng 1 -->
+    <!-- Sản phẩm 1 -->
+    <div class="col-lg-3 col-md-4 col-6 mb-4">
+        <div class="card product-card h-100">
+            <div class="position-relative">
+                <img src="../img/dép/dep1.jpg" class="w-100" alt="Dép quai ngang Biti's" onclick="xemChiTiet('Dép quai ngang Bitis DEP001NAU', '../img/dép/dep1.jpg', 199000)">
+                <span class="position-absolute top-0 end-0 bg-danger text-white p-1 px-2 m-2 rounded">-20%</span>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">Dép quai ngang Biti's DEP001NAU</h6>
+                <div class="mb-2 ">
+                    <span class="price">199,000đ</span>
+                    <span class="text-muted text-decoration-line-through ms-2">249,000đ</span>
+                </div>
+                <div class="d-flex justify-content-between">
+            
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép quai ngang Bitis DEP001NAU', '../img/dép/dep1.jpg', 199000)" >xem chi tiết</button>
+                <button class="btn btn-outline-primary w-100" onclick="addToCart('Dép quai ngang Bitis DEP001NAU', '../img/dép/dep1.jpg', 199000)">THÊM VÀO GIỎ</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sản phẩm 2 -->
+    <div class="col-lg-3 col-md-4 col-6 mb-4">
+        <div class="card product-card h-100">
+            <img src="../img/dép/dep2.jpg" class="w-100" alt="Dép xỏ ngón Biti's" onclick="xemChiTiet('Dép xỏ ngón Bitis DEP002DEN', '../img/dép/dep2.jpg', 179000)">
+            <div class="card-body">
+                <h6 class="card-title">Dép xỏ ngón Biti's DEP002DEN</h6>
+                <div class="mb-2">
+                    <span class="price">179,000đ</span>
+                </div>
+
+                <div class="d-flex justify-content-between">
+     
+
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép xỏ ngón Bitis DEP002DEN', '../img/dép/dep2.jpg', 179000)" >xem chi tiết</button>
+                <button class="btn btn-outline-primary w-100"  onclick="addToCart('Dép xỏ ngón Bitis DEP002DEN', '../img/dép/dep2.jpg', 179000)" >THÊM VÀO GIỎ</button>
+               
+              
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sản phẩm 3 -->
+    <div class="col-lg-3 col-md-4 col-6 mb-4">
+        <div class="card product-card h-100">
+            <div class="position-relative">
+                <img src="../img/dép/dép3.jpg" class="w-100" alt="Dép thể thao Biti's">
+                <span class="position-absolute top-0 end-0 bg-danger text-white p-1 px-2 m-2 rounded">-25%</span>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">Dép thể thao Biti's DEP003XANH</h6>
+                <div class="mb-2">
+                    <span class="price">224,000đ</span>
+                    <span class="text-muted text-decoration-line-through ms-2">299,000đ</span>
+                </div>
+                <div class="d-flex justify-content-between">
+            
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép thể thao Bitis DEP003XANH', '../img/dép/dep3.jpg', 224000)" >xem chi tiết</button>
+                <button class="btn btn-outline-primary w-100"  onclick="addToCart('Dép thể thao Bitis DEP003XANH', '../img/dép/dep3.jpg', 224000)">THÊM VÀO GIỎ</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sản phẩm 4 -->
+    <div class="col-lg-3 col-md-4 col-6 mb-4">
+        <div class="card product-card h-100">
+            <img src="../img/dép/dép4.jpg" class="w-100" alt="Dép bánh mì Biti's">
+            <div class="card-body">
+                <h6 class="card-title">Dép bánh mì Biti's DEP004TRANG</h6>
+                <div class="mb-2">
+                    <span class="price">159,000đ</span>
+                </div>
+                <div class="d-flex justify-content-between">
+        
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép bánh mì Bitis DEP004TRANG', '../img/dép/dép4.jpg', 159000)" >xem chi tiết</button>
+                <button class="btn btn-outline-primary w-100" onclick="addToCart('Dép bánh mì Bitis DEP004TRANG', '../img/dép/dép4.jpg', 159000)"  >THÊM VÀO GIỎ</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Hàng 2 -->
+    <!-- Sản phẩm 5 -->
+    <div class="col-lg-3 col-md-4 col-6 mb-4">
+        <div class="card product-card h-100">
+            <div class="position-relative">
+                <img src="../img/dép/dep5.jpg" class="w-100" alt="Dép quai hậu Biti's">
+                <span class="position-absolute top-0 end-0 bg-danger text-white p-1 px-2 m-2 rounded">-15%</span>
+            </div>
+            <div class="card-body">
+                <h6 class="card-title">Dép quai hậu Biti's DEP005HONG</h6>
+                <div class="mb-2">
+                    <span class="price">254,000đ</span>
+                    <span class="text-muted text-decoration-line-through ms-2">299,000đ</span>
+                </div>
+                <div class="d-flex justify-content-between">
+               
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép quai hậu Bitis DEP005HONG', '../img/dép/dep5.jpg', 254000)" >xem chi tiết</button>
+                <button  class="btn btn-outline-primary w-100" onclick="addToCart('Dép quai hậu Bitis DEP005HONG', '../img/dép/dep5.jpg', 254000)">THÊM VÀO GIỎ</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sản phẩm 6 -->
+    <div class="col-lg-3 col-md-4 col-6 mb-4">
+        <div class="card product-card h-100">
+            <img src="../img/dép/dép6.jpg" class="w-100" alt="Dép lê Biti's">
+            <div class="card-body">
+                <h6 class="card-title">Dép lê Biti's DEP006NAU</h6>
+                <div class="mb-2">
+                    <span class="price">139,000đ</span>
+                </div>
+                <div class="d-flex justify-content-between">
+              
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép lê Bitis DEP006NAU', '../img/dép/dép6.jpg', 139000)" >xem chi tiết</button>
+                <button class="btn btn-outline-primary w-100" onclick="addToCart('Dép lê Bitis DEP006NAU', '../img/dép/dép6.jpg', 139000)">THÊM VÀO GIỎ</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sản phẩm 7 -->
+    <div class="col-lg-3 col-md-4 col-6 mb-4">
+        <div class="card product-card h-100">
+            <img src="../img/dép/dep7.jpg" class="w-100" alt="Dép cao su Biti's">
+            <div class="card-body">
+                <h6 class="card-title">Dép cao su Biti's DEP007XANH</h6>
+                <div class="mb-2">
+                    <span class="price">99,000đ</span>
+                    <span class="text-muted text-decoration-line-through ms-2">129,000đ</span>
+                </div>
+                <div class="d-flex justify-content-between">
+          
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép cao su Bitis DEP007XANH', '../img/dép/dep7.jpg', 99000)" >xem chi tiết</button>
+                <button class="btn btn-outline-primary w-100" onclick="addToCart('Dép cao su Bitis DEP007XANH', '../img/dép/dep7.jpg', 99000)">THÊM VÀO GIỎ</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Sản phẩm 8 -->
+    <div class="col-lg-3 col-md-4 col-6 mb-4">
+        <div class="card product-card h-100">
+            <img src="../img/dép/dép8.jpg" class="w-100" alt="Dép đi biển Biti's">
+            <div class="card-body">
+                <h6 class="card-title">Dép đi biển Biti's DEP008CAM</h6>
+                <div class="mb-2">
+                    <span class="price">179,000đ</span>
+                </div>
+                <div class="d-flex justify-content-between">
+              
+                </div>
+            </div>
+            <div class="card-footer bg-white border-0">
+                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép đi biển Bitis DEP008CAM', '../img/dép/dép8.jpg', 179000)" >xem chi tiết</button>
+                <button class="btn btn-outline-primary w-100" onclick="addToCart('Dép đi biển Bitis DEP008CAM', '../img/dép/dép8.jpg', 179000)">THÊM VÀO GIỎ</button>
+            </div>
+        </div>
+    </div>
+
+<!-- sanpham 9 -->
+<div class="col-lg-3 col-md-4 col-6 mb-4">
+    <div class="card product-card h-100">
+        <img src="../img/dép/dep9.jpg" class="w-100" alt="Dép đi biển Biti's">
+        <div class="card-body">
+            <h6 class="card-title">Dép trong nhà  Biti's DEP01DEN</h6>
+            <div class="mb-2">
+                <span class="price">179,000đ</span>
+            </div>
+            <div class="d-flex justify-content-between">
+               
+            </div>
+        </div>
+        <div class="card-footer bg-white border-0">
+            <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Dép trong nhà  Bitis DEP01DEN', '../img/dép/dep9.jpg', 179000)" >xem chi tiết</button>
+            <button class="btn btn-outline-primary w-100" onclick="addToCart('Dép trong nhà  Bitis DEP01DEN', '../img/dép/dep9.jpg', 179000)" >THÊM VÀO GIỎ</button>
+        </div>
+    </div>
+</div>
+</div>
+</div> 
+    <a href="giohang.html" class="cart-floating-button">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count">0</span>        
+    </a>
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5>VỀ BITTS</h5>
+                <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
+                <div class="mt-3">
+                    <h6>ĐĂNG KÝ NHẬN TIN</h6>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Email của bạn">
+                        <button class="btn btn-primary" type="button">Gửi</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>THÔNG TIN</h5>
+                <ul class="list-unstyled">
+                    <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
+                    <li><a href="gioithieu.html" class="text-white">Chính sách bảo mật</a></li>
+                    <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
+                    <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
+                    <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5>LIÊN HỆ</h5>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
+                    <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                    <li><i class="fas fa-envelope me-2"></i> Email: vanchuongdeptrai@gmail.com</li>
+                    <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
+                </ul>
+                <div class="mt-3">
+                    <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                   <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
+                   
+
+                   <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
+                   <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
+                   <a href="#"><i class="fa-solid fa-phone"></i></a>
+                
+                </div>
+            </div>
+        </div>
+        <hr>
+        <div class="text-center">
+            <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+</div>
+
+</body>
+</html>

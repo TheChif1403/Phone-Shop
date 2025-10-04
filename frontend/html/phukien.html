@@ -133,31 +133,30 @@
             const navLinks = document.querySelectorAll('.main-nav .nav-item a');
 
             navLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                    link.addEventListener('click', function() if (this.getAttribute("href").includes("home.html")) {
+                            localStorage.removeItem("activeNav");
+                            return;
+                        }
 
-                    if (this.getAttribute("href").includes("home.html")) {
-                        localStorage.removeItem("activeNav");
-                        return;
-                    }
+                        navLinks.forEach(l => l.classList.remove('active'));
 
-                    navLinks.forEach(l => l.classList.remove('active'));
+                        this.classList.add('active');
 
-                    this.classList.add('active');
-
-                    localStorage.setItem("activeNav", this.getAttribute("href"));
-                });
+                        localStorage.setItem("activeNav", this.getAttribute("href"));
+                    });
             });
 
-            const activeNav = localStorage.getItem("activeNav");
-            if (activeNav) {
-                navLinks.forEach(l => {
-                    if (l.getAttribute("href") === activeNav) {
-                        l.classList.add("active");
-                    }
-                });
-            }
+        const activeNav = localStorage.getItem("activeNav");
+        if (activeNav) {
+            navLinks.forEach(l => {
+                if (l.getAttribute("href") === activeNav) {
+                    l.classList.add("active");
+                }
+            });
+        }
         });
     </script>
+
 
 </head>
 
@@ -233,28 +232,22 @@
             </div>
         </div>
 
-        <!-- Hero Banner -->
-        <div class="hero-section  ">
-            <img src="../img/337024049_547599220691356_1542994487405062699_n.png" alt="Bitis Collection" class="hero-image">
-
-        </div>
-
         <!-- Featured Products -->
         <div class="featured-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>SẢN PHẨM NỔI BẬT</h2>
+                    <h2>SẢN PHẨM</h2>
                 </div>
                 <div class="row">
                     <!-- Product 1 -->
                     <div class="col-lg-3 col-md-6">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/apple/17pro.jpg" class="product-img" alt="Bitis Hunter X">
+                                <img src="../img/dienthoai/5533920481.jpg" class="product-img" alt="Chuột quang không dây Genius NX-7000">
                                 <!-- <div class="product-badge bg-danger"></div> -->
                             </div>
                             <div class="product-info">
-                                <h5 class="product-title">Iphone 17 pro max</h5>
+                                <h5 class="product-title">Chuột quang không dây Genius NX-7000</h5>
                                 <div class="product-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -264,11 +257,10 @@
 
                                 </div>
                                 <div>
-                                    <span class="product-price"> 860,000đ</span>
-                                    <span class="product-old-price">1,299,000đ</span>
+                                    <span class="product-price">179.000 ₫</span>
                                 </div>
 
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày Derby Nam Bitis BMM001777NAU', '../img/giaytay/giayBMM00177Nau.webp', 680000)">THÊM VÀO GIỎ</button>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
                             </div>
                         </div>
                     </div>
@@ -277,10 +269,10 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/apple/17air.jpg" class="product-img" alt="Bitis Hunter X Trắng">
+                                <img src="../img/dienthoai/Buds-6.grn1.jpg" class="product-img" alt="Tai nghe Bluetooth Redmi Buds 6">
                             </div>
                             <div class="product-info">
-                                <h5 class="product-title">Iphone 17 AIR</h5>
+                                <h5 class="product-title">Tai nghe Bluetooth Redmi Buds 6</h5>
                                 <div class="product-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -290,9 +282,9 @@
 
                                 </div>
                                 <div>
-                                    <span class="product-price">780,000đ </span>
+                                    <span class="product-price">1.270.000 ₫</span>
                                 </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày Thể Thao Cao Cấp Nam Bitis BSM003700XAM', '../img/giaythethao/giay7.webp', 780000)">THÊM VÀO GIỎ</button>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
                             </div>
                         </div>
                     </div>
@@ -301,11 +293,11 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/apple/17.jpg" class="product-img" alt="Bitis Hunter Mid">
+                                <img src="../img/dienthoai/G100BT-1.jpg" class="product-img" alt="Loa Microlab G100BT">
                                 <!-- <div class="product-badge  bg-danger">MỚI</div> -->
                             </div>
                             <div class="product-info">
-                                <h5 class="product-title">Iphone 17</h5>
+                                <h5 class="product-title">Loa Microlab G100BT</h5>
                                 <div class="product-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
@@ -315,9 +307,10 @@
 
                                 </div>
                                 <div>
-                                    <span class="product-price">1,299,000đ</span>
+                                    <span class="product-price">469.000 ₫</span>
+                                    <span class="product-old-price">650.000 ₫</span>
                                 </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Gót Vuông BITTS SD021', '../img/sandal/sandal2.webp', 1299000)">THÊM VÀO GIỎ</button>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
                             </div>
                         </div>
                     </div>
@@ -326,27 +319,125 @@
                     <div class="col-lg-3 col-md-6">
                         <div class="product-card">
                             <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/apple/16promax.jpg" class="product-img" alt="Bitis Explorer">
+                                <img src="../img/dienthoai/K120-1.jpg" class="product-img" alt="Bàn phím Logitech K120">
 
                             </div>
                             <div class="product-info">
-                                <h5 class="product-title">Iphone 16 Pro max</h5>
+                                <h5 class="product-title">Bàn phím Logitech K120</h5>
                                 <div class="product-rating">
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star"></i>
                                     <i class="fas fa-star-half-alt"></i>
-
                                 </div>
                                 <div>
-                                    <span class="product-price">425,000đ </span>
-                                    <span class="product-old-price">500,000đ </span>
+                                    <span class="product-price">160.000 ₫</span>
+                                    <span class="product-old-price">190.000 ₫</span>
                                 </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày trẻ em Bitis BMM001677NAD', '../img/giày trẻ em/giay3.jpg', 425000)">THÊM VÀO GIỎ</button>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
                             </div>
                         </div>
                     </div>
+
+                    <!-- Product 5 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/Magic_Keyboard_for_iPad_Air_11-13.11976765623.jpg" class="product-img" alt="Magic Keyboard Ipad Air 13-inch">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Magic Keyboard Ipad Air 13-inch</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">8.090.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/PADO-PM423-1.jpg" class="product-img" alt="Chuột không dây Pado PM423">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Chuột không dây Pado PM423</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">159.000 ₫</span>
+                                    <span class="product-old-price">190.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/Phụ-kiện-Magic-Keyboard-Folio-for-iPad-(A16).1.jpg" class="product-img" alt="Magic Keyboard Folio for Ipad (A16)">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Magic Keyboard Folio for Ipad (A16)</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">6.790.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/Q100-1.jpg" class="product-img" alt="Quạt tản nhiệt Laptop Q100">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Quạt tản nhiệt Laptop Q100</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">299.000 ₫</span>
+                                    <span class="product-old-price">399.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
@@ -358,8 +449,8 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-4">
-                        <h5>VỀ BITTS</h5>
-                        <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
+                        <h5>VỀ DIDONGVIET</h5>
+                        <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
                         <div class="mt-3">
                             <h6>ĐĂNG KÝ NHẬN TIN</h6>
                             <div class="input-group mb-3">
@@ -381,7 +472,7 @@
                     <div class="col-md-4 mb-4">
                         <h5>LIÊN HỆ</h5>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
                             <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
                             <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
                             <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
@@ -400,14 +491,12 @@
                 </div>
                 <hr>
                 <div class="text-center">
-                    <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
+                    <p class="mb-0">© 2023 DIDONGVIET. All rights reserved.</p>
                 </div>
             </div>
         </footer>
 
     </div>
 </body>
-
-</html>
 
 </html>

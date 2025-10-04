@@ -1,0 +1,42 @@
+[
+  {
+    "id": "1",
+    "name": "iPhone 17 Pro Max 256GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 37990000,
+    "stock": 100,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "http://127.0.0.1:5500/frontend/img/dienthoai/dienthoai/apple/17pro.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "2",
+    "name": "iPhone 17 Air 256GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 31990000,
+    "stock": 100,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "http://127.0.0.1:5500/frontend/img/dienthoai/dienthoai/apple/17air.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "3",
+    "name": "iPhone 17 256GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 25990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "http://127.0.0.1:5500/frontend/img/dienthoai/dienthoai/apple/17.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "4",
+    "name": "iPhone 16 Pro Max 256GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 21990000,
+    "stock": 100,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "http://127.0.0.1:5500/frontend/img/dienthoai/dienthoai/apple/16promax.jpg",
+    "category": "Smartphone"
+  }
+]

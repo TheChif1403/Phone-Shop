@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "name": "Điện thoại Samsung Galaxy Z Fold7 5G 12GB/256GB",
+    "brand": "Samsung",
+    "price": 42990000,
+    "stock": 100,
+    "description": "Qualcomm Snapdragon 8 Elite For Galaxy 8 nhân",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/338738/samsung-galaxy-z-fold7-black-thumb-1-600x600.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "2",
+    "name": "Điện thoại Samsung Galaxy Z Flip5 5G 12GB/256GB",
+    "brand": "Samsung",
+    "price": 31990000,
+    "stock": 100,
+    "description": "Qualcomm Snapdragon 8 Elite For Galaxy 8 nhân",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/338736/samsung-galaxy-z-flip7-red-thumb-600x600.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "3",
+    "name": "Điện thoại Samsung Galaxy S25 Ultra 5G 12GB/256GB",
+    "brand": "Samsung",
+    "price": 25990000,
+    "stock": 200,
+    "description": "Màn hình super Amoled 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/2025/10/timerseo/333347.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "4",
+    "name": "Điện thoại Samsung Galaxy S24 Ultra 5G 12GB/256GB",
+    "brand": "Samsung",
+    "price": 24990000,
+    "stock": 100,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/2025/10/timerseo/307174.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "5",
+    "name": "Điện thoại Samsung Galaxy S25 Edge 5G 12GB/512GB",
+    "brand": "Samsung",
+    "price": 20990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/2025/10/timerseo/335955.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "6",
+    "name": "Điện thoại Samsung Galaxy Z Flip7 FE 5G 8GB/128GB",
+    "brand": "Samsung",
+    "price": 18990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/338741/samsung-galaxy-z-flip7-fe-white-thumb-600x600.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "7",
+    "name": "Điện thoại Samsung Galaxy A26 5G 6GB/128GB",
+    "brand": "Samsung",
+    "price": 9990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/2025/10/timerseo/335915.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "8",
+    "name": "Điện thoại Samsung Galaxy A17 4GB/128GB",
+    "brand": "Samsung",
+    "price": 19990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/341797/samsung-galaxy-a17-lte-xam-thumb-600x600.jpg",
+    "category": "Smartphone"
+  }
+]

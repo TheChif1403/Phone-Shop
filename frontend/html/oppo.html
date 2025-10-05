@@ -1,441 +1,504 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oppe</title>
+    <title>shop dien thoai</title>
     <!-- Bootstrap 5 CSS -->
-<link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/bootstrap.js">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.js"></script>
     <!-- Font Awesome -->
-<link rel="stylesheet" href="../js/bootstrap.js">
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
-<script src="../js/bootstrap.js"></script>
-    <!-- <style>
-        .header-hotline {
-            background-color: #f8f9fa;
-            font-size: 14px;
-            padding: 8px 0;
+    <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            /* width: 100%; */
+            margin: 0 auto;
         }
-        .navbar-custom {
-            background-color: #fff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-             font-weight: bold;
-        }
-        .category-card {
-            border: none;
-            transition: all 0.3s;
-        }
-        .category-card:hover {
-            transform: translateY(-5px);
-        }
-        .category-img {
-            height: 100px;
-            object-fit: contain;
-        }
-        .product-card {
-            border: none;
-            transition: all 0.3s;
-            margin-bottom: 20px;
-        }
-        .product-card:hover {
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .product-img {
-            height: 200px;
-            object-fit: cover;
-        }
-        .price {
-            color: #d63384;
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
             font-weight: bold;
         }
-        .banner-section {
-            margin: 20px 0;
+        
+        .product-info {
+            padding: 20px;
         }
-        .footer {
-            background-color: #343a40;
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            font-size: 16px;
+            height: 40px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .product-old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .product-rating {
+            color: #FFC107;
+            margin-bottom: 10px;
+        }
+        
+        .btn-product {
+            background-color: var(--dark-color);
             color: white;
-            padding: 30px 0;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
         }
-        .trang-chu-style {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 28px;
-    color: #d63384;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
-.cart-floating-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #3316b3;
-    color: white;
-    padding: 12px 16px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    text-decoration: none;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.cart-floating-button:hover {
-    background-color: #c2185b;
-}
-
-.cart-floating-button i {
-    font-size: 20px;
-    margin-right: 8px;
-}
-
-.cart-count {
-    background-color: white;
-    color: #9727c7;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 2px 8px;
-    font-size: 14px;
-    margin-left: 5px;
-}
-    </style> -->
-    <script src="../js/addToCard.js"></script>
+        
+        .btn-product:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .cart-floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #403087;
+            color: rgb(202, 76, 76);
+            padding: 12px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cart-floating-button:hover {
+            background-color: #c2185b;
+        }
+        
+        .cart-floating-button i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
+        .cart-count {
+            background-color: white;
+            color: #9727c7;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        
+        .main-nav .nav-item a {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .main-nav .nav-item a.active {
+            background-color: red !important;
+            color: white !important;
+            font-weight: bold;
+        }
+    </style>
     <script>
-            
-        function xemChiTiet(ten, hinhAnh, gia) {
-    const sanPham = {
-        name: ten,
-        image: hinhAnh,
-        price: gia,
-        sizes: ["38", "39", "40", "41", "42"],
-        colors: ["Đen", "Nâu", "Trắng"],
-        description: "Dép sandal Biti’s mang đến sự thoải mái tối đa cho đôi chân trong những ngày hè oi ả. Với thiết kế thoáng mát, dễ chịu và đế chống trượt, dép sandal không chỉ giúp bạn di chuyển linh hoạt mà còn tạo phong cách trẻ trung, năng động. Đây là lựa chọn hoàn hảo cho những buổi dạo phố hay đi biển."
-    };
-    localStorage.setItem("selectedProduct", JSON.stringify(sanPham));
-    window.location.href = "chitietsanpham.html";
-    }
+        document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll('.main-nav .nav-item a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+
+                    if (this.getAttribute("href").includes("home.html")) {
+                        localStorage.removeItem("activeNav");
+                        return;
+                    }
+
+                    navLinks.forEach(l => l.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    localStorage.setItem("activeNav", this.getAttribute("href"));
+                });
+            });
+
+            const activeNav = localStorage.getItem("activeNav");
+            if (activeNav) {
+                navLinks.forEach(l => {
+                    if (l.getAttribute("href") === activeNav) {
+                        l.classList.add("active");
+                    }
+                });
+            }
+        });
     </script>
 
-  
-   </head>
-   <body>
-    <div class="container-fluid">
-    <!-- Top Bar -->
-<div class="top-bar ">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-6">
-                <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
-            </div>
-            <div class="col-md-6 text-end auth-buttons">
-                <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
-                <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
-            </div>
-        </div>
-    </div>
-</div>
+</head>
 
-<!-- Logo & Search -->
-<div class="logo-section">
-    <div class="container">
-        <div class="row align-items-center">
-            <div class="col-md-4">
-                <div class="logo">
-                   
-                        <img src="../img/download (1).png" alt="" height="50px">
-                    
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="search-box">
-                    <i class="fas fa-search"></i>
-                    <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+<body>
+    <div class="container-fluid w-100">
+        <!-- Top Bar -->
+        <div class="top-bar ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
+                    </div>
+                    <div class="col-md-6 text-end auth-buttons">
+                        <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
+                        <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
 
-<!-- Main Navigation -->
-<div class="main-nav">
-    <div class="container nav-container">
-        <div class="d-flex justify-content-center">
-                <div class="nav-item active">
-                    <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
-                </div>
-                <div class="nav-item">
-                    <a href="apple.html">APPLE</a>
-                </div>
-                <div class="nav-item">
-                    <a href="samsung.html">SAMSUNG</a>
-                </div>
-                <div class="nav-item">
-                    <a href="honor.html">HONOR</a>
-                </div>
-                <div class="nav-item">
-                    <a href="oppo.html">OPPO</a>
-                </div>
-                <div class="nav-item">
-                    <a href="Giaytreem.html">VIVO</a>
-                </div>
-                <div class="nav-item">
-                    <a href="dep.html">XIAOMI</a>
-                </div>
-                <div class="nav-item">
-                    <a href="vo.html">TECHNO</a>
-                </div>
-                <div class="nav-item">
-                    <a href="sales.html">PHỤ KIỆN </a>
-                </div>
-            </div>
-    </div>
- </div>   
+        <!-- Logo & Search -->
+        <div class="logo-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="../img/download (1).png" alt="" height="50px">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                        </div>
+                    </div>
 
-    <!-- Banner Section -->
-    <div class="banner-section">
-        <div class="container">
-         
-            <img src="../img/sandal/bst-sandal_3a216dc95adf4aad9b0a2db9ad4f8cc5_master.webp" class="w-100"  alt="" class="img-fluid rounded">
+                </div>
+            </div>
         </div>
-    </div>
 
-        <!-- Sản phẩm nổi bật -->
-        <h4 class="mb-4 mt-5">       SẢN PHẨM NỔI BẬT</h4>
-        <!-- Sản phẩm nổi bật -->
+        <!-- Main Navigation -->
+        <div class="main-nav">
+            <div class="container nav-container">
+                <div class="d-flex justify-content-center">
+                    <div class="nav-item active">
+                        <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="apple.html">APPLE</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="samsung.html">SAMSUNG</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="honor.html">HONOR</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="oppo.html">OPPO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="vivo.html">VIVO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="xiaomi.html">XIAOMI</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="techno.html">TECHNO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="phukien.html">PHỤ KIỆN </a>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<div class="row">
-    <!-- Hàng 1 -->
-    <!-- Sản phẩm 1 -->
-    <div class="col-lg-3 col-md-4 col-6 mb-4">
-        <div class="card product-card h-100">
-            <div class="position-relative">
-                <img src="../img/sandal/sandal1.jpg" class="w-100" alt="">
-                <span class="position-absolute top-0 end-0 bg-danger text-white p-1 px-2 m-2 rounded">-20%</span>
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Sandal Quai Ngang Da Thật BITTS SD01</h6>
-                <div class="mb-2">
-                    <span class="price">799,000đ</span>
-                    <span class="text-muted text-decoration-line-through ms-2">999,000đ</span>
+        <!-- Featured Products -->
+        <div class="featured-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>SẢN PHẨM</h2>
                 </div>
-                <!-- <div class="d-flex justify-content-between">
-                    <span class="text-muted">(42)</span>
-                </div> -->
-            </div>
-            <div class="card-footer bg-white border-0">
-                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Sandal Quai Ngang Da Thật BITTS SD01', '../img/sandal/sandal1.jpg', 999000)" >xem chi tiết</button>
-                <button class="btn btn-outline-primary w-100"onclick="addToCart('Sandal Quai Ngang Da Thật BITTS SD01', '../img/sandal/sandal1.jpg', 999000)">THÊM VÀO GIỎ</button>
+                <div class="row">
+                    <!-- Product 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/vivo/Black.1.jpg" class="product-img" alt="Vivo Y19S">
+                                <!-- <div class="product-badge bg-danger"></div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Vivo Y19S</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+
+                                </div>
+                                <div>
+                                    <span class="product-price">4.110.000 ₫</span>
+                                    <span class="product-old-price">4.710.000 ₫</span>
+                                </div>
+
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/vivo/V50-Lite.blk1.jpg" class="product-img" alt="Vivo V50 Lite 5G">
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Vivo V50 Lite 5G</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+
+                                </div>
+                                <div>
+                                    <span class="product-price">10.300.000 ₫</span>
+                                    <span class="product-old-price">10.800.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/vivo/Vivo-Y04.grn1.jpg" class="product-img" alt="Vivo Y04">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Vivo Y04</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+
+                                </div>
+                                <div>
+                                    <span class="product-price">3.720.000 ₫</span>
+                                    <span class="product-old-price">3.920.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/vivo/Vivo-Y36-grn1.jpg" class="product-img" alt="Vivo Y36">
+
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Vivo Y36</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">5.280.000 ₫</span>
+                                    <span class="product-old-price">6.080.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 5 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/vivo/y02a.jpeg" class="product-img" alt="Vivo Y02A">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Vivo Y02A</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">2.740.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 6 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/vivo/Y100.blk1.jpg" class="product-img" alt="Vivo Y100">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Vivo Y100</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">6.360.000 ₫</span>
+                                    <span class="product-old-price">7.560.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 7 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/vivo/y16-ori.jpeg" class="product-img" alt="Vivo Y16">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Vivo Y16</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">4.410.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Product 8 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/vivo/Y28-org1.jpg" class="product-img" alt="Vivo Y28">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Vivo Y28</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <div>
+                                    <span class="product-price">5.580.000 ₫</span>
+                                    <span class="product-old-price">6.380.000 ₫</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
             </div>
         </div>
-    </div>
-    
-    <!-- Sản phẩm 2 -->
-    <div class="col-lg-3 col-md-4 col-6 mb-4">
-        <div class="card product-card h-100">
-            <img src="../img/sandal/sandal2.webp" class="w-100" alt="">
-            <div class="card-body">
-                <h6 class="card-title">Sandal Gót Vuông BITTS SD02</h6>
-                <div class="mb-2">
-                    <span class="price">1,299,000đ</span>
-                </div>
-                <!-- <div class="d-flex justify-content-between">
-                    <span class="text-muted">(28)</span>
-                </div> -->
-            </div>
-            <div class="card-footer bg-white border-0">
-                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Sandal Gót Vuông BITTS SD021', '../img/sandal/sandal2.webp', 1299000)" >xem chi tiết</button>
-                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Gót Vuông BITTS SD021', '../img/sandal/sandal2.webp', 1299000)">THÊM VÀO GIỎ</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Sản phẩm 3 -->
-    <div class="col-lg-3 col-md-4 col-6 mb-4">
-        <div class="card product-card h-100">
-            <div class="position-relative">
-                <img src="../img/sandal/sandal3.jpg" class="w-100" alt="">
-                <span class="position-absolute top-0 end-0 bg-danger text-white p-1 px-2 m-2 rounded">-15%</span>
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Sandal Đế Xuồng BITTS SD03</h6>
-                <div class="mb-2">
-                    <span class="price">1,099,000đ</span>
-                    <span class="text-muted text-decoration-line-through ms-2">1,299,000đ</span>
-                </div>
-                <!-- <div class="d-flex justify-content-between">
-                    <span class="text-muted">(56)</span>
-                </div> -->
-            </div>
-            <div class="card-footer bg-white border-0">
-                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Sandal Đế Xuồng BITTS SD03', '../img/sandal/sandal3.jpg', 1099000)" >xem chi tiết</button>
-                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Đế Xuồng BITTS SD03', '../img/sandal/sandal3.jpg', 1099000)">THÊM VÀO GIỎ</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Sản phẩm 4 -->
-    <div class="col-lg-3 col-md-4 col-6 mb-4">
-        <div class="card product-card h-100">
-            <img src="../img/sandal/sandal4.jpg" class="w-100" alt="">
-            <div class="card-body">
-                <h6 class="card-title">Sandal Dây Chéo BITTS SD04</h6>
-                <div class="mb-2">
-                    <span class="price">899,000đ</span>
-                </div>
-                <!-- <div class="d-flex justify-content-between">
-                    <span class="text-muted">(34)</span>
-                </div> -->
-            </div>
-            <div class="card-footer bg-white border-0">
-                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Sandal Dây Chéo BITTS SD04', '../img/sandal/sandal4.jpg', 899000)" >xem chi tiết</button>
-                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Dây Chéo BITTS SD04', '../img/sandal/sandal4.jpg', 899000)">THÊM VÀO GIỎ</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Hàng 2 -->
-    <!-- Sản phẩm 5 -->
-    <div class="col-lg-3 col-md-4 col-6 mb-4">
-        <div class="card product-card h-100">
-            <div class="position-relative">
-                <img src="../img/sandal/sandal5.jpg" class="w-100" alt="">
-                <span class="position-absolute top-0 end-0 bg-danger text-white p-1 px-2 m-2 rounded">-10%</span>
-            </div>
-            <div class="card-body">
-                <h6 class="card-title">Sandal Nam Da Bò BITTS SD05</h6>
-                <div class="mb-2">
-                    <span class="price">599,000đ</span>
-                    <span class="text-muted text-decoration-line-through ms-2">699,000đ</span>
-                </div>
-                <!-- <div class="d-flex justify-content-between">
-                    <span class="text-muted">(38)</span>
-                </div> -->
-            </div>
-            <div class="card-footer bg-white border-0">
-                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Sandal Nam Da Bò BITTS SD05', '../img/sandal/sandal5.jpg', 599000)" >xem chi tiết</button>
-                <button class="btn btn-outline-primary w-100"onclick="addToCart('Sandal Nam Da Bò BITTS SD05', '../img/sandal/sandal5.jpg', 599000)">THÊM VÀO GIỎ</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Sản phẩm 6 -->
-    <div class="col-lg-3 col-md-4 col-6 mb-4">
-        <div class="card product-card h-100">
-            <img src="../img/sandal/sandal6.jpg" class="w-100" alt="">
-            <div class="card-body">
-                <h6 class="card-title">Sandal BITTS SD06</h6>
-                <div class="mb-2">
-                    <span class="price">899,000đ</span>
-                </div>
-                <!-- <div class="d-flex justify-content-between">
-                    <span class="text-muted">(45)</span>
-                </div> -->
-            </div>
-            <div class="card-footer bg-white border-0">
-                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Sandal BITTS SD06', '../img/sandal/sandal6.jpg', 899000)" >xem chi tiết</button>
-                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal BITTS SD06', '../img/sandal/sandal6.jpg', 899000)">THÊM VÀO GIỎ</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Sản phẩm 7 -->
-    <div class="col-lg-3 col-md-4 col-6 mb-4">
-        <div class="card product-card h-100">
-            <img src="../img/sandal/sandal7.jpg" class="w-100" alt="">
-            <div class="card-body">
-                <h6 class="card-title">Sandal Đế Bệt BITTS SD07</h6>
-                <div class="mb-2">
-                    <span class="price">1,199,000đ</span>
-                    <span class="text-muted text-decoration-line-through ms-2">1,599,000đ</span>
-                </div>
-                <!-- <div class="d-flex justify-content-between">
-                    <span class="text-muted">(29)</span>
-                </div> -->
-            </div>
-            <div class="card-footer bg-white border-0">
-                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Sandal Đế Bệt BITTS SD07', '../img/sandal/sandal7.jpg', 1199000)" >xem chi tiết</button>
-                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Đế Bệt BITTS SD07', '../img/sandal/sandal7.jpg', 1199000)">THÊM VÀO GIỎ</button>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Sản phẩm 8 -->
-    <div class="col-lg-3 col-md-4 col-6 mb-4">
-        <div class="card product-card h-100">
-            <img src="../img/sandal/sandal8.jpg" class="w-100" alt="">
-            <div class="card-body">
-                <h6 class="card-title">Sandal Quai Hậu BITTS SD08</h6>
-                <div class="mb-2">
-                    <span class="price">399,000đ</span>
-                </div>
-                <!-- <div class="d-flex justify-content-between">
-                    <span class="text-muted">(52)</span>
-                </div> -->
-            </div>
-            <div class="card-footer bg-white border-0">
-                <button class="btn btn-outline-warning w-100 mb-1"  onclick="xemChiTiet('Sandal Quai Hậu BITTS SD08', '../img/sandal/sandal8.jpg', 399000)" >xem chi tiết</button>
-                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Quai Hậu BITTS SD08', '../img/sandal/sandal8.jpg', 399000)">THÊM VÀO GIỎ</button>
-            </div>
-        </div>
-    </div>
-</div>
-<a href="giohang.html" class="cart-floating-button">
-    <i class="fas fa-shopping-cart"></i>
-    <span class="cart-count">0</span> 
-</a>
-     <!-- Footer -->
-     <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5>VỀ BITTS</h5>
-                    <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
-                    <div class="mt-3">
-                        <h6>ĐĂNG KÝ NHẬN TIN</h6>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email của bạn">
-                            <button class="btn btn-primary" type="button">Gửi</button>
+        <a href="giohang.html" class="cart-floating-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </a>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5>VỀ DIDONGVIET</h5>
+                        <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
+                        <div class="mt-3">
+                            <h6>ĐĂNG KÝ NHẬN TIN</h6>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-primary" type="button">Gửi</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>THÔNG TIN</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
+                            <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
+                            <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
+                            <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>LIÊN HỆ</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
+                            <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                            <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
+                        </ul>
+                        <div class="mt-3">
+                            <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                            <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
+
+
+                            <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
+                            <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
+                            <a href="#"><i class="fa-solid fa-phone"></i></a>
+
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5>THÔNG TIN</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
-                        <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
-                        <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
-                        <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
-                        <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
-                    </ul>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">© 2023 DIDONGVIET. All rights reserved.</p>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <h5>LIÊN HỆ</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
-                        <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
-                        <li><i class="fas fa-envelope me-2"></i> Email: vanchuongdeptrai@gmail.com</li>
-                        <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
-                    </ul>
-                    <div class="mt-3">
-                        <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
-                       <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
-                       
+            </div>
+        </footer>
 
-                       <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
-                       <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
-                       <a href="#"><i class="fa-solid fa-phone"></i></a>
-                    
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center">
-                <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-</div>
-   
-   </body>
-   </html>
+    </div>
+</body>
+
+</html>

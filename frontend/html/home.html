@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>shop dien thoai</title>
     <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
-<link rel="stylesheet" href="../js/bootstrap.js">
-<link rel="stylesheet" href="../css/style.css">
-<script src="../js/bootstrap.js"></script>
+    <link rel="stylesheet" href="../js/bootstrap.js">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.js"></script>
     <!-- Font Awesome -->
-<link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
- 
-*{
-    box-sizing: border-box;
-    /* width: 100%; */
-    margin: 0 auto;
-}
-
-
+        * {
+            box-sizing: border-box;
+            /* width: 100%; */
+            margin: 0 auto;
+        }
+        
         .product-badge {
             position: absolute;
             top: 15px;
@@ -31,7 +30,7 @@
             font-size: 12px;
             font-weight: bold;
         }
-         
+        
         .product-info {
             padding: 20px;
         }
@@ -77,83 +76,127 @@
         .btn-product:hover {
             background-color: var(--primary-color);
         }
-
-    
         
-    .cart-floating-button {
-    position: fixed;
-    bottom: 30px;
-    right: 30px;
-    background-color: #403087;
-    color: rgb(202, 76, 76);
-    padding: 12px 16px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    text-decoration: none;
-    z-index: 999;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    transition: background-color 0.3s ease;
-}
-
-.cart-floating-button:hover {
-    background-color: #c2185b;
-}
-
-.cart-floating-button i {
-    font-size: 20px;
-    margin-right: 8px;
-}
-
-.cart-count {
-    background-color: white;
-    color: #9727c7;
-    font-weight: bold;
-    border-radius: 50%;
-    padding: 2px 8px;
-    font-size: 14px;
-    margin-left: 5px;
-}
+        .cart-floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #403087;
+            color: rgb(202, 76, 76);
+            padding: 12px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cart-floating-button:hover {
+            background-color: #c2185b;
+        }
+        
+        .cart-floating-button i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
+        .cart-count {
+            background-color: white;
+            color: #9727c7;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        
+        .main-nav .nav-item a {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .main-nav .nav-item a.active {
+            background-color: red !important;
+            color: white !important;
+            font-weight: bold;
+        }
     </style>
     <script src="../js/addToCard.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const navLinks = document.querySelectorAll('.main-nav .nav-item a');
+
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+
+                    if (this.getAttribute("href").includes("home.html")) {
+                        localStorage.removeItem("activeNav");
+                        return;
+                    }
+
+                    navLinks.forEach(l => l.classList.remove('active'));
+
+                    this.classList.add('active');
+
+                    localStorage.setItem("activeNav", this.getAttribute("href"));
+                });
+            });
+
+            const activeNav = localStorage.getItem("activeNav");
+            if (activeNav) {
+                navLinks.forEach(l => {
+                    if (l.getAttribute("href") === activeNav) {
+                        l.classList.add("active");
+                    }
+                });
+            }
+        });
+    </script>
+
 </head>
+
 <body>
     <div class="container-fluid w-100">
-      <!-- Top Bar -->
-      <div class="top-bar ">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
-                </div>
-                <div class="col-md-6 text-end auth-buttons">
-                    <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
-                    <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
+        <!-- Top Bar -->
+        <div class="top-bar ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
+                    </div>
+                    <div class="col-md-6 text-end auth-buttons">
+                        <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
+                        <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <!-- Logo & Search -->
-    <div class="logo-section">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-4">
-                    <div class="logo">
-                        <img src="../img/download (1).png" alt="" height="50px">
+        <!-- Logo & Search -->
+        <div class="logo-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="../img/download (1).png" alt="" height="50px">
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="search-box">
-                        <i class="fas fa-search"></i>
-                        <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                        </div>
                     </div>
+
                 </div>
-                
             </div>
         </div>
-    </div>
 
     <!-- Main Navigation -->
     <div class="main-nav">
@@ -175,193 +218,196 @@
                     <a href="oppo.html">OPPO</a>
                 </div>
                 <div class="nav-item">
-                    <a href="Giaytreem.html">VIVO</a>
+                    <a href="vivo.html">VIVO</a>
                 </div>
                 <div class="nav-item">
-                    <a href="dep.html">XIAOMI</a>
+                    <a href="xiaomi.html">XIAOMI</a>
                 </div>
                 <div class="nav-item">
-                    <a href="vo.html">TECHNO</a>
+                    <a href="techno.html">TECHNO</a>
                 </div>
                 <div class="nav-item">
-                    <a href="sales.html">PHỤ KIỆN </a>
+                    <a href="phukien.html">PHỤ KIỆN </a>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Hero Banner -->
-    <div class="hero-section  ">
-        <img src="../img/337024049_547599220691356_1542994487405062699_n.png" alt="Bitis Collection" class="hero-image" >
-        
-    </div>
+        <!-- Hero Banner -->
+        <div class="hero-section  ">
+            <img src="../img/337024049_547599220691356_1542994487405062699_n.png" alt="Bitis Collection" class="hero-image">
 
-    <!-- Featured Products -->
-    <div class="featured-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>SẢN PHẨM NỔI BẬT</h2>
-            </div>
-            <div class="row">
-                <!-- Product 1 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="product-card">
-                        <div class="product-img-container">
-                            <img src="../img/dienthoai/dienthoai/apple/17pro.jpg" class="product-img" alt="Bitis Hunter X">
-                            <!-- <div class="product-badge bg-danger"></div> -->
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Iphone 17 pro max</h5>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                                
+        </div>
+
+        <!-- Featured Products -->
+        <div class="featured-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>SẢN PHẨM NỔI BẬT</h2>
+                </div>
+                <div class="row">
+                    <!-- Product 1 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/apple/17pro.jpg" class="product-img" alt="Bitis Hunter X">
+                                <!-- <div class="product-badge bg-danger"></div> -->
                             </div>
-                            <div>
-                                <span class="product-price"> 860,000đ</span>
-                                <span class="product-old-price">1,299,000đ</span>
+                            <div class="product-info">
+                                <h5 class="product-title">Iphone 17 pro max</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+
+                                </div>
+                                <div>
+                                    <span class="product-price"> 860,000đ</span>
+                                    <span class="product-old-price">1,299,000đ</span>
+                                </div>
+
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày Derby Nam Bitis BMM001777NAU', '../img/giaytay/giayBMM00177Nau.webp', 680000)">THÊM VÀO GIỎ</button>
                             </div>
-                            
-                            <button class="btn btn-outline-primary w-100"  onclick="addToCart('Giày Derby Nam Bitis BMM001777NAU', '../img/giaytay/giayBMM00177Nau.webp', 680000)">THÊM VÀO GIỎ</button>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="product-card">
-                        <div class="product-img-container">
-                            <img src="../img/dienthoai/dienthoai/apple/17air.jpg" class = "product-img" alt="Bitis Hunter X Trắng">
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Iphone 17 AIR</h5>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="far fa-star"></i>
-                                
+
+                    <!-- Product 2 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/apple/17air.jpg" class="product-img" alt="Bitis Hunter X Trắng">
                             </div>
-                            <div>
-                                <span class="product-price">780,000đ </span>
+                            <div class="product-info">
+                                <h5 class="product-title">Iphone 17 AIR</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+
+                                </div>
+                                <div>
+                                    <span class="product-price">780,000đ </span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày Thể Thao Cao Cấp Nam Bitis BSM003700XAM', '../img/giaythethao/giay7.webp', 780000)">THÊM VÀO GIỎ</button>
                             </div>
-                            <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày Thể Thao Cao Cấp Nam Bitis BSM003700XAM', '../img/giaythethao/giay7.webp', 780000)">THÊM VÀO GIỎ</button>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="product-card">
-                        <div class="product-img-container">
-                            <img src="../img/dienthoai/dienthoai/apple/17.jpg" class="product-img" alt="Bitis Hunter Mid">
-                            <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                        </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Iphone 17</h5>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                
-                            </div>
-                            <div>
-                                <span class="product-price">1,299,000đ</span>
-                            </div>
-                            <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Gót Vuông BITTS SD021', '../img/sandal/sandal2.webp', 1299000)">THÊM VÀO GIỎ</button>
                         </div>
                     </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="col-lg-3 col-md-6">
-                    <div class="product-card">
-                        <div class="product-img-container">
-                            <img src="../img/dienthoai/dienthoai/apple/16promax.jpg" class="product-img" alt="Bitis Explorer">
-                            
+
+                    <!-- Product 3 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/apple/17.jpg" class="product-img" alt="Bitis Hunter Mid">
+                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
+                            </div>
+                            <div class="product-info">
+                                <h5 class="product-title">Iphone 17</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+
+                                </div>
+                                <div>
+                                    <span class="product-price">1,299,000đ</span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Gót Vuông BITTS SD021', '../img/sandal/sandal2.webp', 1299000)">THÊM VÀO GIỎ</button>
+                            </div>
                         </div>
-                        <div class="product-info">
-                            <h5 class="product-title">Iphone 16 Pro max</h5>
-                            <div class="product-rating">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                               
+                    </div>
+
+                    <!-- Product 4 -->
+                    <div class="col-lg-3 col-md-6">
+                        <div class="product-card">
+                            <div class="product-img-container">
+                                <img src="../img/dienthoai/dienthoai/apple/16promax.jpg" class="product-img" alt="Bitis Explorer">
+
                             </div>
-                            <div>
-                                <span class="product-price">425,000đ </span>
-                                <span class="product-old-price">500,000đ </span>
+                            <div class="product-info">
+                                <h5 class="product-title">Iphone 16 Pro max</h5>
+                                <div class="product-rating">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star-half-alt"></i>
+
+                                </div>
+                                <div>
+                                    <span class="product-price">425,000đ </span>
+                                    <span class="product-old-price">500,000đ </span>
+                                </div>
+                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày trẻ em Bitis BMM001677NAD', '../img/giày trẻ em/giay3.jpg', 425000)">THÊM VÀO GIỎ</button>
                             </div>
-                            <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày trẻ em Bitis BMM001677NAD', '../img/giày trẻ em/giay3.jpg', 425000)">THÊM VÀO GIỎ</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <a href="giohang.html" class="cart-floating-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </a>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5>VỀ BITTS</h5>
+                        <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
+                        <div class="mt-3">
+                            <h6>ĐĂNG KÝ NHẬN TIN</h6>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-primary" type="button">Gửi</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>THÔNG TIN</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
+                            <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
+                            <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
+                            <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>LIÊN HỆ</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
+                            <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                            <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
+                        </ul>
+                        <div class="mt-3">
+                            <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                            <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
+
+
+                            <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
+                            <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
+                            <a href="#"><i class="fa-solid fa-phone"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
     </div>
-    <a href="giohang.html" class="cart-floating-button">
-        <i class="fas fa-shopping-cart"></i>
-        <span class="cart-count">0</span> 
-    </a>
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <h5>VỀ BITTS</h5>
-                    <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
-                    <div class="mt-3">
-                        <h6>ĐĂNG KÝ NHẬN TIN</h6>
-                        <div class="input-group mb-3">
-                            <input type="email" class="form-control" placeholder="Email của bạn">
-                            <button class="btn btn-primary" type="button">Gửi</button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>THÔNG TIN</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
-                        <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
-                        <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
-                        <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
-                        <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <h5>LIÊN HỆ</h5>
-                    <ul class="list-unstyled">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
-                        <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
-                        <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
-                        <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
-                    </ul>
-                    <div class="mt-3">
-                        <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
-                       <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
-                       
-    
-                       <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
-                       <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
-                       <a href="#"><i class="fa-solid fa-phone"></i></a>
-                    
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="text-center">
-                <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-  
-</div>
 </body>
+
+</html>
+
 </html>

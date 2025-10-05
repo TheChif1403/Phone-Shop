@@ -1,0 +1,82 @@
+[
+  {
+    "id": "1",
+    "name": "iPhone 17 Pro Max 256GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 37990000,
+    "stock": 100,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "http://127.0.0.1:5500/frontend/img/dienthoai/dienthoai/apple/17pro.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "2",
+    "name": "iPhone 17 Air 256GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 31990000,
+    "stock": 100,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "http://127.0.0.1:5500/frontend/img/dienthoai/dienthoai/apple/17air.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "3",
+    "name": "iPhone 17 256GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 25990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/342667/iphone-17-xanh-thumb-600x600.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "4",
+    "name": "iPhone 16 Pro Max 256GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 21990000,
+    "stock": 100,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "http://127.0.0.1:5500/frontend/img/dienthoai/dienthoai/apple/16promax.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "5",
+    "name": "iPhone 16e 128GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 15990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/334864/iphone-16e-white-thumb-600x600.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "6",
+    "name": "iPhone 15 128GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 15990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-xanh-thumb-600x600.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "7",
+    "name": "iPhone 15plus 128GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 19990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-hong-128gb-thumb-600x600.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "8",
+    "name": "iPhone 16 128GB | Chính hãng VNA",
+    "brand": "Apple",
+    "price": 19990000,
+    "stock": 200,
+    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+    "image": "https://cdn.tgdd.vn/Products/Images/42/329135/iphone-16-blue-600x600.png",
+    "category": "Smartphone"
+  }
+]

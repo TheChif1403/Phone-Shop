@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="../js/bootstrap.js">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/renderProducts.js">
+        
+    </script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
@@ -234,215 +237,16 @@
         </div>
 
         <!-- Featured Products -->
-        <div class="featured-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>SẢN PHẨM</h2>
-                </div>
-                <div class="row">
-                    <!-- Product 1 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/xiaomi/15-Ultra.Sil1.jpg" class="product-img" alt="Xiaomi 15 Ultra">
-                                <!-- <div class="product-badge bg-danger"></div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Xiaomi 15 Ultra</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">28.990.000 ₫</span>
-                                    <span class="product-old-price">34.360.000 ₫</span>
-                                </div>
-
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/xiaomi/15tpro.jpeg" class="product-img" alt="Xiaomi 15T Pro">
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Xiaomi 15T Pro</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">19.490.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/xiaomi/7246650512135138041.jpeg" class="product-img" alt="Xiaomi Redmi Note 14 Pro Plus">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Xiaomi Redmi Note 14 Pro Plus</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">9.190.000 ₫</span>
-                                    <span class="product-old-price">10.800.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/xiaomi/Note-13-gold1.jpg" class="product-img" alt="Xiaomi Note 13">
-
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Xiaomi Note 13</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">3.790.000 ₫</span>
-                                    <span class="product-old-price">4.890.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 5 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/xiaomi/Poco-M6,blk1.jpg" class="product-img" alt="Xiaomi POCO M5">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Xiaomi POCO M5</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">3.490.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 6 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/xiaomi/Redmi-A13-Blk1.jpg" class="product-img" alt="Xiaomi Redmi A3">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Xiaomi Redmi A3</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">1.890.000 ₫</span>
-                                    <span class="product-old-price">2.490.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 7 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/xiaomi/Xiaomi-15.blk1.jpg" class="product-img" alt="Xiaomi 15">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Xiaomi 15</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">20.490.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 8 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/xiaomi/xiaominote14.jpeg" class="product-img" alt="Xiaomi Redmi Note 14">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Xiaomi Redmi Note 14</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">6.790.000 ₫</span>
-                                    <span class="product-old-price">7.160.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+         <div class="featured-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>SẢN PHẨM NỔI BẬT</h2>
         </div>
+        <div class="row" id="product-list">
+            <!-- Sản phẩm sẽ được thêm tự động ở đây -->
+        </div>
+    </div>
+</div>
         <a href="giohang.html" class="cart-floating-button">
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-count">0</span>
@@ -493,7 +297,7 @@
                 </div>
                 <hr>
                 <div class="text-center">
-                    <p class="mb-0">© 2023 DIDONGVIET. All rights reserved.</p>
+                    <p class="mb-0">© 2025 DIDONGVIET. All rights reserved.</p>
                 </div>
             </div>
         </footer>

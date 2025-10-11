@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../js/bootstrap.js">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.js"></script>
+     <script src="../js/renderProducts.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
@@ -233,216 +234,16 @@
         </div>
 
         <!-- Featured Products -->
-        <div class="featured-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>SẢN PHẨM</h2>
-                </div>
-                <div class="row">
-                    <!-- Product 1 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/vivo/Black.1.jpg" class="product-img" alt="Vivo Y19S">
-                                <!-- <div class="product-badge bg-danger"></div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Vivo Y19S</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">4.110.000 ₫</span>
-                                    <span class="product-old-price">4.710.000 ₫</span>
-                                </div>
-
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/vivo/V50-Lite.blk1.jpg" class="product-img" alt="Vivo V50 Lite 5G">
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Vivo V50 Lite 5G</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">10.300.000 ₫</span>
-                                    <span class="product-old-price">10.800.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/vivo/Vivo-Y04.grn1.jpg" class="product-img" alt="Vivo Y04">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Vivo Y04</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">3.720.000 ₫</span>
-                                    <span class="product-old-price">3.920.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/vivo/Vivo-Y36-grn1.jpg" class="product-img" alt="Vivo Y36">
-
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Vivo Y36</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">5.280.000 ₫</span>
-                                    <span class="product-old-price">6.080.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 5 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/vivo/y02a.jpeg" class="product-img" alt="Vivo Y02A">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Vivo Y02A</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">2.740.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 6 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/vivo/Y100.blk1.jpg" class="product-img" alt="Vivo Y100">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Vivo Y100</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">6.360.000 ₫</span>
-                                    <span class="product-old-price">7.560.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 7 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/vivo/y16-ori.jpeg" class="product-img" alt="Vivo Y16">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Vivo Y16</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">4.410.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 8 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/vivo/Y28-org1.jpg" class="product-img" alt="Vivo Y28">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Vivo Y28</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">5.580.000 ₫</span>
-                                    <span class="product-old-price">6.380.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+              <div class="featured-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>SẢN PHẨM NỔI BẬT</h2>
         </div>
+        <div class="row" id="product-list">
+            <!-- Sản phẩm sẽ được thêm tự động ở đây -->
+        </div>
+    </div>
+</div>
         <a href="giohang.html" class="cart-floating-button">
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-count">0</span>

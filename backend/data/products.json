@@ -320,5 +320,245 @@
     "description": "Chip Snapdragon 7s Gen 2, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 67W.",
     "image": "https://cdn.tgdd.vn/Products/Images/42/338878/poco-x6-blue-thumb-600x600.jpg",
     "category": "Smartphone"
+  },
+  {
+    "id": "33",
+    "name": "Điện thoại Honor H400 Lite 5G 8GB/256GB",
+    "brand": "Honor",
+    "price": 7890000,
+    "stock": 200,
+    "description": "Chip MediaTek Dimensity 6100+, màn hình AMOLED 120Hz, pin 5000mAh, sạc nhanh 35W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/honor/H400-Lite.Grn1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "34",
+    "name": "Điện thoại Honor H400 5G 12GB/256GB",
+    "brand": "Honor",
+    "price": 8990000,
+    "stock": 180,
+    "description": "Chip Snapdragon 6 Gen 1, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 40W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/honor/Honor-H400-5G.Gld1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "35",
+    "name": "Điện thoại Honor Magic V5 5G 16GB/512GB",
+    "brand": "Honor",
+    "price": 35990000,
+    "stock": 60,
+    "description": "Điện thoại gập, chip Snapdragon 8 Gen 2, màn hình OLED kép 120Hz, pin 5000mAh, sạc nhanh 66W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/honor/HONOR-Magic-V5-Gld1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "36",
+    "name": "Điện thoại Honor X5b Plus 8GB/128GB",
+    "brand": "Honor",
+    "price": 4990000,
+    "stock": 250,
+    "description": "Chip Helio G88, màn hình LCD 90Hz, pin 5000mAh, camera kép 50MP, sạc nhanh 22.5W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/honor/X5b-Plus.blk1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "37",
+    "name": "Điện thoại Honor X5B 8GB/128GB",
+    "brand": "Honor",
+    "price": 4690000,
+    "stock": 220,
+    "description": "Chip Helio G85, màn hình LCD 6.7 inch, camera 50MP, pin 5000mAh, sạc nhanh 22.5W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/honor/X5B.Ble1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "38",
+    "name": "Điện thoại Honor X6C 6GB/128GB",
+    "brand": "Honor",
+    "price": 4290000,
+    "stock": 240,
+    "description": "Chip MediaTek Helio G37, màn hình LCD 6.56 inch, camera 50MP, pin 5000mAh.",
+    "image": "http://127.0.0.1:5500/backend/imgs/honor/X6C.blk1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "39",
+    "name": "Điện thoại Honor X8C 8GB/256GB",
+    "brand": "Honor",
+    "price": 6490000,
+    "stock": 210,
+    "description": "Chip Snapdragon 680, màn hình AMOLED 90Hz, camera 108MP, pin 4500mAh, sạc nhanh 35W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/honor/X8C.grn1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "40",
+    "name": "Điện thoại Honor X9C 5G 8GB/256GB",
+    "brand": "Honor",
+    "price": 8990000,
+    "stock": 190,
+    "description": "Chip Snapdragon 6 Gen 1, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 40W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/honor/X9C.blk1.jpg",
+    "category": "Smartphone"
+  },{
+  "id": "41",
+  "name": "Điện thoại OPPO A3X 8GB/128GB",
+  "brand": "OPPO",
+  "price": 5490000,
+  "stock": 240,
+  "description": "Chip Snapdragon 680, màn hình AMOLED 90Hz, camera 50MP, pin 5000mAh, sạc nhanh 33W.",
+  "image": "http://127.0.0.1:5500/backend/imgs/oppo/A3X.ble1.jpg",
+  "category": "Smartphone"
+},
+{
+  "id": "42",
+  "name": "Điện thoại OPPO Find X8 5G 12GB/256GB",
+  "brand": "OPPO",
+  "price": 19990000,
+  "stock": 120,
+  "description": "Chip Snapdragon 8 Gen 3, màn hình OLED LTPO 120Hz, camera 50MP, pin 5000mAh, sạc nhanh 100W.",
+  "image": "http://127.0.0.1:5500/backend/imgs/oppo/Find-X8.UI.Blk1.jpg",
+  "category": "Smartphone"
+},
+{
+  "id": "43",
+  "name": "Điện thoại OPPO A5i 6GB/128GB (Phiên bản 1)",
+  "brand": "OPPO",
+  "price": 3990000,
+  "stock": 260,
+  "description": "Chip Helio G35, màn hình LCD 6.56 inch, camera kép 50MP, pin 5000mAh, sạc 10W.",
+  "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i.all1.jpg",
+  "category": "Smartphone"
+},
+{
+  "id": "44",
+  "name": "Điện thoại OPPO A5i 6GB/128GB (Phiên bản 2)",
+  "brand": "OPPO",
+  "price": 4090000,
+  "stock": 250,
+  "description": "Chip Helio G35, thiết kế mặt lưng mới, camera kép 50MP, pin 5000mAh.",
+  "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i.all2.jpg",
+  "category": "Smartphone"
+},
+{
+  "id": "45",
+  "name": "Điện thoại OPPO A5i Pro 8GB/256GB",
+  "brand": "OPPO",
+  "price": 5290000,
+  "stock": 230,
+  "description": "Chip Dimensity 6100+, màn hình AMOLED 90Hz, camera 64MP, pin 5000mAh, sạc nhanh 33W.",
+  "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i-Pro.Pur1.jpg",
+  "category": "Smartphone"
+},
+{
+  "id": "46",
+  "name": "Điện thoại OPPO Reno12F 8GB/256GB",
+  "brand": "OPPO",
+  "price": 8690000,
+  "stock": 180,
+  "description": "Chip Dimensity 6300, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 67W.",
+  "image": "http://127.0.0.1:5500/backend/imgs/oppo/Reno12F-AI-org.jpg",
+  "category": "Smartphone"
+},
+{
+  "id": "47",
+  "name": "Điện thoại OPPO Reno13F 5G 8GB/256GB",
+  "brand": "OPPO",
+  "price": 9490000,
+  "stock": 160,
+  "description": "Chip Dimensity 7050, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 67W.",
+  "image": "http://127.0.0.1:5500/backend/imgs/oppo/Reno13-F.pur-AI-v1.jpg",
+  "category": "Smartphone"
+},
+{
+  "id": "48",
+  "name": "Điện thoại OPPO Reno14F 5G 12GB/256GB",
+  "brand": "OPPO",
+  "price": 10990000,
+  "stock": 140,
+  "description": "Chip Snapdragon 7 Gen 3, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 80W.",
+  "image": "http://127.0.0.1:5500/backend/imgs/honor/X9C.blk1.jpg",
+  "category": "Smartphone"
+},
+{
+    "id": "49",
+    "name": "Điện thoại Xiaomi 15T Pro 12GB/512GB",
+    "brand": "Xiaomi",
+    "price": 19990000,
+    "stock": 150,
+    "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 144Hz, camera 200MP, pin 5000mAh, sạc nhanh 120W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/xiaomi/15tpro.jpeg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "50",
+    "name": "Điện thoại Xiaomi 15 Ultra 16GB/512GB",
+    "brand": "Xiaomi",
+    "price": 25990000,
+    "stock": 100,
+    "description": "Chip Snapdragon 8 Gen 3, màn hình LTPO AMOLED 120Hz, camera Leica 200MP, pin 5300mAh, sạc nhanh 90W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/xiaomi/15-Ultra.Sil1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "51",
+    "name": "Điện thoại Redmi Note 13 4G 8GB/256GB",
+    "brand": "Xiaomi",
+    "price": 5990000,
+    "stock": 220,
+    "description": "Chip Helio G99, màn hình AMOLED 120Hz, camera 108MP, pin 5000mAh, sạc nhanh 33W.",
+    "image": "http://127.0.0.1:5500/backend/imgs/xiaomi/Note-13-gold1.jpg",
+    "category": "Smartphone"
+  },
+  {
+    "id": "52",
+    "name": "Điện thoại Redmi Note 13 5G 8GB/256GB (Vàng)",
+    "brand": "Xiaomi",
+    "price": 6990000,
+    "stock": 210,
+    "description": "Chip Dimensity 6100+, màn hình AMOLED 120Hz, pin 5000mAh, sạc nhanh 33W.",
+    "image": "http://127.0.0.1:5500",
+    "category": "Smartphone"
+  },
+  {
+    "id": "53",
+    "name": "Điện thoại Poco M6 5G 8GB/256GB",
+    "brand": "Xiaomi",
+    "price": 6290000,
+    "stock": 230,
+    "description": "Chip Dimensity 6100+, màn hình AMOLED 90Hz, camera 64MP, pin 5000mAh, sạc nhanh 33W.",
+    "image": "http://127.0.0.1:5500",
+    "category": "Smartphone"
+  },
+  {
+    "id": "54",
+    "name": "Điện thoại Redmi A13 4GB/128GB",
+    "brand": "Xiaomi",
+    "price": 3190000,
+    "stock": 260,
+    "description": "Chip Helio G36, màn hình LCD 90Hz, camera 50MP, pin 5000mAh, sạc 10W.",
+    "image": "http://127.0.0.1:5500",
+    "category": "Smartphone"
+  },
+  {
+    "id": "55",
+    "name": "Điện thoại Xiaomi 15 5G 12GB/512GB",
+    "brand": "Xiaomi",
+    "price": 17990000,
+    "stock": 160,
+    "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+    "image": "http://127.0.0.1:5500",
+    "category": "Smartphone"
+  },
+  {
+    "id": "56",
+    "name": "Điện thoại Redmi Note 14 5G 8GB/256GB",
+    "brand": "Xiaomi",
+    "price": 7490000,
+    "stock": 200,
+    "description": "Chip Dimensity 7200 Ultra, màn hình AMOLED 120Hz, camera 108MP, pin 5000mAh, sạc nhanh 67W.",
+    "image": "http://127.0.0.1:5500",
+    "category": "Smartphone"
   }
+
 ]

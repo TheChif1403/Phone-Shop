@@ -12,6 +12,28 @@
     <script src="../js/bootstrap.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+     <script src="../js/renderProducts.js"></script>
+
+    <script>
+    async function loadProducts() {
+      try {
+        const res = await fetch('http://localhost:5000/api/products');
+        const data = await res.json();
+        const list = document.getElementById('product-list');
+        list.innerHTML = data.map(p => `
+          <div class="card">
+            <img src="${p.image}" alt="${p.name}">
+            <h3>${p.name}</h3>
+            <p>${p.brand}</p>
+            <p><b>${p.price.toLocaleString()}₫</b></p>
+          </div>
+        `).join('');
+      } catch (err) {
+        console.error('Lỗi tải dữ liệu:', err);
+      }
+    }
+    loadProducts();
+  </script>
     <style>
         * {
             box-sizing: border-box;
@@ -239,117 +261,22 @@
 
         </div>
 
-        <!-- Featured Products -->
-        <div class="featured-section">
-            <div class="container">
-                <div class="section-title">
-                    <h2>SẢN PHẨM NỔI BẬT</h2>
-                </div>
-                <div class="row">
-                    <!-- Product 1 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/apple/17pro.jpg" class="product-img" alt="Bitis Hunter X">
-                                <!-- <div class="product-badge bg-danger"></div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Iphone 17 pro max</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
+        
 
-                                </div>
-                                <div>
-                                    <span class="product-price"> 860,000đ</span>
-                                    <span class="product-old-price">1,299,000đ</span>
-                                </div>
-
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày Derby Nam Bitis BMM001777NAU', '../img/giaytay/giayBMM00177Nau.webp', 680000)">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/apple/17air.jpg" class="product-img" alt="Bitis Hunter X Trắng">
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Iphone 17 AIR</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">780,000đ </span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày Thể Thao Cao Cấp Nam Bitis BSM003700XAM', '../img/giaythethao/giay7.webp', 780000)">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/apple/17.jpg" class="product-img" alt="Bitis Hunter Mid">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Iphone 17</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">1,299,000đ</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Sandal Gót Vuông BITTS SD021', '../img/sandal/sandal2.webp', 1299000)">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/dienthoai/apple/16promax.jpg" class="product-img" alt="Bitis Explorer">
-
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Iphone 16 Pro max</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">425,000đ </span>
-                                    <span class="product-old-price">500,000đ </span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart('Giày trẻ em Bitis BMM001677NAD', '../img/giày trẻ em/giay3.jpg', 425000)">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!-- Featured Products -->
+<div class="featured-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>SẢN PHẨM NỔI BẬT</h2>
         </div>
+        <div class="row" id="product-list">
+            <!-- Sản phẩm sẽ được thêm tự động ở đây -->
+        </div>
+    </div>
+</div>
+
+
+
         <a href="giohang.html" class="cart-floating-button">
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-count">0</span>
@@ -406,7 +333,9 @@
         </footer>
 
     </div>
+   
 </body>
+
 
 </html>
 

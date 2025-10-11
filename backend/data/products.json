@@ -1,564 +1,643 @@
-[
-  {
-    "id": "1",
-    "name": "iPhone 17 Pro Max 256GB | Chính hãng VNA",
-    "brand": "Apple",
-    "price": 37990000,
-    "stock": 100,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image" :  "http://127.0.0.1:5500/backend/imgs/apple/17pro.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "2",
-    "name": "iPhone 17 Air 256GB | Chính hãng VNA",
-    "brand": "Apple",
-    "price": 31990000,
-    "stock": 100,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/344777/iphone-air-1tb-vang-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "3",
-    "name": "iPhone 17 256GB | Chính hãng VNA",
-    "brand": "Apple",
-    "price": 25990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/342667/iphone-17-xanh-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "4",
-    "name": "iPhone 16 Pro Max 256GB | Chính hãng VNA",
-    "brand": "Apple",
-    "price": 21990000,
-    "stock": 100,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-1-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "5",
-    "name": "iPhone 16e 128GB | Chính hãng VNA",
-    "brand": "Apple",
-    "price": 15990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/334864/iphone-16e-white-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "6",
-    "name": "iPhone 15 128GB | Chính hãng VNA",
-    "brand": "Apple",
-    "price": 15990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-xanh-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "7",
-    "name": "iPhone 15plus 128GB | Chính hãng VNA",
-    "brand": "Apple",
-    "price": 19990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-hong-128gb-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "8",
-    "name": "iPhone 16 128GB | Chính hãng VNA",
-    "brand": "Apple",
-    "price": 19990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/329135/iphone-16-blue-600x600.png",
-    "category": "Smartphone"
-    
-},
-  {
-    "id": "9",
-    "name": "Điện thoại Samsung Galaxy Z Fold7 5G 12GB/256GB",
-    "brand": "Samsung",
-    "price": 42990000,
-    "stock": 100,
-    "description": "Qualcomm Snapdragon 8 Elite For Galaxy 8 nhân",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/338738/samsung-galaxy-z-fold7-black-thumb-1-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "10",
-    "name": "Điện thoại Samsung Galaxy Z Flip5 5G 12GB/256GB",
-    "brand": "Samsung",
-    "price": 31990000,
-    "stock": 100,
-    "description": "Qualcomm Snapdragon 8 Elite For Galaxy 8 nhân",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/338736/samsung-galaxy-z-flip7-red-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "11",
-    "name": "Điện thoại Samsung Galaxy S25 Ultra 5G 12GB/256GB",
-    "brand": "Samsung",
-    "price": 25990000,
-    "stock": 200,
-    "description": "Màn hình super Amoled 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/333347.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "12",
-    "name": "Điện thoại Samsung Galaxy S24 Ultra 5G 12GB/256GB",
-    "brand": "Samsung",
-    "price": 24990000,
-    "stock": 100,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/307174.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "13",
-    "name": "Điện thoại Samsung Galaxy S25 Edge 5G 12GB/512GB",
-    "brand": "Samsung",
-    "price": 20990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/335955.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "14",
-    "name": "Điện thoại Samsung Galaxy Z Flip7 FE 5G 8GB/128GB",
-    "brand": "Samsung",
-    "price": 18990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/338741/samsung-galaxy-z-flip7-fe-white-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "15",
-    "name": "Điện thoại Samsung Galaxy A26 5G 6GB/128GB",
-    "brand": "Samsung",
-    "price": 9990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/335915.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "16",
-    "name": "Điện thoại Samsung Galaxy A17 4GB/128GB",
-    "brand": "Samsung",
-    "price": 19990000,
-    "stock": 200,
-    "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/341797/samsung-galaxy-a17-lte-xam-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  
-  {
-    "id": "17",
-    "name": "Điện thoại Vivo X200 Pro 5G 12GB/512GB",
-    "brand": "Vivo",
-    "price": 23990000,
-    "stock": 150,
-    "description": "Màn hình AMOLED 6.8 inch 120Hz, chip Dimensity 9400, camera 200MP, sạc nhanh 120W.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/341625/vivo-v60-5g-xam-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "18",
-    "name": "Điện thoại Vivo V30e 5G 8GB/256GB",
-    "brand": "Vivo",
-    "price": 9990000,
-    "stock": 200,
-    "description": "Màn hình AMOLED 6.7 inch, pin 5000mAh, sạc nhanh 80W, camera selfie 50MP.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/338918/vivo-y19s-pro-bac-thumb-1-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "19",
-    "name": "Điện thoại Vivo Y100 5G 8GB/128GB",
-    "brand": "Vivo",
-    "price": 7990000,
-    "stock": 250,
-    "description": "Chip Dimensity 7020, màn hình AMOLED 120Hz, thiết kế mỏng nhẹ sang trọng.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/336408-600x600-2.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "20",
-    "name": "Điện thoại Vivo Y36 8GB/256GB",
-    "brand": "Vivo",
-    "price": 6990000,
-    "stock": 300,
-    "description": "Snapdragon 680, màn hình 90Hz, camera 50MP, pin 5000mAh sạc nhanh 44W.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/331200-600x600-2.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "21",
-    "name": "Điện thoại Vivo T3 5G 8GB/256GB",
-    "brand": "Vivo",
-    "price": 8990000,
-    "stock": 150,
-    "description": "Chip Dimensity 7200, màn hình AMOLED 120Hz, camera 64MP chống rung OIS.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/335228-600x600-2.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "22",
-    "name": "Điện thoại Vivo Y27 8GB/128GB",
-    "brand": "Vivo",
-    "price": 5590000,
-    "stock": 250,
-    "description": "Thiết kế mỏng nhẹ, camera kép 50MP, pin 5000mAh sạc nhanh 44W.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/329959-600x600-2.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "23",
-    "name": "Điện thoại Vivo V29 5G 12GB/512GB",
-    "brand": "Vivo",
-    "price": 14990000,
-    "stock": 120,
-    "description": "Màn hình AMOLED 120Hz, camera 50MP OIS, sạc nhanh 80W, thiết kế cong tinh tế.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/319214-600x600-2.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "24",
-    "name": "Điện thoại Vivo X100 Ultra 5G 16GB/512GB",
-    "brand": "Vivo",
-    "price": 26990000,
-    "stock": 100,
-    "description": "Camera Zeiss 200MP, chip Snapdragon 8 Gen 3, màn hình AMOLED 144Hz.",
-    "image": "https://cdn.tgdd.vn/2025/10/timerseo/334226-600x600-2.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "25",
-"name": "Điện thoại Xiaomi 14 Ultra 5G 16GB/512GB",
-    "brand": "Xiaomi",
-    "price": 26990000,
-    "stock": 100,
-    "description": "Snapdragon 8 Gen 3, màn hình AMOLED 2K, camera Leica 200MP, pin 5000mAh.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/333832/xiaomi-14-ultra-black-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "26",
-    "name": "Điện thoại Xiaomi 14T Pro 5G 12GB/256GB",
-    "brand": "Xiaomi",
-    "price": 17990000,
-    "stock": 200,
-    "description": "Chip Dimensity 9300, màn hình AMOLED 144Hz, camera 200MP, sạc nhanh 120W.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/342875/xiaomi-14t-pro-blue-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "27",
-    "name": "Điện thoại Xiaomi Redmi Note 13 Pro+ 5G 12GB/512GB",
-    "brand": "Xiaomi",
-    "price": 9990000,
-    "stock": 250,
-    "description": "Chip Dimensity 7200 Ultra, màn hình AMOLED 120Hz, sạc nhanh 120W, camera 200MP.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/311283/redmi-note-13-pro-plus-green-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "28",
-    "name": "Điện thoại Xiaomi Redmi Note 13 8GB/256GB",
-    "brand": "Xiaomi",
-    "price": 6990000,
-    "stock": 300,
-    "description": "Màn hình AMOLED 120Hz, camera 108MP, pin 5000mAh, sạc nhanh 67W.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/311284/redmi-note-13-pink-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "29",
-    "name": "Điện thoại Xiaomi 13T 5G 8GB/256GB",
-    "brand": "Xiaomi",
-    "price": 12990000,
-    "stock": 150,
-    "description": "Chip Dimensity 8200-Ultra, camera Leica 50MP, pin 5000mAh, sạc nhanh 67W.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/310266/xiaomi-13t-blue-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "30",
-    "name": "Điện thoại Xiaomi 13 Lite 8GB/256GB",
-    "brand": "Xiaomi",
-    "price": 9990000,
-    "stock": 200,
-    "description": "Snapdragon 7 Gen 1, màn hình AMOLED 120Hz, camera kép selfie 32MP.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/299850/xiaomi-13-lite-pink-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "31",
-    "name": "Điện thoại Xiaomi Poco F6 Pro 5G 12GB/512GB",
-    "brand": "Xiaomi",
-    "price": 15990000,
-    "stock": 180,
-    "description": "Snapdragon 8 Gen 2, màn hình AMOLED 144Hz, sạc nhanh 120W, pin 5000mAh.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/341021/poco-f6-pro-black-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "32",
-    "name": "Điện thoại Xiaomi Poco X6 5G 8GB/256GB",
-    "brand": "Xiaomi",
-    "price": 8990000,
-    "stock": 250,
-    "description": "Chip Snapdragon 7s Gen 2, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 67W.",
-    "image": "https://cdn.tgdd.vn/Products/Images/42/338878/poco-x6-blue-thumb-600x600.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "33",
-    "name": "Điện thoại Honor H400 Lite 5G 8GB/256GB",
-    "brand": "Honor",
-    "price": 7890000,
-    "stock": 200,
-    "description": "Chip MediaTek Dimensity 6100+, màn hình AMOLED 120Hz, pin 5000mAh, sạc nhanh 35W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/honor/H400-Lite.Grn1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "34",
-    "name": "Điện thoại Honor H400 5G 12GB/256GB",
-    "brand": "Honor",
-    "price": 8990000,
-    "stock": 180,
-    "description": "Chip Snapdragon 6 Gen 1, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 40W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/honor/Honor-H400-5G.Gld1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "35",
-    "name": "Điện thoại Honor Magic V5 5G 16GB/512GB",
-    "brand": "Honor",
-    "price": 35990000,
-    "stock": 60,
-    "description": "Điện thoại gập, chip Snapdragon 8 Gen 2, màn hình OLED kép 120Hz, pin 5000mAh, sạc nhanh 66W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/honor/HONOR-Magic-V5-Gld1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "36",
-    "name": "Điện thoại Honor X5b Plus 8GB/128GB",
-    "brand": "Honor",
-    "price": 4990000,
-    "stock": 250,
-    "description": "Chip Helio G88, màn hình LCD 90Hz, pin 5000mAh, camera kép 50MP, sạc nhanh 22.5W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/honor/X5b-Plus.blk1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "37",
-    "name": "Điện thoại Honor X5B 8GB/128GB",
-    "brand": "Honor",
-    "price": 4690000,
-    "stock": 220,
-    "description": "Chip Helio G85, màn hình LCD 6.7 inch, camera 50MP, pin 5000mAh, sạc nhanh 22.5W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/honor/X5B.Ble1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "38",
-    "name": "Điện thoại Honor X6C 6GB/128GB",
-    "brand": "Honor",
-    "price": 4290000,
-    "stock": 240,
-    "description": "Chip MediaTek Helio G37, màn hình LCD 6.56 inch, camera 50MP, pin 5000mAh.",
-    "image": "http://127.0.0.1:5500/backend/imgs/honor/X6C.blk1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "39",
-    "name": "Điện thoại Honor X8C 8GB/256GB",
-    "brand": "Honor",
-    "price": 6490000,
-    "stock": 210,
-    "description": "Chip Snapdragon 680, màn hình AMOLED 90Hz, camera 108MP, pin 4500mAh, sạc nhanh 35W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/honor/X8C.grn1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "40",
-    "name": "Điện thoại Honor X9C 5G 8GB/256GB",
-    "brand": "Honor",
-    "price": 8990000,
-    "stock": 190,
-    "description": "Chip Snapdragon 6 Gen 1, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 40W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/honor/X9C.blk1.jpg",
-    "category": "Smartphone"
-  },{
-  "id": "41",
-  "name": "Điện thoại OPPO A3X 8GB/128GB",
-  "brand": "OPPO",
-  "price": 5490000,
-  "stock": 240,
-  "description": "Chip Snapdragon 680, màn hình AMOLED 90Hz, camera 50MP, pin 5000mAh, sạc nhanh 33W.",
-  "image": "http://127.0.0.1:5500/backend/imgs/oppo/A3X.ble1.jpg",
-  "category": "Smartphone"
-},
-{
-  "id": "42",
-  "name": "Điện thoại OPPO Find X8 5G 12GB/256GB",
-  "brand": "OPPO",
-  "price": 19990000,
-  "stock": 120,
-  "description": "Chip Snapdragon 8 Gen 3, màn hình OLED LTPO 120Hz, camera 50MP, pin 5000mAh, sạc nhanh 100W.",
-  "image": "http://127.0.0.1:5500/backend/imgs/oppo/Find-X8.UI.Blk1.jpg",
-  "category": "Smartphone"
-},
-{
-  "id": "43",
-  "name": "Điện thoại OPPO A5i 6GB/128GB (Phiên bản 1)",
-  "brand": "OPPO",
-  "price": 3990000,
-  "stock": 260,
-  "description": "Chip Helio G35, màn hình LCD 6.56 inch, camera kép 50MP, pin 5000mAh, sạc 10W.",
-  "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i.all1.jpg",
-  "category": "Smartphone"
-},
-{
-  "id": "44",
-  "name": "Điện thoại OPPO A5i 6GB/128GB (Phiên bản 2)",
-  "brand": "OPPO",
-  "price": 4090000,
-  "stock": 250,
-  "description": "Chip Helio G35, thiết kế mặt lưng mới, camera kép 50MP, pin 5000mAh.",
-  "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i.all2.jpg",
-  "category": "Smartphone"
-},
-{
-  "id": "45",
-  "name": "Điện thoại OPPO A5i Pro 8GB/256GB",
-  "brand": "OPPO",
-  "price": 5290000,
-  "stock": 230,
-  "description": "Chip Dimensity 6100+, màn hình AMOLED 90Hz, camera 64MP, pin 5000mAh, sạc nhanh 33W.",
-  "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i-Pro.Pur1.jpg",
-  "category": "Smartphone"
-},
-{
-  "id": "46",
-  "name": "Điện thoại OPPO Reno12F 8GB/256GB",
-  "brand": "OPPO",
-  "price": 8690000,
-  "stock": 180,
-  "description": "Chip Dimensity 6300, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 67W.",
-  "image": "http://127.0.0.1:5500/backend/imgs/oppo/Reno12F-AI-org.jpg",
-  "category": "Smartphone"
-},
-{
-  "id": "47",
-  "name": "Điện thoại OPPO Reno13F 5G 8GB/256GB",
-  "brand": "OPPO",
-  "price": 9490000,
-  "stock": 160,
-  "description": "Chip Dimensity 7050, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 67W.",
-  "image": "http://127.0.0.1:5500/backend/imgs/oppo/Reno13-F.pur-AI-v1.jpg",
-  "category": "Smartphone"
-},
-{
-  "id": "48",
-  "name": "Điện thoại OPPO Reno14F 5G 12GB/256GB",
-  "brand": "OPPO",
-  "price": 10990000,
-  "stock": 140,
-  "description": "Chip Snapdragon 7 Gen 3, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 80W.",
-  "image": "http://127.0.0.1:5500/backend/imgs/honor/X9C.blk1.jpg",
-  "category": "Smartphone"
-},
-{
-    "id": "49",
-    "name": "Điện thoại Xiaomi 15T Pro 12GB/512GB",
-    "brand": "Xiaomi",
-    "price": 19990000,
-    "stock": 150,
-    "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 144Hz, camera 200MP, pin 5000mAh, sạc nhanh 120W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/xiaomi/15tpro.jpeg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "50",
-    "name": "Điện thoại Xiaomi 15 Ultra 16GB/512GB",
-    "brand": "Xiaomi",
-    "price": 25990000,
-    "stock": 100,
-    "description": "Chip Snapdragon 8 Gen 3, màn hình LTPO AMOLED 120Hz, camera Leica 200MP, pin 5300mAh, sạc nhanh 90W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/xiaomi/15-Ultra.Sil1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "51",
-    "name": "Điện thoại Redmi Note 13 4G 8GB/256GB",
-    "brand": "Xiaomi",
-    "price": 5990000,
-    "stock": 220,
-    "description": "Chip Helio G99, màn hình AMOLED 120Hz, camera 108MP, pin 5000mAh, sạc nhanh 33W.",
-    "image": "http://127.0.0.1:5500/backend/imgs/xiaomi/Note-13-gold1.jpg",
-    "category": "Smartphone"
-  },
-  {
-    "id": "52",
-    "name": "Điện thoại Redmi Note 13 5G 8GB/256GB (Vàng)",
-    "brand": "Xiaomi",
-    "price": 6990000,
-    "stock": 210,
-    "description": "Chip Dimensity 6100+, màn hình AMOLED 120Hz, pin 5000mAh, sạc nhanh 33W.",
-    "image": "http://127.0.0.1:5500",
-    "category": "Smartphone"
-  },
-  {
-    "id": "53",
-    "name": "Điện thoại Poco M6 5G 8GB/256GB",
-    "brand": "Xiaomi",
-    "price": 6290000,
-    "stock": 230,
-    "description": "Chip Dimensity 6100+, màn hình AMOLED 90Hz, camera 64MP, pin 5000mAh, sạc nhanh 33W.",
-    "image": "http://127.0.0.1:5500",
-    "category": "Smartphone"
-  },
-  {
-    "id": "54",
-    "name": "Điện thoại Redmi A13 4GB/128GB",
-    "brand": "Xiaomi",
-    "price": 3190000,
-    "stock": 260,
-    "description": "Chip Helio G36, màn hình LCD 90Hz, camera 50MP, pin 5000mAh, sạc 10W.",
-    "image": "http://127.0.0.1:5500",
-    "category": "Smartphone"
-  },
-  {
-    "id": "55",
-    "name": "Điện thoại Xiaomi 15 5G 12GB/512GB",
-    "brand": "Xiaomi",
-    "price": 17990000,
-    "stock": 160,
-    "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
-    "image": "http://127.0.0.1:5500",
-    "category": "Smartphone"
-  },
-  {
-    "id": "56",
-    "name": "Điện thoại Redmi Note 14 5G 8GB/256GB",
-    "brand": "Xiaomi",
-    "price": 7490000,
-    "stock": 200,
-    "description": "Chip Dimensity 7200 Ultra, màn hình AMOLED 120Hz, camera 108MP, pin 5000mAh, sạc nhanh 67W.",
-    "image": "http://127.0.0.1:5500",
-    "category": "Smartphone"
-  }
+[{
+        "id": "1",
+        "name": "iPhone 17 Pro Max 256GB | Chính hãng VNA",
+        "brand": "Apple",
+        "price": 37990000,
+        "stock": 100,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "http://127.0.0.1:5500/backend/imgs/apple/17pro.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "2",
+        "name": "iPhone 17 Air 256GB | Chính hãng VNA",
+        "brand": "Apple",
+        "price": 31990000,
+        "stock": 100,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/344777/iphone-air-1tb-vang-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "3",
+        "name": "iPhone 17 256GB | Chính hãng VNA",
+        "brand": "Apple",
+        "price": 25990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/342667/iphone-17-xanh-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "4",
+        "name": "iPhone 16 Pro Max 256GB | Chính hãng VNA",
+        "brand": "Apple",
+        "price": 21990000,
+        "stock": 100,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-1-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "5",
+        "name": "iPhone 16e 128GB | Chính hãng VNA",
+        "brand": "Apple",
+        "price": 15990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/334864/iphone-16e-white-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "6",
+        "name": "iPhone 15 128GB | Chính hãng VNA",
+        "brand": "Apple",
+        "price": 15990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-xanh-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "7",
+        "name": "iPhone 15plus 128GB | Chính hãng VNA",
+        "brand": "Apple",
+        "price": 19990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-hong-128gb-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "8",
+        "name": "iPhone 16 128GB | Chính hãng VNA",
+        "brand": "Apple",
+        "price": 19990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/329135/iphone-16-blue-600x600.png",
+        "category": "Smartphone"
+
+    },
+    {
+        "id": "9",
+        "name": "Điện thoại Samsung Galaxy Z Fold7 5G 12GB/256GB",
+        "brand": "Samsung",
+        "price": 42990000,
+        "stock": 100,
+        "description": "Qualcomm Snapdragon 8 Elite For Galaxy 8 nhân",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/338738/samsung-galaxy-z-fold7-black-thumb-1-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "10",
+        "name": "Điện thoại Samsung Galaxy Z Flip5 5G 12GB/256GB",
+        "brand": "Samsung",
+        "price": 31990000,
+        "stock": 100,
+        "description": "Qualcomm Snapdragon 8 Elite For Galaxy 8 nhân",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/338736/samsung-galaxy-z-flip7-red-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "11",
+        "name": "Điện thoại Samsung Galaxy S25 Ultra 5G 12GB/256GB",
+        "brand": "Samsung",
+        "price": 25990000,
+        "stock": 200,
+        "description": "Màn hình super Amoled 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/333347.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "12",
+        "name": "Điện thoại Samsung Galaxy S24 Ultra 5G 12GB/256GB",
+        "brand": "Samsung",
+        "price": 24990000,
+        "stock": 100,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/307174.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "13",
+        "name": "Điện thoại Samsung Galaxy S25 Edge 5G 12GB/512GB",
+        "brand": "Samsung",
+        "price": 20990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/335955.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "14",
+        "name": "Điện thoại Samsung Galaxy Z Flip7 FE 5G 8GB/128GB",
+        "brand": "Samsung",
+        "price": 18990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/338741/samsung-galaxy-z-flip7-fe-white-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "15",
+        "name": "Điện thoại Samsung Galaxy A26 5G 6GB/128GB",
+        "brand": "Samsung",
+        "price": 9990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/335915.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "16",
+        "name": "Điện thoại Samsung Galaxy A17 4GB/128GB",
+        "brand": "Samsung",
+        "price": 19990000,
+        "stock": 200,
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/341797/samsung-galaxy-a17-lte-xam-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+
+    {
+        "id": "17",
+        "name": "Điện thoại Vivo X200 Pro 5G 12GB/512GB",
+        "brand": "Vivo",
+        "price": 23990000,
+        "stock": 150,
+        "description": "Màn hình AMOLED 6.8 inch 120Hz, chip Dimensity 9400, camera 200MP, sạc nhanh 120W.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/341625/vivo-v60-5g-xam-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "18",
+        "name": "Điện thoại Vivo V30e 5G 8GB/256GB",
+        "brand": "Vivo",
+        "price": 9990000,
+        "stock": 200,
+        "description": "Màn hình AMOLED 6.7 inch, pin 5000mAh, sạc nhanh 80W, camera selfie 50MP.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/338918/vivo-y19s-pro-bac-thumb-1-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "19",
+        "name": "Điện thoại Vivo Y100 5G 8GB/128GB",
+        "brand": "Vivo",
+        "price": 7990000,
+        "stock": 250,
+        "description": "Chip Dimensity 7020, màn hình AMOLED 120Hz, thiết kế mỏng nhẹ sang trọng.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/336408-600x600-2.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "20",
+        "name": "Điện thoại Vivo Y36 8GB/256GB",
+        "brand": "Vivo",
+        "price": 6990000,
+        "stock": 300,
+        "description": "Snapdragon 680, màn hình 90Hz, camera 50MP, pin 5000mAh sạc nhanh 44W.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/331200-600x600-2.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "21",
+        "name": "Điện thoại Vivo T3 5G 8GB/256GB",
+        "brand": "Vivo",
+        "price": 8990000,
+        "stock": 150,
+        "description": "Chip Dimensity 7200, màn hình AMOLED 120Hz, camera 64MP chống rung OIS.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/335228-600x600-2.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "22",
+        "name": "Điện thoại Vivo Y27 8GB/128GB",
+        "brand": "Vivo",
+        "price": 5590000,
+        "stock": 250,
+        "description": "Thiết kế mỏng nhẹ, camera kép 50MP, pin 5000mAh sạc nhanh 44W.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/329959-600x600-2.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "23",
+        "name": "Điện thoại Vivo V29 5G 12GB/512GB",
+        "brand": "Vivo",
+        "price": 14990000,
+        "stock": 120,
+        "description": "Màn hình AMOLED 120Hz, camera 50MP OIS, sạc nhanh 80W, thiết kế cong tinh tế.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/319214-600x600-2.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "24",
+        "name": "Điện thoại Vivo X100 Ultra 5G 16GB/512GB",
+        "brand": "Vivo",
+        "price": 26990000,
+        "stock": 100,
+        "description": "Camera Zeiss 200MP, chip Snapdragon 8 Gen 3, màn hình AMOLED 144Hz.",
+        "image": "https://cdn.tgdd.vn/2025/10/timerseo/334226-600x600-2.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "25",
+        "name": "Điện thoại Xiaomi 14 Ultra 5G 16GB/512GB",
+        "brand": "Xiaomi",
+        "price": 26990000,
+        "stock": 100,
+        "description": "Snapdragon 8 Gen 3, màn hình AMOLED 2K, camera Leica 200MP, pin 5000mAh.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/333832/xiaomi-14-ultra-black-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "26",
+        "name": "Điện thoại Xiaomi 14T Pro 5G 12GB/256GB",
+        "brand": "Xiaomi",
+        "price": 17990000,
+        "stock": 200,
+        "description": "Chip Dimensity 9300, màn hình AMOLED 144Hz, camera 200MP, sạc nhanh 120W.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/342875/xiaomi-14t-pro-blue-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "27",
+        "name": "Điện thoại Xiaomi Redmi Note 13 Pro+ 5G 12GB/512GB",
+        "brand": "Xiaomi",
+        "price": 9990000,
+        "stock": 250,
+        "description": "Chip Dimensity 7200 Ultra, màn hình AMOLED 120Hz, sạc nhanh 120W, camera 200MP.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/311283/redmi-note-13-pro-plus-green-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "28",
+        "name": "Điện thoại Xiaomi Redmi Note 13 8GB/256GB",
+        "brand": "Xiaomi",
+        "price": 6990000,
+        "stock": 300,
+        "description": "Màn hình AMOLED 120Hz, camera 108MP, pin 5000mAh, sạc nhanh 67W.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/311284/redmi-note-13-pink-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "29",
+        "name": "Điện thoại Xiaomi 13T 5G 8GB/256GB",
+        "brand": "Xiaomi",
+        "price": 12990000,
+        "stock": 150,
+        "description": "Chip Dimensity 8200-Ultra, camera Leica 50MP, pin 5000mAh, sạc nhanh 67W.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/310266/xiaomi-13t-blue-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "30",
+        "name": "Điện thoại Xiaomi 13 Lite 8GB/256GB",
+        "brand": "Xiaomi",
+        "price": 9990000,
+        "stock": 200,
+        "description": "Snapdragon 7 Gen 1, màn hình AMOLED 120Hz, camera kép selfie 32MP.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/299850/xiaomi-13-lite-pink-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "31",
+        "name": "Điện thoại Xiaomi Poco F6 Pro 5G 12GB/512GB",
+        "brand": "Xiaomi",
+        "price": 15990000,
+        "stock": 180,
+        "description": "Snapdragon 8 Gen 2, màn hình AMOLED 144Hz, sạc nhanh 120W, pin 5000mAh.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/341021/poco-f6-pro-black-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "32",
+        "name": "Điện thoại Xiaomi Poco X6 5G 8GB/256GB",
+        "brand": "Xiaomi",
+        "price": 8990000,
+        "stock": 250,
+        "description": "Chip Snapdragon 7s Gen 2, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 67W.",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/338878/poco-x6-blue-thumb-600x600.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "33",
+        "name": "Điện thoại Honor H400 Lite 5G 8GB/256GB",
+        "brand": "Honor",
+        "price": 7890000,
+        "stock": 200,
+        "description": "Chip MediaTek Dimensity 6100+, màn hình AMOLED 120Hz, pin 5000mAh, sạc nhanh 35W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/H400-Lite.Grn1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "34",
+        "name": "Điện thoại Honor H400 5G 12GB/256GB",
+        "brand": "Honor",
+        "price": 8990000,
+        "stock": 180,
+        "description": "Chip Snapdragon 6 Gen 1, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 40W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/Honor-H400-5G.Gld1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "35",
+        "name": "Điện thoại Honor Magic V5 5G 16GB/512GB",
+        "brand": "Honor",
+        "price": 35990000,
+        "stock": 60,
+        "description": "Điện thoại gập, chip Snapdragon 8 Gen 2, màn hình OLED kép 120Hz, pin 5000mAh, sạc nhanh 66W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/HONOR-Magic-V5-Gld1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "36",
+        "name": "Điện thoại Honor X5b Plus 8GB/128GB",
+        "brand": "Honor",
+        "price": 4990000,
+        "stock": 250,
+        "description": "Chip Helio G88, màn hình LCD 90Hz, pin 5000mAh, camera kép 50MP, sạc nhanh 22.5W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/X5b-Plus.blk1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "37",
+        "name": "Điện thoại Honor X5B 8GB/128GB",
+        "brand": "Honor",
+        "price": 4690000,
+        "stock": 220,
+        "description": "Chip Helio G85, màn hình LCD 6.7 inch, camera 50MP, pin 5000mAh, sạc nhanh 22.5W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/X5B.Ble1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "38",
+        "name": "Điện thoại Honor X6C 6GB/128GB",
+        "brand": "Honor",
+        "price": 4290000,
+        "stock": 240,
+        "description": "Chip MediaTek Helio G37, màn hình LCD 6.56 inch, camera 50MP, pin 5000mAh.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/X6C.blk1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "39",
+        "name": "Điện thoại Honor X8C 8GB/256GB",
+        "brand": "Honor",
+        "price": 6490000,
+        "stock": 210,
+        "description": "Chip Snapdragon 680, màn hình AMOLED 90Hz, camera 108MP, pin 4500mAh, sạc nhanh 35W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/X8C.grn1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "40",
+        "name": "Điện thoại Honor X9C 5G 8GB/256GB",
+        "brand": "Honor",
+        "price": 8990000,
+        "stock": 190,
+        "description": "Chip Snapdragon 6 Gen 1, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 40W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/X9C.blk1.jpg",
+        "category": "Smartphone"
+    }, {
+        "id": "41",
+        "name": "Điện thoại OPPO A3X 8GB/128GB",
+        "brand": "OPPO",
+        "price": 5490000,
+        "stock": 240,
+        "description": "Chip Snapdragon 680, màn hình AMOLED 90Hz, camera 50MP, pin 5000mAh, sạc nhanh 33W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/oppo/A3X.ble1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "42",
+        "name": "Điện thoại OPPO Find X8 5G 12GB/256GB",
+        "brand": "OPPO",
+        "price": 19990000,
+        "stock": 120,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình OLED LTPO 120Hz, camera 50MP, pin 5000mAh, sạc nhanh 100W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/oppo/Find-X8.UI.Blk1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "43",
+        "name": "Điện thoại OPPO A5i 6GB/128GB (Phiên bản 1)",
+        "brand": "OPPO",
+        "price": 3990000,
+        "stock": 260,
+        "description": "Chip Helio G35, màn hình LCD 6.56 inch, camera kép 50MP, pin 5000mAh, sạc 10W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i.all1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "44",
+        "name": "Điện thoại OPPO A5i 6GB/128GB (Phiên bản 2)",
+        "brand": "OPPO",
+        "price": 4090000,
+        "stock": 250,
+        "description": "Chip Helio G35, thiết kế mặt lưng mới, camera kép 50MP, pin 5000mAh.",
+        "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i.all2.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "45",
+        "name": "Điện thoại OPPO A5i Pro 8GB/256GB",
+        "brand": "OPPO",
+        "price": 5290000,
+        "stock": 230,
+        "description": "Chip Dimensity 6100+, màn hình AMOLED 90Hz, camera 64MP, pin 5000mAh, sạc nhanh 33W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i-Pro.Pur1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "46",
+        "name": "Điện thoại OPPO Reno12F 8GB/256GB",
+        "brand": "OPPO",
+        "price": 8690000,
+        "stock": 180,
+        "description": "Chip Dimensity 6300, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 67W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/oppo/Reno12F-AI-org.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "47",
+        "name": "Điện thoại OPPO Reno13F 5G 8GB/256GB",
+        "brand": "OPPO",
+        "price": 9490000,
+        "stock": 160,
+        "description": "Chip Dimensity 7050, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 67W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/oppo/Reno13-F.pur-AI-v1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "48",
+        "name": "Điện thoại OPPO Reno14F 5G 12GB/256GB",
+        "brand": "OPPO",
+        "price": 10990000,
+        "stock": 140,
+        "description": "Chip Snapdragon 7 Gen 3, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 80W.",
+        "image": "http://127.0.0.1:5500/backend/imgs/honor/X9C.blk1.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "49",
+        "name": "Điện thoại Tecno Camon 40 Pro (8GB+8GB/256GB)",
+        "brand": "Tecno",
+        "price": 5590000,
+        "stock": 150,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 144Hz, camera 200MP, pin 5000mAh, sạc nhanh 120W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2025/03/26/camon-40-pro-1.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "50",
+        "name": "Điện thoại TECNO Spark 30C (4+4GB/128GB)",
+        "brand": "Tecno",
+        "price": 2290000,
+        "stock": 100,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình LTPO AMOLED 120Hz, camera Leica 200MP, pin 5300mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2024/10/01/ecno-spark-30c-1.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "51",
+        "name": "Điện thoại Tecno Spark 30 5G (6+6GB/128GB)",
+        "brand": "Tecno",
+        "price": 3390000,
+        "stock": 220,
+        "description": "Chip Helio G99, màn hình AMOLED 120Hz, camera 108MP, pin 5000mAh, sạc nhanh 33W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2025/03/12/tecno-spark-30-5g-den.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "52",
+        "name": "Điện thoại TECNO SPARK 40 (8+8GB/256GB)",
+        "brand": "Tecno",
+        "price": 3490000,
+        "stock": 210,
+        "description": "Chip Dimensity 6100+, màn hình AMOLED 120Hz, pin 5000mAh, sạc nhanh 33W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2025/08/13/tecno-spark-40-den.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "53",
+        "name": "Điện thoại TECNO SPARK Go 2 (4+4GB/64GB)",
+        "brand": "Tecno",
+        "price": 2190000,
+        "stock": 230,
+        "description": "Chip Dimensity 6100+, màn hình AMOLED 90Hz, camera 64MP, pin 5000mAh, sạc nhanh 33W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2025/08/11/tecno-spark-go-2-bac.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "54",
+        "name": "Điện thoại TECNO POVA 7 (8+8GB/128GB)",
+        "brand": "Tecno",
+        "price": 3990000,
+        "stock": 260,
+        "description": "Chip Helio G36, màn hình LCD 90Hz, camera 50MP, pin 5000mAh, sạc 10W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2025/06/11/tecno-pova-7-geek-black-5.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "55",
+        "name": "Điện thoại TECNO SPARK Go 1 (4+4GB/64GB)",
+        "brand": "Tecno",
+        "price": 1990000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2024/09/11/tecno-spark-go-1-3.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "56",
+        "name": "Điện thoại TECNO CAMON 30S (8+8GB/256GB)",
+        "brand": "Tecno",
+        "price": 4390000,
+        "stock": 200,
+        "description": "Chip Dimensity 7200 Ultra, màn hình AMOLED 120Hz, camera 108MP, pin 5000mAh, sạc nhanh 67W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2025/02/08/tecno-camon-30s-1.gif",
+        "category": "Smartphone"
+    },
+    {
+        "id": "57",
+        "name": "Ốp lưng Ốp lưng Mipow Tempered Glass Case for iPhone 12/12 Pro 6.1",
+        "brand": "Phukien",
+        "price": 29000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2021/03/31/image-removebg-preview-15.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "58",
+        "name": "Cường lực Camera Mryes Iphone 14 Pro/Pro Max - Chính hãng",
+        "brand": "Phukien",
+        "price": 29000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2022/12/06/image-removebg-preview-5.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "59",
+        "name": "Cáp Golf USB-A to Lightning 120W GC-98I 1M - Chính hãng",
+        "brand": "Phukien",
+        "price": 49000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2023/09/08/golf-usb-a-to-lightning-120w-gc-98i-1m-3.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "60",
+        "name": "Camera hành động DJI Osmo Action 360 Advanced Combo",
+        "brand": "Phukien",
+        "price": 13650000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/previewV2/Uploads/2025/08/14/osmo-360.jpg",
+        "category": "Smartphone"
+    },
+    {
+        "id": "61",
+        "name": "Phụ kiện Dây đeo UNIQ Lino Liquid Silicon For Apple Airtag",
+        "brand": "Phukien",
+        "price": 49000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2021/05/14/image-removebg-preview-7.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "62",
+        "name": "Ốp SPIGEN Apple AirPods Pro Tough Armor - Chính hãng",
+        "brand": "Phukien",
+        "price": 99000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2021/05/04/image-removebg-preview-26.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "63",
+        "name": "Bộ micro không dây Blink500 ProX B2 (TX + TX + RX) -Chính hãng",
+        "brand": "Phukien",
+        "price": 4390000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2023/05/17/blink500-prox-b2-3.png",
+        "category": "Smartphone"
+    },
+    {
+        "id": "64",
+        "name": "Tay cầm chống rung Hohem iSteady M6 - Chính Hãng",
+        "brand": "Phukien",
+        "price": 3490000,
+        "stock": 160,
+        "description": "Chip Snapdragon 8 Gen 3, màn hình AMOLED 120Hz, camera 200MP, pin 4800mAh, sạc nhanh 90W.",
+        "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2023/03/15/hohem-isteady-m6-2.jpeg",
+        "category": "Smartphone"
+    }
 
 ]

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../js/bootstrap.js">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/dangnhap.js"></script>
+    <script src="../js/renderProducts.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
@@ -127,7 +129,6 @@
             font-weight: bold;
         }
     </style>
-    <script src="../js/addToCard.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const navLinks = document.querySelectorAll('.main-nav .nav-item a');
@@ -159,344 +160,148 @@
         });
     </script>
 
+</head>
 
-    <body>
-        <div class="container-fluid w-100">
-            <!-- Top Bar -->
-            <div class="top-bar ">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-6">
-                            <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
-                        </div>
-                        <div class="col-md-6 text-end auth-buttons">
-                            <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
-                            <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
-                        </div>
+<body>
+    <div class="container-fluid w-100">
+        <!-- Top Bar -->
+        <div class="top-bar ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
+                    </div>
+                    <div class="col-md-6 text-end auth-buttons">
+                        <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
+                        <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
                     </div>
                 </div>
             </div>
-
-            <!-- Logo & Search -->
-            <div class="logo-section">
-                <div class="container">
-                    <div class="row align-items-center">
-                        <div class="col-md-4">
-                            <div class="logo">
-                                <img src="../img/download (1).png" alt="" height="50px">
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="search-box">
-                                <i class="fas fa-search"></i>
-                                <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-
-            <!-- Main Navigation -->
-            <div class="main-nav">
-                <div class="container nav-container">
-                    <div class="d-flex justify-content-center">
-                        <div class="nav-item active">
-                            <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="apple.html">APPLE</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="samsung.html">SAMSUNG</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="honor.html">HONOR</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="oppo.html">OPPO</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="vivo.html">VIVO</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="xiaomi.html">XIAOMI</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="techno.html">TECHNO</a>
-                        </div>
-                        <div class="nav-item">
-                            <a href="phukien.html">PHỤ KIỆN </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Featured Products -->
-            <div class="featured-section">
-                <div class="container">
-                    <div class="section-title">
-                        <h2>SẢN PHẨM</h2>
-                    </div>
-                    <div class="row">
-                        <!-- Product 1 -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-card">
-                                <div class="product-img-container">
-                                    <img src="../img/dienthoai/dienthoai/tecno/CAMON-20-blk1.jpg" class="product-img" alt="Tecno Camon 20">
-                                    <!-- <div class="product-badge bg-danger"></div> -->
-                                </div>
-                                <div class="product-info">
-                                    <h5 class="product-title">Tecno Camon 20</h5>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-
-                                    </div>
-                                    <div>
-                                        <span class="product-price">4.990.000 ₫</span>
-                                    </div>
-
-                                    <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 2 -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-card">
-                                <div class="product-img-container">
-                                    <img src="../img/dienthoai/dienthoai/tecno/Camon-30s.blk1.jpg" class="product-img" alt="Tecno Camon 30S">
-                                </div>
-                                <div class="product-info">
-                                    <h5 class="product-title">Tecno Camon 30S</h5>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-
-                                    </div>
-                                    <div>
-                                        <span class="product-price">4.700.000 ₫</span>
-                                    </div>
-                                    <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 3 -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-card">
-                                <div class="product-img-container">
-                                    <img src="../img/dienthoai/dienthoai/tecno/Camon-40-Pro.whi1.jpg" class="product-img" alt="Tecno Camon 40 Pro">
-                                    <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                                </div>
-                                <div class="product-info">
-                                    <h5 class="product-title">Tecno Camon 40 Pro</h5>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-
-                                    </div>
-                                    <div>
-                                        <span class="product-price">5.770.000 ₫</span>
-                                        <span class="product-old-price">6.870.000 ₫</span>
-                                    </div>
-                                    <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 4 -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-card">
-                                <div class="product-img-container">
-                                    <img src="../img/dienthoai/dienthoai/tecno/SPARK-30-5G.blk1.jpg" class="product-img" alt="Tecno Spark 30">
-
-                                </div>
-                                <div class="product-info">
-                                    <h5 class="product-title">Tecno Spark 30</h5>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star-half-alt"></i>
-                                    </div>
-                                    <div>
-                                        <span class="product-price">3.410.000 ₫</span>
-                                        <span class="product-old-price">4.410.000 ₫</span>
-                                    </div>
-                                    <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 5 -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-card">
-                                <div class="product-img-container">
-                                    <img src="../img/dienthoai/dienthoai/tecno/Spark-40,Blk1.jpg" class="product-img" alt="Tecno Spark 40">
-                                    <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                                </div>
-                                <div class="product-info">
-                                    <h5 class="product-title">Tecno Spark 40</h5>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div>
-                                        <span class="product-price">3.590.000 ₫</span>
-                                    </div>
-                                    <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 6 -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-card">
-                                <div class="product-img-container">
-                                    <img src="../img/dienthoai/dienthoai/tecno/Spark-Go-2,blk1.jpg" class="product-img" alt="Tecno Spark Go 2">
-                                    <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                                </div>
-                                <div class="product-info">
-                                    <h5 class="product-title">Tecno Spark Go 2</h5>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div>
-                                        <span class="product-price">2.290.000 ₫</span>
-                                        <span class="product-old-price">2.590.000 ₫</span>
-                                    </div>
-                                    <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 7 -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-card">
-                                <div class="product-img-container">
-                                    <img src="../img/dienthoai/dienthoai/tecno/Spark-40,Pur1.jpg" class="product-img" alt="Tecno Spark 40">
-                                    <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                                </div>
-                                <div class="product-info">
-                                    <h5 class="product-title">Tecno Spark 40</h5>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div>
-                                        <span class="product-price">2.990.000 ₫</span>
-                                    </div>
-                                    <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Product 8 -->
-                        <div class="col-lg-3 col-md-6">
-                            <div class="product-card">
-                                <div class="product-img-container">
-                                    <img src="../img/dienthoai/dienthoai/tecno/Tecno-Pova7.Blk1.jpg" class="product-img" alt="Tecno Pova 7">
-                                    <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                                </div>
-                                <div class="product-info">
-                                    <h5 class="product-title">Tecno Pova 7</h5>
-                                    <div class="product-rating">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                    </div>
-                                    <div>
-                                        <span class="product-price">4.590.000 ₫</span>
-                                        <span class="product-old-price">5.290.000 ₫</span>
-                                    </div>
-                                    <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-            <a href="giohang.html" class="cart-floating-button">
-                <i class="fas fa-shopping-cart"></i>
-                <span class="cart-count">0</span>
-            </a>
-            <footer class="footer">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4 mb-4">
-                            <h5>VỀ DIDONGVIET</h5>
-                            <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
-                            <div class="mt-3">
-                                <h6>ĐĂNG KÝ NHẬN TIN</h6>
-                                <div class="input-group mb-3">
-                                    <input type="email" class="form-control" placeholder="Email của bạn">
-                                    <button class="btn btn-primary" type="button">Gửi</button>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <h5>THÔNG TIN</h5>
-                            <ul class="list-unstyled">
-                                <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
-                                <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
-                                <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
-                                <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
-                                <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4 mb-4">
-                            <h5>LIÊN HỆ</h5>
-                            <ul class="list-unstyled">
-                                <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
-                                <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
-                                <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
-                                <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
-                            </ul>
-                            <div class="mt-3">
-                                <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
-                                <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
-
-
-                                <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
-                                <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
-                                <a href="#"><i class="fa-solid fa-phone"></i></a>
-
-                            </div>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="text-center">
-                        <p class="mb-0">© 2023 DIDONGVIET. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
-
         </div>
-    </body>
+
+        <!-- Logo & Search -->
+        <div class="logo-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="../img/download (1).png" alt="" height="50px">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="main-nav">
+            <div class="container nav-container">
+                <div class="d-flex justify-content-center">
+                    <div class="nav-item active">
+                        <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="apple.html">APPLE</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="samsung.html">SAMSUNG</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="honor.html">HONOR</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="oppo.html">OPPO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="vivo.html">VIVO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="xiaomi.html">XIAOMI</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="techno.html">TECHNO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="phukien.html">PHỤ KIỆN </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Featured Products -->
+        <div class="featured-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>SẢN PHẨM NỔI BẬT</h2>
+                </div>
+                <div class="row" id="product-list">
+                    <!-- Sản phẩm sẽ được thêm tự động ở đây -->
+                </div>
+            </div>
+        </div>
+
+        <a href="giohang.html" class="cart-floating-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </a>
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5>VỀ DIDONGVIET</h5>
+                        <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
+                        <div class="mt-3">
+                            <h6>ĐĂNG KÝ NHẬN TIN</h6>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-primary" type="button">Gửi</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>THÔNG TIN</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
+                            <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
+                            <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
+                            <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
+                            <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>LIÊN HỆ</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
+                            <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                            <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
+                        </ul>
+                        <div class="mt-3">
+                            <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                            <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
+
+
+                            <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
+                            <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
+                            <a href="#"><i class="fa-solid fa-phone"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">© 2023 DIDONGVIET. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+</body>
 
 </html>

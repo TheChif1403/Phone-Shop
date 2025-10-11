@@ -9,36 +9,44 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+
 /* Top Bar */
+
 .top-bar {
     background-color: var(--dark-color);
     color: white;
     padding: 8px 0;
     font-size: 14px;
 }
+
 .auth-buttons .btn {
     padding: 5px 15px;
     border-radius: 20px;
     font-size: 13px;
     margin-left: 10px;
 }
+
 .btn-login {
     background-color: transparent;
     border: 1px solid white;
     color: white;
 }
+
 .btn-register {
     background-color: var(--primary-color);
     border: 1px solid var(--primary-color);
     color: white;
 }
 
+
 /* Logo & Search */
+
 .logo-section {
     padding: 20px 0;
     background-color: white;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
+
 .logo {
     font-size: 32px;
     font-weight: bold;
@@ -46,17 +54,20 @@ body {
     text-transform: uppercase;
     letter-spacing: 2px;
 }
+
 .search-box {
     position: relative;
     max-width: 500px;
     margin: 0 auto;
 }
+
 .search-box input {
     border-radius: 25px;
     padding-left: 45px;
     border: 1px solid #ddd;
     height: 45px;
 }
+
 .search-box i {
     position: absolute;
     left: 20px;
@@ -64,21 +75,27 @@ body {
     color: #777;
 }
 
+
 /* Navigation */
+
 .main-nav {
     background-color: var(--dark-color);
 }
+
 .nav-container {
     padding: 0;
 }
+
 .nav-item {
     position: relative;
     padding: 15px 20px;
     transition: all 0.3s;
 }
+
 .nav-item:hover {
-    background-color: rgba(255,255,255,0.1);
+    background-color: rgba(255, 255, 255, 0.1);
 }
+
 .nav-item a {
     color: white;
     text-decoration: none;
@@ -87,42 +104,53 @@ body {
     font-size: 14px;
     letter-spacing: 1px;
 }
+
 .nav-item.active {
     background-color: var(--primary-color);
 }
 
+
 /* Sản phẩm */
+
 .product-card {
     background: white;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
     transition: all 0.3s;
     margin-bottom: 30px;
     border: none;
 }
+
 .product-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 }
+
 .product-img {
     width: 100%;
     height: 280px;
     object-fit: cover;
     transition: transform 0.5s;
 }
+
 .product-card:hover .product-img {
     transform: scale(1.05);
 }
+
 .product-info {
     padding: 20px;
 }
-.price, .product-price {
+
+.price,
+.product-price {
     color: var(--primary-color);
     font-weight: bold;
 }
 
+
 /* Nút giỏ hàng nổi */
+
 .cart-floating-button {
     position: fixed;
     bottom: 30px;
@@ -131,7 +159,7 @@ body {
     color: white;
     padding: 12px 16px;
     border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
     text-decoration: none;
     z-index: 999;
     display: flex;
@@ -139,13 +167,16 @@ body {
     font-size: 18px;
     transition: background-color 0.3s ease;
 }
+
 .cart-floating-button:hover {
     background-color: #c2185b;
 }
+
 .cart-floating-button i {
     font-size: 20px;
     margin-right: 8px;
 }
+
 .cart-count {
     background-color: white;
     color: #9727c7;
@@ -156,9 +187,67 @@ body {
     margin-left: 5px;
 }
 
+
 /* Footer */
+
 .footer {
     background-color: #343a40;
     color: white;
     padding: 30px 0;
+}
+
+
+/* Thêm vào thẻ <style> hoặc file style.css */
+
+
+/* Định nghĩa màu biến nếu chưa có (cần thiết cho các class khác) */
+
+
+/* Thêm đoạn CSS này vào thẻ <style> hiện tại của bạn */
+
+
+/* 1. Vùng chứa ảnh: Cố định kích thước để đảm bảo đồng nhất */
+
+.product-image-container {
+    width: 100%;
+    /* Đặt chiều cao cố định (ví dụ 200px) để tất cả thẻ sản phẩm có cùng chiều cao ảnh */
+    height: 200px;
+    /* Dùng Flexbox để căn giữa ảnh nếu ảnh nhỏ hơn khung */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 10px;
+    /* Thêm padding nhẹ để ảnh không dính sát viền */
+}
+
+
+/* 2. Thẻ hình ảnh: Sử dụng object-fit để FIX TỶ LỆ KHUNG HÌNH */
+
+.product-image-container img {
+    max-width: 100%;
+    /* Chiều rộng tối đa bằng container */
+    max-height: 100%;
+    /* Chiều cao tối đa bằng container */
+    /* FIX: Giữ nguyên tỉ lệ khung hình và đảm bảo toàn bộ ảnh vừa vặn trong container. 
+       Ảnh sẽ được co nhỏ lại nếu cần, nhưng không bị méo. */
+    object-fit: contain;
+    /* Tùy chọn: nếu bạn muốn ảnh lấp đầy khung và chấp nhận bị cắt bớt một chút: 
+    object-fit: cover; 
+    Bỏ max-height/max-width và dùng width: 100%; height: 100%; */
+}
+
+
+/* Thêm hiệu ứng cho thẻ sản phẩm (tùy chọn) */
+
+.product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid #eee;
+    height: 100%;
+    /* Đảm bảo chiều cao thẻ bằng nhau trong hàng Bootstrap */
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }

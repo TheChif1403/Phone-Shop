@@ -1,5 +1,8 @@
+// routes/product.js
 const express = require("express");
+const { body } = require("express-validator");
 const router = express.Router();
+
 const {
   createProduct,
   getProducts,
@@ -8,8 +11,18 @@ const {
   deleteProduct,
 } = require("../controllers/productController");
 
+// Middleware validate dữ liệu
+const validateProduct = [
+  body("name").notEmpty().withMessage("Tên sản phẩm không được để trống"),
+  body("price")
+    .isNumeric()
+    .withMessage("Giá phải là số")
+    .custom((value) => value > 0)
+    .withMessage("Giá phải lớn hơn 0"),
+];
+
 // POST /api/products - thêm sản phẩm mới
-router.post("/", createProduct);
+router.post("/", validateProduct, createProduct);
 
 // GET /api/products - lấy danh sách sản phẩm
 router.get("/", getProducts);
@@ -18,7 +31,7 @@ router.get("/", getProducts);
 router.get("/:id", getProductById);
 
 // PUT /api/products/:id - cập nhật sản phẩm
-router.put("/:id", updateProduct);
+router.put("/:id", validateProduct, updateProduct);
 
 // DELETE /api/products/:id - xóa sản phẩm
 router.delete("/:id", deleteProduct);

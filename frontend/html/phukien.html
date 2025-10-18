@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../js/bootstrap.js">
     <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/dangnhap.js"></script>
+    <script src="../js/renderProducts.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
@@ -127,36 +129,36 @@
             font-weight: bold;
         }
     </style>
-    <script src="../js/addToCard.js"></script>
     <script>
         document.addEventListener("DOMContentLoaded", () => {
             const navLinks = document.querySelectorAll('.main-nav .nav-item a');
 
             navLinks.forEach(link => {
-                    link.addEventListener('click', function() if (this.getAttribute("href").includes("home.html")) {
-                            localStorage.removeItem("activeNav");
-                            return;
-                        }
+                link.addEventListener('click', function() {
 
-                        navLinks.forEach(l => l.classList.remove('active'));
+                    if (this.getAttribute("href").includes("home.html")) {
+                        localStorage.removeItem("activeNav");
+                        return;
+                    }
 
-                        this.classList.add('active');
+                    navLinks.forEach(l => l.classList.remove('active'));
 
-                        localStorage.setItem("activeNav", this.getAttribute("href"));
-                    });
+                    this.classList.add('active');
+
+                    localStorage.setItem("activeNav", this.getAttribute("href"));
+                });
             });
 
-        const activeNav = localStorage.getItem("activeNav");
-        if (activeNav) {
-            navLinks.forEach(l => {
-                if (l.getAttribute("href") === activeNav) {
-                    l.classList.add("active");
-                }
-            });
-        }
+            const activeNav = localStorage.getItem("activeNav");
+            if (activeNav) {
+                navLinks.forEach(l => {
+                    if (l.getAttribute("href") === activeNav) {
+                        l.classList.add("active");
+                    }
+                });
+            }
         });
     </script>
-
 
 </head>
 
@@ -236,211 +238,14 @@
         <div class="featured-section">
             <div class="container">
                 <div class="section-title">
-                    <h2>SẢN PHẨM</h2>
+                    <h2>SẢN PHẨM NỔI BẬT</h2>
                 </div>
-                <div class="row">
-                    <!-- Product 1 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/5533920481.jpg" class="product-img" alt="Chuột quang không dây Genius NX-7000">
-                                <!-- <div class="product-badge bg-danger"></div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Chuột quang không dây Genius NX-7000</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">179.000 ₫</span>
-                                </div>
-
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 2 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/Buds-6.grn1.jpg" class="product-img" alt="Tai nghe Bluetooth Redmi Buds 6">
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Tai nghe Bluetooth Redmi Buds 6</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="far fa-star"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">1.270.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 3 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/G100BT-1.jpg" class="product-img" alt="Loa Microlab G100BT">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Loa Microlab G100BT</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-
-                                </div>
-                                <div>
-                                    <span class="product-price">469.000 ₫</span>
-                                    <span class="product-old-price">650.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 4 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/K120-1.jpg" class="product-img" alt="Bàn phím Logitech K120">
-
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Bàn phím Logitech K120</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star-half-alt"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">160.000 ₫</span>
-                                    <span class="product-old-price">190.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 5 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/Magic_Keyboard_for_iPad_Air_11-13.11976765623.jpg" class="product-img" alt="Magic Keyboard Ipad Air 13-inch">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Magic Keyboard Ipad Air 13-inch</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">8.090.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 6 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/PADO-PM423-1.jpg" class="product-img" alt="Chuột không dây Pado PM423">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Chuột không dây Pado PM423</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">159.000 ₫</span>
-                                    <span class="product-old-price">190.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 7 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/Phụ-kiện-Magic-Keyboard-Folio-for-iPad-(A16).1.jpg" class="product-img" alt="Magic Keyboard Folio for Ipad (A16)">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Magic Keyboard Folio for Ipad (A16)</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">6.790.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Product 8 -->
-                    <div class="col-lg-3 col-md-6">
-                        <div class="product-card">
-                            <div class="product-img-container">
-                                <img src="../img/dienthoai/Q100-1.jpg" class="product-img" alt="Quạt tản nhiệt Laptop Q100">
-                                <!-- <div class="product-badge  bg-danger">MỚI</div> -->
-                            </div>
-                            <div class="product-info">
-                                <h5 class="product-title">Quạt tản nhiệt Laptop Q100</h5>
-                                <div class="product-rating">
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                    <i class="fas fa-star"></i>
-                                </div>
-                                <div>
-                                    <span class="product-price">299.000 ₫</span>
-                                    <span class="product-old-price">399.000 ₫</span>
-                                </div>
-                                <button class="btn btn-outline-primary w-100" onclick="addToCart()">THÊM VÀO GIỎ</button>
-                            </div>
-                        </div>
-                    </div>
-
+                <div class="row" id="product-list">
+                    <!-- Sản phẩm sẽ được thêm tự động ở đây -->
                 </div>
             </div>
         </div>
+
         <a href="giohang.html" class="cart-floating-button">
             <i class="fas fa-shopping-cart"></i>
             <span class="cart-count">0</span>

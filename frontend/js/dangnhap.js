@@ -1,85 +1,55 @@
-// DOM Elements
-const loginForm = document.getElementById('loginForm');
-const usernameInput = document.getElementById('Username');
-const passwordInput = document.getElementById('Password');
-const usernameError = document.getElementById('UsernameError');
-const passwordError = document.getElementById('PasswordError');
-const successAlert = document.querySelector('.success-alert');
+document
+  .getElementById("loginForm")
+  .addEventListener("submit", async function (e) {
+    e.preventDefault();
 
-// Constants
-const DISPLAY_BLOCK = 'block';
-const DISPLAY_NONE = 'none';
-const PASSWORD_MIN_LENGTH = 6;
-const ALERT_TIMEOUT = 3000;
+    // Lấy giá trị từ form
+    const username = document.getElementById("Username").value.trim();
+    const password = document.getElementById("Password").value.trim();
 
-// Regex Patterns
-const USERNAME_REGEX = /^[a-zA-Z0-9_]{4,20}$/; // 4-20 ký tự, chỉ chữ, số và gạch dưới
-const PASSWORD_REGEX = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*#?&]{6,}$/; // Ít nhất 6 ký tự, có ít nhất 1 chữ và 1 số
-
-// Error Messages
-const ERROR_MESSAGES = {
-    username: {
-        required: 'Tên đăng nhập không được để trống',
-        invalid: 'Tên đăng nhập phải có 4-20 ký tự, chỉ chứa chữ, số và gạch dưới'
-    },
-    password: {
-        required: 'Mật khẩu không được để trống',
-        length: `Mật khẩu phải có ít nhất ${PASSWORD_MIN_LENGTH} ký tự`,
-        invalid: 'Mật khẩu phải chứa ít nhất 1 chữ cái và 1 số'
-    }
-};
-
-// Form validation
-const validateForm = () => {
-    let isValid = true;
-    
-    // Reset errors
-    usernameError.style.display = DISPLAY_NONE;
-    passwordError.style.display = DISPLAY_NONE;
-
-    // Validate username
-    const usernameValue = usernameInput.value.trim();
-    if (!usernameValue) {
-        usernameError.textContent = ERROR_MESSAGES.username.required;
-        usernameError.style.display = DISPLAY_BLOCK;
-        isValid = false;
-    } else if (!USERNAME_REGEX.test(usernameValue)) {
-        usernameError.textContent = ERROR_MESSAGES.username.invalid;
-        usernameError.style.display = DISPLAY_BLOCK;
-        isValid = false;
+    // Kiểm tra rỗng
+    if (!username) {
+      document.getElementById("UsernameError").style.display = "block";
+    } else {
+      document.getElementById("UsernameError").style.display = "none";
     }
 
-    // Validate password
-    const passwordValue = passwordInput.value.trim();
-    if (!passwordValue) {
-        passwordError.textContent = ERROR_MESSAGES.password.required;
-        passwordError.style.display = DISPLAY_BLOCK;
-        isValid = false;
-    } else if (passwordValue.length < PASSWORD_MIN_LENGTH) {
-        passwordError.textContent = ERROR_MESSAGES.password.length;
-        passwordError.style.display = DISPLAY_BLOCK;
-        isValid = false;
-    } else if (!PASSWORD_REGEX.test(passwordValue)) {
-        passwordError.textContent = ERROR_MESSAGES.password.invalid;
-        passwordError.style.display = DISPLAY_BLOCK;
-        isValid = false;
+    if (!password) {
+      document.getElementById("PasswordError").style.display = "block";
+    } else {
+      document.getElementById("PasswordError").style.display = "none";
     }
 
-    return isValid;
-};
+    if (!username || !password) return;
 
-// Form submission
-if (loginForm) {
-    loginForm.addEventListener('submit', (e) => {
-        e.preventDefault();
-        
-        if (validateForm()) {
-            successAlert.style.display = DISPLAY_BLOCK;
-            loginForm.reset();
-            
-            setTimeout(() => {
-                successAlert.style.display = DISPLAY_NONE;
-            }, ALERT_TIMEOUT);
-        }
-    });
-}
+    try {
+      // Gửi dữ liệu tới backend
+      const res = await fetch("http://localhost:5000/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ username, password }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        // Nếu đăng nhập thành công
+        alert(" Đăng nhập thành công!");
+        document.querySelector(".success-alert").style.display = "block";
+
+        // Lưu user vào localStorage (nếu cần dùng sau)
+        localStorage.setItem("user", JSON.stringify(data.user));
+
+        // Chuyển hướng sang trang chủ
+        setTimeout(() => {
+          window.location.href = "home.html";
+        }, 1500);
+      } else {
+        //  Nếu sai tài khoản hoặc mật khẩu
+        alert("Thất bại " + data.message);
+      }
+    } catch (error) {
+      console.error("Lỗi khi đăng nhập:", error);
+      alert("Không thể kết nối đến server!");
+    }
+  });

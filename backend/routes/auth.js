@@ -41,7 +41,7 @@ router.post("/login", async (req, res) => {
       return res.status(400).json({ message: "Người dùng không tồn tại" });
     }
 
-    // ⚠️ Thực tế nên so sánh password bằng bcrypt
+    // Thực tế nên so sánh password bằng bcrypt
     if (user.password !== password) {
       return res.status(400).json({ message: "Sai mật khẩu" });
     }

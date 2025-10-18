@@ -5,7 +5,7 @@ const { register, login } = require("../controllers/authController");
 
 // test
 router.get("/test", (req, res) => {
-  res.json({ msg: "Auth route OK" });
+    res.json({ msg: "Auth route OK" });
 });
 
 // đăng ký

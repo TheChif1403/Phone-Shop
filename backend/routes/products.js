@@ -1,15 +1,17 @@
 const express = require("express");
 const router = express.Router();
+const auth = require("../middleware/authMiddleware");
+const isAdmin = require("../middleware/isAdmin");
 const {
-  createProduct,
-  getProducts,
-  getProductById,
-  updateProduct,
-  deleteProduct,
+    createProduct,
+    getProducts,
+    getProductById,
+    updateProduct,
+    deleteProduct,
 } = require("../controllers/productController");
 
 // POST /api/products - thêm sản phẩm mới
-router.post("/", createProduct);
+router.post('/', auth, isAdmin, createProduct); // chỉ admin thêm
 
 // GET /api/products - lấy danh sách sản phẩm
 router.get("/", getProducts);
@@ -18,9 +20,9 @@ router.get("/", getProducts);
 router.get("/:id", getProductById);
 
 // PUT /api/products/:id - cập nhật sản phẩm
-router.put("/:id", updateProduct);
+router.put('/:id', auth, isAdmin, updateProduct);
 
 // DELETE /api/products/:id - xóa sản phẩm
-router.delete("/:id", deleteProduct);
+router.delete('/:id', auth, isAdmin, deleteProduct);
 
 module.exports = router;

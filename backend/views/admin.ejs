@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Trang Quản Trị Sản Phẩm</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        input,
+        textarea {
+            margin: 5px 0;
+            padding: 6px;
+            width: 100%;
+        }
+        
+        button {
+            padding: 8px 16px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+        
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🛒 Trang Quản Trị Sản Phẩm</h1>
+
+    <div id="auth">
+        <h3>Đăng nhập Admin</h3>
+        <input id="email" placeholder="Email">
+        <input id="password" type="password" placeholder="Mật khẩu">
+        <button onclick="login()">Đăng nhập</button>
+        <p id="loginMsg"></p>
+    </div>
+
+    <div id="adminPanel" style="display:none;">
+        <button onclick="logout()">Đăng xuất</button>
+
+        <h2>Thêm / Sửa sản phẩm</h2>
+        <form id="productForm">
+            <input id="pid" type="hidden">
+            <input id="name" placeholder="Tên sản phẩm" required>
+            <input id="price" placeholder="Giá" required>
+            <input id="category" placeholder="Danh mục">
+            <input id="stock" placeholder="Tồn kho">
+            <textarea id="description" placeholder="Mô tả"></textarea>
+            <input id="image" placeholder="Link ảnh">
+            <button type="submit">Lưu</button>
+        </form>
+
+        <h3>Danh sách sản phẩm</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Tên</th>
+                    <th>Giá</th>
+                    <th>Kho</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="productTable"></tbody>
+        </table>
+    </div>
+
+    <script>
+        let token = null;
+
+        // 🟢 Đăng nhập admin
+        async function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            const res = await fetch('/api/auth/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    email,
+                    password
+                })
+            });
+
+            const data = await res.json();
+            if (data.token) {
+                token = data.token;
+                document.getElementById('auth').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                loadProducts();
+            } else {
+                document.getElementById('loginMsg').innerText = data.msg || 'Đăng nhập thất bại';
+            }
+        }
+
+        function logout() {
+            token = null;
+            document.getElementById('auth').style.display = 'block';
+            document.getElementById('adminPanel').style.display = 'none';
+        }
+
+        // 🟡 Thêm hoặc cập nhật sản phẩm
+        document.getElementById('productForm').addEventListener('submit', async(e) => {
+            e.preventDefault();
+            const id = document.getElementById('pid').value;
+            const body = {
+                name: document.getElementById('name').value,
+                price: Number(document.getElementById('price').value),
+                category: document.getElementById('category').value,
+                stock: Number(document.getElementById('stock').value),
+                description: document.getElementById('description').value,
+                image: document.getElementById('image').value
+            };
+
+            const url = id ? `/api/products/${id}` : '/api/products';
+            const method = id ? 'PUT' : 'POST';
+
+            const res = await fetch(url, {
+                method,
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + token
+                },
+                body: JSON.stringify(body)
+            });
+
+            if (res.ok) {
+                e.target.reset();
+                loadProducts();
+            } else {
+                alert('❌ Lỗi khi lưu sản phẩm!');
+            }
+        });
+
+        // 🧾 Hiển thị danh sách sản phẩm
+        async function loadProducts() {
+            const res = await fetch('/api/products');
+            const data = await res.json();
+
+            const table = document.getElementById('productTable');
+            table.innerHTML = data.map(p => `
+    <tr>
+      <td>${p.name}</td>
+      <td>${p.price.toLocaleString()}₫</td>
+      <td>${p.stock}</td>
+      <td>
+        <button onclick="edit('${p._id}')">✏️ Sửa</button>
+        <button onclick="del('${p._id}')">🗑️ Xóa</button>
+      </td>
+    </tr>
+  `).join('');
+        }
+
+        // 🟣 Sửa sản phẩm
+        async function edit(id) {
+            const res = await fetch('/api/products/' + id);
+            const p = await res.json();
+            document.getElementById('pid').value = p._id;
+            document.getElementById('name').value = p.name;
+            document.getElementById('price').value = p.price;
+            document.getElementById('category').value = p.category;
+            document.getElementById('stock').value = p.stock;
+            document.getElementById('description').value = p.description;
+            document.getElementById('image').value = p.image;
+        }
+
+        // 🔴 Xóa sản phẩm
+        async function del(id) {
+            if (!confirm('Bạn có chắc muốn xóa sản phẩm này?')) return;
+            await fetch('/api/products/' + id, {
+                method: 'DELETE',
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            loadProducts();
+        }
+    </script>
+</body>
+
+</html>

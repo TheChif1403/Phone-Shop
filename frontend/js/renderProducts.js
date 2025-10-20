@@ -325,3 +325,56 @@ async function showProductModal(productId) {
         console.error('⚠️ Lỗi tải chi tiết sản phẩm:', err);
     }
 }
+
+// tim
+
+document.addEventListener('DOMContentLoaded', () => {
+    const searchBtn = document.getElementById('searchBtn');
+    const searchInput = document.getElementById('searchInput');
+
+    searchBtn.addEventListener('click', async () => {
+        const keyword = searchInput.value.trim().toLowerCase();
+
+        try {
+            // Lấy tất cả sản phẩm từ API
+            const res = await fetch('http://localhost:5000/api/dbproducts');
+            let products = await res.json();
+
+            // Lọc theo tên sản phẩm
+            if (keyword) {
+                products = products.filter(p => p.name.toLowerCase().includes(keyword));
+            }
+
+            // Render lại
+            const container = document.getElementById('product-list');
+            if (!container) return;
+
+            container.innerHTML = products.map(p => `
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4"> 
+                    <div class="card product-card h-100 position-relative">
+                        <div class="product-image-container">
+                            <img src="${p.image}" class="card-img-top product-img" alt="${p.name}" onclick="showProductModal('${p._id}')">
+                        </div>
+                        <div class="product-info d-flex flex-column">
+                            <h5 class="product-title">${p.name}</h5>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="mt-auto"> 
+                                <span class="product-price">${p.price.toLocaleString('vi-VN')}₫</span>
+                                <button class="btn btn-product mt-2" onclick="addToCart('${p._id}', '${p.name}', '${p.image}', ${p.price})">
+                                    <i class="fas fa-shopping-cart me-1"></i> THÊM VÀO GIỎ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+        } catch (err) {
+            console.error('⚠️ Lỗi khi tìm kiếm sản phẩm:', err);
+        }
+    });
+});

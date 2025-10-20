@@ -14,25 +14,29 @@
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
      <script src="../js/renderProducts.js"></script>
 
-    <script>
-    async function loadProducts() {
-      try {
-        const res = await fetch('http://localhost:5000/api/products');
-        const data = await res.json();
-        const list = document.getElementById('product-list');
-        list.innerHTML = data.map(p => `
-          <div class="card">
-            <img src="${p.image}" alt="${p.name}">
-            <h3>${p.name}</h3>
-            <p>${p.brand}</p>
-            <p><b>${p.price.toLocaleString()}₫</b></p>
-          </div>
-        `).join('');
-      } catch (err) {
-        console.error('Lỗi tải dữ liệu:', err);
-      }
-    }
-    loadProducts();
+    
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Render mặc định
+    renderProducts('product-list', null, 20);
+
+    // Bộ lọc giá
+    const filterBtn = document.getElementById('filterPriceBtn');
+    filterBtn.addEventListener('click', () => {
+        const minPrice = document.getElementById('minPrice').value;
+        const maxPrice = document.getElementById('maxPrice').value;
+
+        renderProducts(
+            'product-list',
+            null, // brand
+            20,   // limit
+            minPrice ? parseInt(minPrice) : null,
+            maxPrice ? parseInt(maxPrice) : null
+        );
+    });
+});
+
   </script>
     <style>
         * {
@@ -261,13 +265,79 @@
 
         </div>
 
-        
+   <!-- Bộ lọc giá -->
+<div class="container my-3">
+    <div class="row">
+        <div class="col-md-6">
+            <label for="minPrice">Giá thấp nhất:</label>
+            <input type="number" id="minPrice" class="form-control" placeholder="Nhập giá từ">
+        </div>
+        <div class="col-md-6">
+            <label for="maxPrice">Giá cao nhất:</label>
+            <input type="number" id="maxPrice" class="form-control" placeholder="Nhập giá đến">
+        </div>
+    </div>
+    <div class="mt-2">
+        <button id="filterBtn" class="btn btn-primary">Lọc sản phẩm</button>
+    </div>
+</div>
+
+<script>
+    const filterBtn = document.getElementById('filterBtn');
+    filterBtn.addEventListener('click', async () => {
+        const minPrice = parseInt(document.getElementById('minPrice').value) || 0;
+        const maxPrice = parseInt(document.getElementById('maxPrice').value) || Infinity;
+
+        try {
+            // Gọi API và lọc trong hàm renderProducts
+            let url = 'http://localhost:5000/api/dbproducts';
+            const res = await fetch(url);
+            let products = await res.json();
+
+            // Lọc theo giá
+            products = products.filter(p => p.price >= minPrice && p.price <= maxPrice);
+
+            // Render lại sản phẩm
+            const container = document.getElementById('product-list');
+            if (!container) return;
+
+            container.innerHTML = products.map(p => `
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4"> 
+                    <div class="card product-card h-100 position-relative">
+                        <div class="product-image-container">
+                            <img src="${p.image}" class="card-img-top product-img" alt="${p.name}" onclick="showProductModal('${p._id}')">
+                        </div>
+                        <div class="product-info d-flex flex-column">
+                            <h5 class="product-title">${p.name}</h5>
+                            <div class="product-rating">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <div class="mt-auto"> 
+                                <span class="product-price">${p.price.toLocaleString('vi-VN')}₫</span>
+                                <button class="btn btn-product mt-2" onclick="addToCart('${p._id}', '${p.name}', '${p.image}', ${p.price})">
+                                    <i class="fas fa-shopping-cart me-1"></i> THÊM VÀO GIỎ
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+
+        } catch (err) {
+            console.error('⚠️ Lỗi khi lọc sản phẩm:', err);
+        }
+    });
+</script>
+
 
 <!-- Featured Products -->
 <div class="featured-section">
     <div class="container">
         <div class="section-title">
             <h2>SẢN PHẨM NỔI BẬT</h2>
+            <div class="container my-3">
         </div>
         <div class="row" id="product-list">
             <!-- Sản phẩm sẽ được thêm tự động ở đây -->

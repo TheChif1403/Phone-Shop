@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liên hệ & Hỗ trợ - Shop điện thoại</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/bootstrap.js">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/renderProducts.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+    <script src="../js/renderProducts.js"></script>
+    <style>
+        .support-floating-button {
+            position: fixed;
+            bottom: 95px;
+            /* Đặt cao hơn nút giỏ hàng (30px + ~50px chiều cao giỏ hàng + 15px khoảng cách) */
+            right: 30px;
+            /* Đặt ở bên phải, căn lề với giỏ hàng */
+            background-color: var(--primary-color, #E31E30);
+            /* Dùng màu đỏ chủ đạo */
+            color: white;
+            padding: 12px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 998;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .support-floating-button:hover {
+            background-color: #a01421;
+            /* Màu đỏ sậm hơn */
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .support-floating-button i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        /* Tùy chỉnh Modal Header cho giống chat box */
+        
+        .modal-header.support-header {
+            background-color: var(--dark-color, #1a1a1a);
+            color: white;
+        }
+        
+        .modal-header.support-header .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+        
+        * {
+            box-sizing: border-box;
+            /* width: 100%; */
+            margin: 0 auto;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            font-size: 16px;
+            height: 40px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .product-old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .product-rating {
+            color: #FFC107;
+            margin-bottom: 10px;
+        }
+        
+        .btn-product {
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-product:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .cart-floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #403087;
+            color: rgb(202, 76, 76);
+            padding: 12px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cart-floating-button:hover {
+            background-color: #c2185b;
+        }
+        
+        .cart-floating-button i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
+        .cart-count {
+            background-color: white;
+            color: #9727c7;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        
+        .main-nav .nav-item a {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .main-nav .nav-item a.active {
+            background-color: red !important;
+            color: white !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid w-100">
+        <!-- Top Bar -->
+        <div class="top-bar ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
+                    </div>
+                    <div class="col-md-6 text-end auth-buttons">
+                        <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
+                        <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo & Search -->
+        <div class="logo-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="../img/download (1).png" alt="" height="50px">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Navigation -->
+        <div class="main-nav">
+            <div class="container nav-container">
+                <div class="d-flex justify-content-center">
+                    <div class="nav-item active">
+                        <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="apple.html">APPLE</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="samsung.html">SAMSUNG</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="honor.html">HONOR</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="oppo.html">OPPO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="vivo.html">VIVO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="xiaomi.html">XIAOMI</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="techno.html">TECHNO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="phukien.html">PHỤ KIỆN </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h1 class="text-center mb-5">Liên hệ & Hỗ trợ</h1>
+
+            <div class="row g-5">
+                <div class="col-md-7">
+                    <h4>Gửi thông tin yêu cầu hỗ trợ</h4>
+                    <p>Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.</p>
+
+                    <form id="mainContactForm">
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Họ và tên của bạn</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Chủ đề</label>
+                            <input type="text" class="form-control" id="contactSubject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Nội dung yêu cầu</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="background-color: var(--primary-color); border: none; padding: 10px 30px;">Gửi yêu cầu</button>
+                    </form>
+                </div>
+
+                <div class="col-md-5">
+                    <h4>Thông tin liên hệ</h4>
+                    <p>Bạn cũng có thể liên hệ trực tiếp với chúng tôi qua các thông tin dưới đây:</p>
+                    <ul class="list-unstyled" style="line-height: 2.5;">
+                        <li>
+                            <i class="fas fa-map-marker-alt me-2 text-danger"></i> 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, TP.HCM
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt me-2 text-danger"></i> Hotline: 07661 58666
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope me-2 text-danger"></i> Email: Ngochuydz@gmail.com
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2 text-danger"></i> Giờ làm việc: 8h - 21h30 (Tất cả các ngày)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="policy-section">
+                        <h2 class="mb-4 text-center">Chính sách đổi trả (Tóm tắt)</h2>
+                        <h5>1. Điều kiện đổi trả:</h5>
+                        <ul>
+                            <li>Sản phẩm bị lỗi do nhà sản xuất (lỗi 1 đổi 1 trong 30 ngày đầu).</li>
+                            <li>Sản phẩm không bị rơi vỡ, vào nước, cấn móp...</li>
+                        </ul>
+                        <p>Vui lòng xem chi tiết tại trang <a href="chinhsach.html#return-policy">Chính sách đổi trả đầy đủ</a>.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5>VỀ BITTS</h5>
+                        <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>THÔNG TIN</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="chinhsach.html" class="text-white">Chính sách, điều khoản</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>LIÊN HỆ</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
+                            <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                            <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="successModalLabel">Gửi thành công!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                            <p>Chúng tôi đã nhận được yêu cầu của bạn và sẽ phản hồi trong thời gian sớm nhất.</p>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: var(--primary-color); border: none;">Đã hiểu</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/global-support.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("mainContactForm");
+
+            const successModalEl = document.getElementById("successModal");
+
+            const successModal = new bootstrap.Modal(successModalEl);
+
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                successModal.show();
+
+                contactForm.reset();
+            });
+
+            successModalEl.addEventListener('hidden.bs.modal', function(event) {
+                location.reload();
+            });
+        });
+    </script>
+
+</body>
+
+</html>

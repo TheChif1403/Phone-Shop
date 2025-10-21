@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tài khoản cá nhân - Shop điện thoại</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+
+    <style>
+        .account-nav .list-group-item.active {
+            background-color: var(--primary-color, #E31E30);
+            border-color: var(--primary-color, #E31E30);
+            color: #fff;
+        }
+        
+        .account-nav .list-group-item-action {
+            color: #333;
+            font-weight: 500;
+        }
+        
+        .account-nav .list-group-item-action:hover {
+            background-color: #f8f9fa;
+        }
+        
+        * {
+            box-sizing: border-box;
+            /* width: 100%; */
+            margin: 0 auto;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            font-size: 16px;
+            height: 40px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .product-old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .product-rating {
+            color: #FFC107;
+            margin-bottom: 10px;
+        }
+        
+        .btn-product {
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-product:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .cart-floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #403087;
+            color: rgb(202, 76, 76);
+            padding: 12px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cart-floating-button:hover {
+            background-color: #c2185b;
+        }
+        
+        .cart-floating-button i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
+        .cart-count {
+            background-color: white;
+            color: #9727c7;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        
+        .main-nav .nav-item a {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .main-nav .nav-item a.active {
+            background-color: red !important;
+            color: white !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid w-100">
+        <div class="top-bar ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
+                    </div>
+                    <div class="col-md-6 text-end auth-buttons">
+                        <a href="dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
+                        <a href="dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="logo-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="../img/download (1).png" alt="" height="50px">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-nav">
+            <div class="container nav-container">
+                <div class="d-flex justify-content-center">
+                    <div class="nav-item">
+                        <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="apple.html">APPLE</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="samsung.html">SAMSUNG</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="honor.html">HONOR</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="oppo.html">OPPO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="vivo.html">VIVO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="xiaomi.html">XIAOMI</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="techno.html">TECHNO</a>
+                    </div>
+                    <div class="nav-item">
+                        <a href="phukien.html">PHỤ KIỆN </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="list-group account-nav" id="accountTab" role="tablist">
+                        <a class="list-group-item list-group-item-action active" id="info-tab" data-bs-toggle="list" href="#info" role="tab" aria-controls="info">
+                            <i class="fas fa-user me-2"></i> Thông tin cá nhân
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="orders-tab" data-bs-toggle="list" href="#orders" role="tab" aria-controls="orders">
+                            <i class="fas fa-box me-2"></i> Quản lý đơn hàng
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="password-tab" data-bs-toggle="list" href="#password" role="tab" aria-controls="password">
+                            <i class="fas fa-key me-2"></i> Đổi mật khẩu
+                        </a>
+                        <a class="list-group-item list-group-item-action" id="wishlist-tab" data-bs-toggle="list" href="#wishlist" role="tab" aria-controls="wishlist">
+                            <i class="fas fa-heart me-2"></i> Sản phẩm mong muốn
+                        </a>
+                        <a class="list-group-item list-group-item-action text-danger" id="logout-tab" href="#">
+                            <i class="fas fa-sign-out-alt me-2"></i> Đăng xuất
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-9">
+                    <div class="tab-content" id="nav-tabContent">
+
+                        <div class="tab-pane fade show active" id="info" role="tabpanel" aria-labelledby="info-tab">
+                            <h4 class="mb-4">Thông tin cá nhân</h4>
+                            <form>
+                                <div class="mb-3 row">
+                                    <label for="fullName" class="col-sm-3 col-form-label">Họ và tên</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" class="form-control" id="fullName" value="Nguyễn Văn A">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="email" class="col-sm-3 col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input type="email" class="form-control-plaintext" id="email" value="nguyenvana@example.com" readonly>
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <label for="phone" class="col-sm-3 col-form-label">Số điện thoại</label>
+                                    <div class="col-sm-9">
+                                        <input type="tel" class="form-control" id="phone" value="0909123456">
+                                    </div>
+                                </div>
+                                <div class="mb-3 row">
+                                    <div class="col-sm-9 offset-sm-3">
+                                        <button type="submit" class="btn btn-primary" style="background-color: var(--primary-color); border: none;">Cập nhật</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                            <h4 class="mb-4">Quản lý đơn hàng</h4>
+                            <div class="table-responsive">
+                                <table class="table table-hover align-middle">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Mã ĐH</th>
+                                            <th scope="col">Ngày đặt</th>
+                                            <th scope="col">Tổng tiền</th>
+                                            <th scope="col">Trạng thái</th>
+                                            <th scope="col"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">#12034</th>
+                                            <td>20/10/2025</td>
+                                            <td>25.990.000₫</td>
+                                            <td><span class="badge bg-success">Đã giao</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-primary">Xem chi tiết</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">#12033</th>
+                                            <td>18/10/2025</td>
+                                            <td>18.500.000₫</td>
+                                            <td><span class="badge bg-warning text-dark">Đang xử lý</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-primary">Xem chi tiết</a></td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">#12031</th>
+                                            <td>15/10/2025</td>
+                                            <td>32.000.000₫</td>
+                                            <td><span class="badge bg-danger">Đã hủy</span></td>
+                                            <td><a href="#" class="btn btn-sm btn-outline-primary">Xem chi tiết</a></td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+                            <h4 class="mb-4">Đổi mật khẩu</h4>
+                            <form style="max-width: 500px;">
+                                <div class="mb-3">
+                                    <label for="currentPass" class="form-label">Mật khẩu hiện tại</label>
+                                    <input type="password" class="form-control" id="currentPass">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="newPass" class="form-label">Mật khẩu mới</label>
+                                    <input type="password" class="form-control" id="newPass">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="confirmNewPass" class="form-label">Xác nhận mật khẩu mới</label>
+                                    <input type="password" class="form-control" id="confirmNewPass">
+                                </div>
+                                <button type="submit" class="btn btn-primary" style="background-color: var(--primary-color); border: none;">Đổi mật khẩu</button>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="wishlist" role="tabpanel" aria-labelledby="wishlist-tab">
+                            <h4 class="mb-4">Sản phẩm mong muốn</h4>
+                            <div class="row">
+                                <div class="col-md-6 col-lg-4 mb-4">
+                                    <div class="card product-card h-100 position-relative">
+                                        <div class="product-image-container">
+                                            <img src="../img/vi_du_iphone.jpg" class="card-img-top product-img" alt="Tên sản phẩm">
+                                        </div>
+                                        <div class="product-info d-flex flex-column">
+                                            <h5 class="product-title">iPhone 15 Pro Max 256GB</h5>
+                                            <div class="mt-auto">
+                                                <span class="product-price">29.990.000₫</span>
+                                                <button class="btn btn-product mt-2">
+                                                    <i class="fas fa-shopping-cart me-1"></i> Mua ngay
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <button class="btn btn-danger btn-sm position-absolute" style="top: 10px; right: 10px; z-index: 10;">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="giohang.html" class="cart-floating-button">
+            <i class="fas fa-shopping-cart"></i>
+            <span class="cart-count">0</span>
+        </a>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <h5>VỀ DIDONGVIET</h5>
+                        <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
+                        <div class="mt-3">
+                            <h6>ĐĂNG KÝ NHẬN TIN</h6>
+                            <div class="input-group mb-3">
+                                <input type="email" class="form-control" placeholder="Email của bạn">
+                                <button class="btn btn-primary" type="button">Gửi</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>THÔNG TIN</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="chinhsach.html" class="text-white">Chính sách, điều khoản</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <h5>LIÊN HỆ</h5>
+                        <ul class="list-unstyled">
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
+                            <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                            <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
+                            <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
+                        </ul>
+                        <div class="mt-3">
+                            <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                            <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
+
+
+                            <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
+                            <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
+                            <a href="#"><i class="fa-solid fa-phone"></i></a>
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-center">
+                    <p class="mb-0">© 2023 DIDONGVIET. All rights reserved.</p>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/global-support.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            // 1. XỬ LÝ ĐĂNG XUẤT (Code cũ)
+            const logoutButton = document.getElementById('logout-tab');
+            if (logoutButton) {
+                logoutButton.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    localStorage.removeItem('user');
+                    // (Lưu ý: Nếu bạn muốn xóa cả wishlist khi đăng xuất, thêm dòng sau):
+                    // localStorage.removeItem('wishlist');
+                    alert('Bạn đã đăng xuất thành công.');
+                    window.location.href = 'home.html';
+                });
+            }
+
+            // 2. TẢI WISHLIST (Code mới)
+            loadWishlist();
+        });
+
+        // Hàm tải và hiển thị danh sách yêu thích
+        function loadWishlist() {
+            const container = document.getElementById('wishlist-items-container');
+            const emptyMsg = document.getElementById('wishlist-empty-msg');
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            if (!container) return; // Thoát nếu không tìm thấy container
+
+            if (wishlist.length === 0) {
+                emptyMsg.style.display = 'block'; // Hiển thị thông báo rỗng
+                container.innerHTML = ''; // Xóa sản phẩm cũ (nếu có)
+                container.appendChild(emptyMsg);
+            } else {
+                emptyMsg.style.display = 'none'; // Ẩn thông báo rỗng
+
+                // Tạo HTML cho từng sản phẩm
+                container.innerHTML = wishlist.map(item => `
+                    <div class="col-lg-4 col-md-6 mb-4" id="wishlist-item-${item.id}">
+                        <div class="card product-card h-100 position-relative">
+                            <button class="btn btn-danger btn-sm position-absolute" 
+                                style="top: 10px; right: 10px; z-index: 10;" 
+                                title="Xóa khỏi Wishlist"
+                                onclick="removeFromWishlist('${item.id}')">
+                                <i class="fas fa-times"></i>
+                            </button>
+                            
+                            <img src="${item.image}" class="card-img-top product-img" alt="${item.name}">
+                            
+                            <div class="product-info d-flex flex-column">
+                                <h5 class="product-title">${item.name}</h5>
+                                <div class="mt-auto">
+                                    <span class="product-price">${item.price.toLocaleString('vi-VN')}₫</span>
+                                    <button class="btn btn-product mt-2"
+                                        onclick="addToCart('${item.id}', '${item.name}', '${item.image}', ${item.price})">
+                                        <i class="fas fa-shopping-cart me-1"></i> Mua ngay
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+
+        // Hàm xóa sản phẩm khỏi danh sách
+        function removeFromWishlist(productId) {
+            if (!confirm('Bạn có chắc muốn xóa sản phẩm này khỏi danh sách yêu thích?')) {
+                return; // Hủy nếu người dùng không đồng ý
+            }
+
+            let wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+
+            // 1. Tạo danh sách mới, loại bỏ sản phẩm có id_cần_xóa
+            wishlist = wishlist.filter(item => item.id !== productId);
+
+            // 2. Lưu lại danh sách mới vào localStorage
+            localStorage.setItem('wishlist', JSON.stringify(wishlist));
+
+            // 3. Tải lại danh sách (để làm mới giao diện)
+            loadWishlist();
+        }
+
+        // (Lưu ý: Hàm addToCart cần được định nghĩa, 
+        // có thể bạn đã có nó trong file global hoặc file khác)
+        if (typeof addToCart === 'undefined') {
+            function addToCart(id, name, image, price) {
+                console.log('Đã thêm vào giỏ:', name);
+                // (Thêm logic giỏ hàng của bạn ở đây)
+                alert('Đã thêm ' + name + ' vào giỏ hàng!');
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chính sách & Điều khoản - Shop điện thoại</title>
+    <!-- Bootstrap 5 CSS -->
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/bootstrap.js">
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/bootstrap.js"></script>
+    <script src="../js/renderProducts.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+    <style>
+        .policy-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .policy-content h2 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            color: var(--primary-color, #E31E30);
+            /* Lấy màu primary từ style.css */
+            border-bottom: 2px solid #f0f0f0;
+            padding-bottom: 10px;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .policy-content h3 {
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: var(--dark-color, #1a1a1a);
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .policy-content ul {
+            padding-left: 25px;
+        }
+        
+        .policy-content li {
+            margin-bottom: 10px;
+        }
+        /* Làm nổi bật các trường hợp từ chối/lưu ý */
+        
+        .text-danger strong {
+            color: var(--primary-color, #E31E30) !important;
+        }
+        
+        * {
+            box-sizing: border-box;
+            /* width: 100%; */
+            margin: 0 auto;
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--primary-color);
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-title {
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--secondary-color);
+            font-size: 16px;
+            height: 40px;
+            overflow: hidden;
+        }
+        
+        .product-price {
+            color: var(--primary-color);
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .product-old-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 14px;
+            margin-left: 10px;
+        }
+        
+        .product-rating {
+            color: #FFC107;
+            margin-bottom: 10px;
+        }
+        
+        .btn-product {
+            background-color: var(--dark-color);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s;
+        }
+        
+        .btn-product:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .cart-floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #403087;
+            color: rgb(202, 76, 76);
+            padding: 12px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cart-floating-button:hover {
+            background-color: #c2185b;
+        }
+        
+        .cart-floating-button i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
+        .cart-count {
+            background-color: white;
+            color: #9727c7;
+            font-weight: bold;
+            border-radius: 50%;
+            padding: 2px 8px;
+            font-size: 14px;
+            margin-left: 5px;
+        }
+        
+        .main-nav .nav-item a {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+        
+        .main-nav .nav-item a.active {
+            background-color: red !important;
+            color: white !important;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid w-100">
+        <!-- Top Bar -->
+        <div class="top-bar ">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
+                    </div>
+                    <div class="col-md-6 text-end auth-buttons">
+                        <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
+                        <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Logo & Search -->
+        <div class="logo-section">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-4">
+                        <div class="logo">
+                            <img src="../img/download (1).png" alt="" height="50px">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                        </div>
+                    </div>
+
+                    <div class="row g-2 align-items-center my-3">
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Navigation -->
+            <div class="main-nav">
+                <div class="container nav-container">
+                    <div class="d-flex justify-content-center">
+                        <div class="nav-item active">
+                            <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="apple.html">APPLE</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="samsung.html">SAMSUNG</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="honor.html">HONOR</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="oppo.html">OPPO</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="vivo.html">VIVO</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="xiaomi.html">XIAOMI</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="techno.html">TECHNO</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="phukien.html">PHỤ KIỆN </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container my-5">
+                <div class="policy-content" style="max-width: 900px; margin: auto;">
+                    <h1 class="text-center mb-4" style="font-weight: bold;">Chính sách & Quy định chung</h1>
+                    <p class="text-center text-muted">Cập nhật lần cuối: 21/10/2025</p>
+
+                    <section id="warranty-policy">
+                        <h2>I. Chính sách Bảo hành</h2>
+
+                        <h3>1. Thời gian bảo hành</h3>
+                        <p>Tất cả sản phẩm điện thoại di động, máy tính bảng, laptop mới được bán ra đều được bảo hành 12 tháng theo tiêu chuẩn của nhà sản xuất.</p>
+                        <ul>
+                            <li><strong>Điện thoại, Tablet, Laptop (Mới):</strong> Bảo hành 12 tháng.</li>
+                            <li><strong>Điện thoại (Cũ/Like New):</strong> Bảo hành 06 tháng tại cửa hàng.</li>
+                            <li><strong>Phụ kiện (Sạc, cáp, tai nghe):</strong> Bảo hành 06 tháng (lỗi 1 đổi 1).</li>
+                        </ul>
+
+                        <h3>2. Điều kiện bảo hành (Sản phẩm được chấp nhận bảo hành)</h3>
+                        <ul>
+                            <li>Sản phẩm còn trong thời hạn bảo hành.</li>
+                            <li>Sản phẩm bị lỗi kỹ thuật, lỗi phần cứng do nhà sản xuất.</li>
+                            <li>Tem bảo hành (nếu có) của cửa hàng hoặc nhà sản xuất phải còn nguyên vẹn, không bị rách, tẩy xóa.</li>
+                            <li>Sản phẩm không thuộc các trường hợp từ chối bảo hành dưới đây.</li>
+                        </ul>
+
+                        <h3>3. Trường hợp từ chối bảo hành (Bảo hành có tính phí)</h3>
+                        <p class="text-danger"><strong>Chúng tôi có quyền từ chối bảo hành miễn phí đối với các trường hợp sau:</strong></p>
+                        <ul>
+                            <li>Sản phẩm đã hết thời hạn bảo hành.</li>
+                            <li>Sản phẩm bị hư hỏng do lỗi người dùng:
+                                <ul>
+                                    <li>Rơi vỡ, va đập, móp méo, cấn, cong vênh.</li>
+                                    <li>Sản phẩm bị vào nước, hóa chất, hoặc để trong môi trường ẩm ướt, nhiệt độ cao.</li>
+                                    <li>Sử dụng bộ sạc, cáp không đúng tiêu chuẩn, không chính hãng gây chập cháy, hỏng nguồn.</li>
+                                </ul>
+                            </li>
+                            <li>Sản phẩm có dấu hiệu bị can thiệp phần cứng (tự ý tháo mở, sửa chữa bên ngoài).</li>
+                            <li>Sản phẩm bị can thiệp phần mềm (Root, Jailbreak, up ROM...) dẫn đến lỗi hệ thống, treo logo, mất IMEI.</li>
+                            <li><strong>Lỗi hiển thị:</strong> Màn hình bị sọc, chảy mực, ám màu, đốm sáng, điểm chết sau một thời gian sử dụng (do va đập, tì đè) sẽ không được bảo hành.</li>
+                        </ul>
+                    </section>
+
+                    <section id="return-policy">
+                        <h2>II. Chính sách Đổi trả (1 ĐỔI 1)</h2>
+                        <p>Nhằm mang lại trải nghiệm mua sắm tốt nhất, chúng tôi áp dụng chính sách đổi trả linh hoạt:</p>
+
+                        <h3>1. Đổi trả do lỗi nhà sản xuất (MIỄN PHÍ)</h3>
+                        <p>Trong vòng <strong>30 NGÀY ĐẦU TIÊN</strong> kể từ ngày mua, nếu sản phẩm phát sinh lỗi phần cứng do nhà sản xuất, quý khách sẽ được <strong>ĐỔI MỚI 1 ĐỔI 1</strong> sang sản phẩm tương đương.</p>
+
+                        <p><strong>Điều kiện đổi mới:</strong></p>
+                        <ul>
+                            <li>Máy còn nguyên vẹn, không bị trầy xước, móp méo, cấn, vào nước.</li>
+                            <li>Tình trạng máy như mới, không có dấu hiệu đã qua sử dụng (ngoại trừ việc kích hoạt).</li>
+                            <li>Phải còn đầy đủ hộp, sách hướng dẫn, và toàn bộ phụ kiện đi kèm (phụ kiện phải như mới).</li>
+                            <li>Sản phẩm đã được thoát khỏi tất cả các tài khoản bảo mật như: iCloud, Google Account, Samsung Account...</li>
+                        </ul>
+                        <p class="text-danger"><strong>Lưu ý:</strong> Nếu thiếu hộp hoặc phụ kiện, hoặc máy bị trầy xước, chúng tôi sẽ chỉ áp dụng chính sách bảo hành (sửa chữa, thay thế linh kiện) mà không áp dụng đổi mới.</p>
+
+                        <h3>2. Đổi trả theo nhu cầu khách hàng (KHÔNG LỖI - Có tính phí)</h3>
+                        <p>Trường hợp khách hàng muốn đổi sang sản phẩm khác hoặc trả lại hàng do không còn nhu cầu sử dụng (trong vòng 7 ngày đầu):</p>
+                        <ul>
+                            <li>Chúng tôi hỗ trợ nhập lại/đổi hàng với mức phí khấu hao tùy theo tình trạng sản phẩm (thường từ 10% - 20% giá trị máy).</li>
+                            <li>Điều kiện: Máy phải còn nguyên vẹn như lúc mua, fullbox, không trầy xước và đã thoát tài khoản bảo mật.</li>
+                        </ul>
+                    </section>
+
+                    <section id="shipping-policy">
+                        <h2>III. Chính sách Vận chuyển & Giao nhận</h2>
+
+                        <h3>1. Phạm vi và thời gian giao hàng</h3>
+                        <ul>
+                            <li><strong>Nội thành TP.HCM:</strong> Giao hàng Hỏa tốc trong 2 giờ (chi phí tùy khu vực) hoặc Giao hàng tiêu chuẩn (1-2 ngày).</li>
+                            <li><strong>Các tỉnh thành khác:</strong> Giao hàng qua các đơn vị chuyển phát (Viettel Post, GHTK...) từ 2-5 ngày làm việc.</li>
+                            <li><strong>Miễn phí vận chuyển:</strong> Áp dụng cho các đơn hàng có giá trị từ 5.000.000đ (cho hình thức chuyển khoản trước).</li>
+                        </ul>
+
+                        <h3>2. Quy định kiểm tra hàng (Đồng kiểm)</h3>
+                        <p class="fw-bold">Để đảm bảo quyền lợi, khi nhận hàng qua đơn vị vận chuyển, quý khách vui lòng thực hiện:</p>
+                        <ul>
+                            <li>Yêu cầu đồng kiểm với bưu tá (người giao hàng).</li>
+                            <li>Quý khách được quyền <strong class="text-danger">mở seal niêm phong của thùng hàng</strong> để kiểm tra.</li>
+                            <li><strong>Kiểm tra:</strong> Có đúng sản phẩm, đúng màu sắc, đúng phiên bản đã đặt hàng hay không? Tình trạng bên ngoài có bị bể vỡ, móp méo không?</li>
+                            <li>Quý khách <strong class="text-danger">KHÔNG ĐƯỢC</strong> mở seal hộp sản phẩm (seal của nhà sản xuất) hoặc bật nguồn/kích hoạt máy khi đồng kiểm.</li>
+                            <li>Nếu phát hiện hàng sai, hàng bị hư hỏng -> Vui lòng từ chối nhận hàng và gọi ngay cho Hotline của chúng tôi.</li>
+                            <li>Nếu hàng hóa chính xác -> Quý khách nhận hàng và thanh toán (nếu là COD).</li>
+                        </ul>
+                        <p>Nếu quý khách không đồng kiểm và đã ký nhận hàng, mọi khiếu nại về sau liên quan đến hư hỏng ngoại quan (móp méo, trầy xước, bể vỡ) sẽ rất khó để xử lý.</p>
+                    </section>
+
+                    <section id="privacy-policy">
+                        <h2>IV. Chính sách Bảo mật thông tin</h2>
+
+                        <h3>1. Mục đích thu thập thông tin</h3>
+                        <p>Chúng tôi thu thập thông tin cá nhân (Họ tên, Email, SĐT, Địa chỉ) của khách hàng cho các mục đích:</p>
+                        <ul>
+                            <li>Xác nhận và xử lý đơn hàng.</li>
+                            <li>Giao hàng và liên hệ với khách hàng trong quá trình giao hàng.</li>
+                            <li>Hỗ trợ khách hàng (bảo hành, đổi trả, khiếu nại).</li>
+                            <li>Gửi thông tin khuyến mãi, tin tức (nếu khách hàng đồng ý đăng ký nhận tin).</li>
+                        </ul>
+
+                        <h3>2. Cam kết bảo mật</h3>
+                        <p>Chúng tôi cam kết bảo mật tuyệt đối thông tin cá nhân của khách hàng. Chúng tôi không bán, chia sẻ hoặc trao đổi thông tin của bạn cho bất kỳ bên thứ ba nào, ngoại trừ các trường hợp sau:</p>
+                        <ul>
+                            <li>Cung cấp cho đơn vị vận chuyển để phục vụ việc giao hàng.</li>
+                            <li>Theo yêu cầu của cơ quan pháp luật có thẩm quyền.</li>
+                        </ul>
+                    </section>
+
+                    <section id="terms-of-use">
+                        <h2>V. Điều khoản sử dụng</h2>
+                        <p>Bằng việc truy cập và sử dụng website, bạn đồng ý với các điều khoản này.</p>
+                        <ul>
+                            <li>Thông tin, hình ảnh, thông số kỹ thuật trên website có thể có sai sót do lỗi nhập liệu hoặc do nhà sản xuất thay đổi mà không báo trước. Chúng tôi không cam kết tính chính xác tuyệt đối nhưng luôn nỗ lực cập nhật nhanh nhất.</li>
+                            <li>Giá bán sản phẩm niêm yết trên website là giá cuối cùng (đã bao gồm VAT) nhưng chưa bao gồm phí vận chuyển.</li>
+                            <li>Chúng tôi có quyền từ chối hoặc hủy đơn hàng của bạn vì bất kỳ lý do gì (sản phẩm hết hàng, lỗi hệ thống, sai giá...).</li>
+                        </ul>
+                    </section>
+
+                </div>
+            </div>
+            <a href="giohang.html" class="cart-floating-button">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </a>
+
+            <footer class="footer">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <h5>VỀ DIDONGVIET</h5>
+                            <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
+                            <div class="mt-3">
+                                <h6>ĐĂNG KÝ NHẬN TIN</h6>
+                                <div class="input-group mb-3">
+                                    <input type="email" class="form-control" placeholder="Email của bạn">
+                                    <button class="btn btn-primary" type="button">Gửi</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <h5>THÔNG TIN</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="chinhsach.html" class="text-white">Chính sách, điều khoản</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <h5>LIÊN HỆ</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
+                                <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                                <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
+                                <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
+                            </ul>
+                            <div class="mt-3">
+                                <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                                <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
+
+
+                                <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
+                                <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
+                                <a href="#"><i class="fa-solid fa-phone"></i></a>
+
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="text-center">
+                        <p class="mb-0">© 2023 DIDONGVIET. All rights reserved.</p>
+                    </div>
+                </div>
+            </footer>
+
+        </div>
+
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <script src="../js/global-support.js"></script>
+
+</body>
+
+</html>

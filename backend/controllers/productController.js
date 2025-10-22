@@ -3,7 +3,7 @@ const Product = require("../models/Product");
 // POST /api/products - Thêm sản phẩm mới
 exports.createProduct = async (req, res) => {
   try {
-    const { name, price, description, category, image, stock } = req.body;
+    const { id, brand, name, price, description, category, image, stock } = req.body;
 
     if (!name || !price) {
       return res
@@ -12,8 +12,10 @@ exports.createProduct = async (req, res) => {
     }
 
     const product = new Product({
+      id,
       name,
       price,
+      brand,
       description,
       category,
       image,

@@ -81,6 +81,20 @@
             </thead>
             <tbody id="productTable"></tbody>
         </table>
+        <h3>📦 Danh sách đơn hàng</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Khách hàng</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                    <th>Hành động</th>
+                </tr>
+            </thead>
+            <tbody id="orderTable"></tbody>
+        </table>
+
     </div>
 
     <script>
@@ -108,6 +122,7 @@
                 document.getElementById('auth').style.display = 'none';
                 document.getElementById('adminPanel').style.display = 'block';
                 loadProducts();
+                loadOrders(); // 🆕 tải danh sách đơn hàng
             } else {
                 document.getElementById('loginMsg').innerText = data.msg || 'Đăng nhập thất bại';
             }
@@ -195,6 +210,52 @@
             });
             loadProducts();
         }
+        // 🧾 Lấy danh sách đơn hàng
+        async function loadOrders() {
+            const res = await fetch('/api/orders', {
+                headers: {
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            const data = await res.json();
+
+            const table = document.getElementById('orderTable');
+            table.innerHTML = data.map(o => `
+    <tr>
+      <td>${o._id}</td>
+      <td>${o.customerName || 'Ẩn danh'}</td>
+      <td>${o.total.toLocaleString()}₫</td>
+      <td>${o.status}</td>
+      <td>
+        ${o.status === 'pending' ? `
+          <button onclick="updateOrder('${o._id}', 'confirmed')">✅ Xác nhận</button>
+          <button onclick="updateOrder('${o._id}', 'cancelled')">❌ Hủy</button>
+        ` : ''}
+        ${o.status === 'confirmed' ? `
+          <button onclick="updateOrder('${o._id}', 'completed')">📦 Hoàn tất</button>
+        ` : ''}
+      </td>
+    </tr>
+  `).join('');
+}
+
+// 🔄 Cập nhật trạng thái đơn hàng
+async function updateOrder(id, status) {
+  const res = await fetch('/api/orders/' + id, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    },
+    body: JSON.stringify({ status })
+  });
+
+  if (res.ok) {
+    loadOrders();
+  } else {
+    alert('❌ Lỗi khi cập nhật đơn hàng');
+  }
+}
     </script>
 </body>
 

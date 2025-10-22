@@ -1,27 +1,26 @@
-const mongoose = require('mongoose');
+// models/Order.js
+const mongoose = require("mongoose");
 
-// 🧱 Định nghĩa cấu trúc từng sản phẩm trong đơn hàng
-const orderItemSchema = new mongoose.Schema({
-    productId: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Product',
-        required: true
-    },
-    productName: { type: String, required: true },
-    price: { type: Number, required: true },
-    quantity: { type: Number, default: 1 }
-});
-
-// 🧾 Cấu trúc đơn hàng
 const orderSchema = new mongoose.Schema({
     userId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'User'
+        ref: "User",
+        required: true,
     },
-    items: [orderItemSchema],
-    total: { type: Number, required: true },
-    status: { type: String, default: 'Đang xử lý' },
-    createdAt: { type: Date, default: Date.now }
-});
+    products: [{
+        productId: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Product",
+            required: true,
+        },
+        quantity: { type: Number, required: true },
+    }, ],
+    totalPrice: { type: Number, required: true },
+    status: {
+        type: String,
+        enum: ["pending", "confirmed", "shipping", "delivered", "cancelled"],
+        default: "pending",
+    },
+}, { timestamps: true });
 
-module.exports = mongoose.model('Order', orderSchema);
+module.exports = mongoose.model("Order", orderSchema); // ✅ dòng quan trọng

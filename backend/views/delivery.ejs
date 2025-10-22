@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>🚚 Quản Lý Giao Hàng</title>
+    <style>
+        body {
+            font-family: Arial;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+        
+        h1 {
+            color: #333;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th,
+        td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+        
+        button {
+            margin: 4px;
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>🚚 Quản Lý Giao Hàng</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Mã đơn</th>
+                <th>Khách hàng</th>
+                <th>Địa chỉ</th>
+                <th>Trạng thái</th>
+                <th>Cập nhật</th>
+            </tr>
+        </thead>
+        <tbody id="deliveryTable"></tbody>
+    </table>
+
+    <script>
+        async function loadDeliveries() {
+            const res = await fetch('/api/orders?status=shipping');
+            const orders = await res.json();
+
+            document.getElementById('deliveryTable').innerHTML = orders.map(o => `
+        <tr>
+          <td>${o._id}</td>
+          <td>${o.customerName}</td>
+          <td>${o.address}</td>
+          <td>${o.status}</td>
+          <td>
+            <button onclick="updateStatus('${o._id}', 'picked_up')">Đã lấy hàng</button>
+            <button onclick="updateStatus('${o._id}', 'delivering')">Đang giao</button>
+            <button onclick="updateStatus('${o._id}', 'delivered')">Giao thành công</button>
+            <button onclick="updateStatus('${o._id}', 'failed')">Giao thất bại</button>
+          </td>
+        </tr>
+      `).join('');
+        }
+
+        async function updateStatus(orderId, status) {
+            const confirmMsg = confirm(`Xác nhận cập nhật trạng thái "${status}" cho đơn ${orderId}?`);
+            if (!confirmMsg) return;
+
+            const res = await fetch(`/api/orders/${orderId}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    status
+                })
+            });
+
+            if (res.ok) {
+                alert("✅ Cập nhật thành công!");
+                loadDeliveries();
+            } else {
+                alert("❌ Lỗi khi cập nhật trạng thái!");
+            }
+        }
+
+        loadDeliveries();
+    </script>
+</body>
+
+</html>

@@ -14,25 +14,29 @@
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
      <script src="../js/renderProducts.js"></script>
 
-    <script>
-    async function loadProducts() {
-      try {
-        const res = await fetch('http://localhost:5000/api/products');
-        const data = await res.json();
-        const list = document.getElementById('product-list');
-        list.innerHTML = data.map(p => `
-          <div class="card">
-            <img src="${p.image}" alt="${p.name}">
-            <h3>${p.name}</h3>
-            <p>${p.brand}</p>
-            <p><b>${p.price.toLocaleString()}₫</b></p>
-          </div>
-        `).join('');
-      } catch (err) {
-        console.error('Lỗi tải dữ liệu:', err);
-      }
-    }
-    loadProducts();
+    
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+    // Render mặc định
+    renderProducts('product-list', null, 20);
+
+    // Bộ lọc giá
+    const filterBtn = document.getElementById('filterPriceBtn');
+    filterBtn.addEventListener('click', () => {
+        const minPrice = document.getElementById('minPrice').value;
+        const maxPrice = document.getElementById('maxPrice').value;
+
+        renderProducts(
+            'product-list',
+            null, // brand
+            20,   // limit
+            minPrice ? parseInt(minPrice) : null,
+            maxPrice ? parseInt(maxPrice) : null
+        );
+    });
+});
+
   </script>
     <style>
         * {
@@ -216,6 +220,11 @@
                         </div>
                     </div>
 
+                    <div class="row g-2 align-items-center my-3">
+    
+
+                    
+
                 </div>
             </div>
         </div>
@@ -261,13 +270,112 @@
 
         </div>
 
-        
+   <!-- Bộ lọc giá -->
+<div class="container my-3">
+    <div class="row">
+        <!-- Search theo tên -->
+    <div class="col-md-4">
+        <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+        </div>
+    </div>
+    <!-- Giá từ -->
+    <div class="col-md-2">
+        <input type="number" id="minPrice" class="form-control" placeholder="Giá từ">
+    </div>
+    <!-- Giá đến -->
+    <div class="col-md-2">
+        <input type="number" id="maxPrice" class="form-control" placeholder="Đến">
+    </div>
+    <div class="col-md-2">
+        <button id="filterBtn" class="btn btn-primary w-100">Lọc</button>
+    </div>
+</div>
+</div>
+
+<script>
+    async function renderProducts(containerId = 'product-list', search = '', minPrice = 0, maxPrice = Infinity) {
+    try {
+        let url = 'http://localhost:5000/api/dbproducts';
+        const res = await fetch(url);
+        let products = await res.json();
+
+        // Filter tên sản phẩm
+        if (search) {
+            const key = search.toLowerCase();
+            products = products.filter(p => p.name.toLowerCase().includes(key));
+        }
+
+        // Filter giá
+        products = products.filter(p => p.price >= minPrice && p.price <= maxPrice);
+
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        container.innerHTML = products.map(p => `
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <div class="card product-card h-100 position-relative">
+                    <div class="product-image-container">
+                        <img src="${p.image}" class="card-img-top product-img" alt="${p.name}" onclick="showProductModal('${p._id}')">
+                    </div>
+                    <div class="product-info d-flex flex-column">
+                        <h5 class="product-title">${p.name}</h5>
+                        <div class="product-rating">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            <i class="far fa-star"></i>
+                        </div>
+                        <div class="mt-auto">
+                            <span class="product-price">${p.price.toLocaleString('vi-VN')}₫</span>
+                            <button class="btn btn-product mt-2"
+                                onclick="addToCart('${p._id}', '${p.name}', '${p.image}', ${p.price})">
+                                <i class="fas fa-shopping-cart me-1"></i> THÊM VÀO GIỎ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `).join('');
+
+    } catch (err) {
+        console.error('⚠️ Lỗi khi tải dữ liệu sản phẩm:', err);
+    }
+}
+
+// DOM Ready
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.getElementById('searchInput');
+    const minInput = document.getElementById('minPrice');
+    const maxInput = document.getElementById('maxPrice');
+    const filterBtn = document.getElementById('filterBtn');
+
+    // Render mặc định tất cả sản phẩm
+    renderProducts();
+
+    // Khi nhấn nút Lọc
+    filterBtn.addEventListener('click', () => {
+        const search = searchInput.value.trim();
+        const minPrice = parseInt(minInput.value) || 0;
+        const maxPrice = parseInt(maxInput.value) || Infinity;
+        renderProducts('product-list', search, minPrice, maxPrice);
+    });
+
+    // Nhấn Enter ở ô tìm kiếm cũng lọc
+    searchInput.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') filterBtn.click();
+    });
+});
+
+</script>
+
 
 <!-- Featured Products -->
 <div class="featured-section">
     <div class="container">
         <div class="section-title">
             <h2>SẢN PHẨM NỔI BẬT</h2>
+            <div class="container my-3">
         </div>
         <div class="row" id="product-list">
             <!-- Sản phẩm sẽ được thêm tự động ở đây -->
@@ -331,7 +439,29 @@
                 </div>
             </div>
         </footer>
-
+            <!-- Modal chi tiết sản phẩm -->
+<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        
+        <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
+        
+        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        
+      </div>
+      
+      <div class="modal-body" id="modal-product-body">
+        <!-- Nội dung sản phẩm sẽ được render ở đây -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+        
+        <button type="button" class="btn btn-primary" id="addToCartModalBtn">Thêm vào giỏ</button>
+      </div>
+    </div>
+  </div>
+</div>
     </div>
    
 </body>

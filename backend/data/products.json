@@ -4,7 +4,7 @@
         "brand": "Apple",
         "price": 37990000,
         "stock": 100,
-        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium sang trọng, camera cải tiến cho ảnh sắc nét.",
         "image": "http://127.0.0.1:5500/backend/imgs/apple/17pro.jpg",
         "category": "Smartphone"
     },
@@ -14,7 +14,7 @@
         "brand": "Apple",
         "price": 31990000,
         "stock": 100,
-        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "description": "Thiết kế mỏng nhẹ, màn hình Super Retina XDR 6.7 inch, chip A17 Pro, phù hợp cho người thích sự thanh thoát và hiệu năng cao.",
         "image": "https://cdn.tgdd.vn/Products/Images/42/344777/iphone-air-1tb-vang-thumb-600x600.jpg",
         "category": "Smartphone"
     },
@@ -24,7 +24,7 @@
         "brand": "Apple",
         "price": 25990000,
         "stock": 200,
-        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "description": "iPhone tiêu chuẩn với màn hình 6.7 inch, chip A17 Pro, trải nghiệm mượt mà và ổn định, phù hợp dùng hàng ngày.",
         "image": "https://cdn.tgdd.vn/Products/Images/42/342667/iphone-17-xanh-thumb-600x600.jpg",
         "category": "Smartphone"
     },
@@ -34,7 +34,7 @@
         "brand": "Apple",
         "price": 21990000,
         "stock": 100,
-        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "description": "Phiên bản Pro Max với camera nâng cấp, màn hình 6.7 inch, chip A17 Pro, khung titanium cao cấp, pin lâu hơn.",
         "image": "https://cdn.tgdd.vn/Products/Images/42/329149/iphone-16-pro-max-sa-mac-thumb-1-600x600.jpg",
         "category": "Smartphone"
     },
@@ -44,7 +44,7 @@
         "brand": "Apple",
         "price": 15990000,
         "stock": 200,
-        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "description": "Phiên bản 16e nhỏ gọn, 128GB, chip A17 Pro, thiết kế thanh lịch, phù hợp với người thích điện thoại vừa tay.",
         "image": "https://cdn.tgdd.vn/Products/Images/42/334864/iphone-16e-white-thumb-600x600.jpg",
         "category": "Smartphone"
     },
@@ -54,7 +54,7 @@
         "brand": "Apple",
         "price": 15990000,
         "stock": 200,
-        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "description": "iPhone 15 128GB, màn hình Super Retina XDR 6.7 inch, chip A17 Pro, màu sắc nổi bật, trải nghiệm giải trí tuyệt vời.",
         "image": "https://cdn.tgdd.vn/Products/Images/42/281570/iphone-15-xanh-thumb-600x600.jpg",
         "category": "Smartphone"
     },
@@ -64,7 +64,7 @@
         "brand": "Apple",
         "price": 19990000,
         "stock": 200,
-        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "description": "iPhone 15 Plus với màn hình lớn, pin dung lượng cao, chip A17 Pro, lý tưởng cho game và xem video.",
         "image": "https://cdn.tgdd.vn/Products/Images/42/303891/iphone-15-plus-hong-128gb-thumb-600x600.jpg",
         "category": "Smartphone"
     },
@@ -74,10 +74,9 @@
         "brand": "Apple",
         "price": 19990000,
         "stock": 200,
-        "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium cao cấp.",
+        "description": "iPhone 16 128GB, thiết kế thời thượng, chip A17 Pro, camera chất lượng cao, màu xanh thanh lịch.",
         "image": "https://cdn.tgdd.vn/Products/Images/42/329135/iphone-16-blue-600x600.png",
         "category": "Smartphone"
-
     },
     {
         "id": "9",

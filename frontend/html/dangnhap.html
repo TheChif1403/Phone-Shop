@@ -13,7 +13,7 @@
             font-family: Arial, sans-serif;
             background-color: #f8f9fa;
         }
-
+        
         .register-container {
             max-width: 1200px;
             margin: 30px auto;
@@ -21,20 +21,20 @@
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
+        
         .header {
             background-color: black;
             color: white;
             padding: 15px 0;
             margin-bottom: 30px;
         }
-
+        
         .header h1 {
             font-size: 24px;
             font-weight: bold;
             text-align: center;
         }
-
+        
         legend {
             font-size: 24px;
             font-weight: bold;
@@ -43,7 +43,7 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-
+        
         .btn-register {
             background-color: black;
             color: white;
@@ -53,49 +53,49 @@
             width: 100%;
             margin-top: 20px;
         }
-
+        
         .btn-register:hover {
             background-color: #333;
         }
-
+        
         .login-link {
             margin-top: 20px;
             text-align: center;
         }
-
+        
         .login-link a {
             color: #333;
             font-weight: bold;
             text-decoration: underline;
         }
-
+        
         .footer {
             background-color: #343a40;
             color: white;
             padding: 30px 0;
         }
-
+        
         .footer-title {
             font-weight: bold;
             margin-bottom: 15px;
         }
-
         /* Thêm style mới */
+        
         .error-message {
             color: #dc3545;
             font-size: 0.875em;
             margin-top: 0.25rem;
             display: none;
         }
-
+        
         .is-invalid {
             border-color: #dc3545 !important;
         }
-
+        
         .is-valid {
             border-color: #28a745 !important;
         }
-
+        
         .password-toggle {
             position: absolute;
             right: 10px;
@@ -104,22 +104,22 @@
             cursor: pointer;
             z-index: 5;
         }
-
+        
         .password-container {
             position: relative;
         }
-
+        
         .success-alert {
             display: none;
         }
-    
+        
         .trang-chu-style {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 28px;
-    color: #d63384;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 28px;
+            color: #d63384;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
     </style>
 </head>
 
@@ -155,19 +155,17 @@
             <div class="form-group row mb-3">
                 <label for="Username" class="col-sm-2 col-form-label">TÊN ĐĂNG NHẬP:</label>
                 <div class="col-sm-10">
-                    <input type="text" id="Username" class="form-control" required
-                        placeholder="nhập tên đăng nhập ">
-                        <div id="UsernameError" style="color: #dc3545; display: none">Username không được để trống</div>
-                    
+                    <input type="text" id="Username" class="form-control" required placeholder="nhập tên đăng nhập ">
+                    <div id="UsernameError" style="color: #dc3545; display: none">Username không được để trống</div>
+
                 </div>
             </div>
 
             <div class="form-group row mb-3">
                 <label for="Password" class="col-sm-2 col-form-label">MẬT KHẨU: </label>
                 <div class="col-sm-10 password-container">
-                    <input type="password"  id="Password" class="form-control" required
-                        placeholder="nhập mật khẩu">
-                        <div id="PasswordError" style="color: #dc3545; display: none">Password không được để trống</div>
+                    <input type="password" id="Password" class="form-control" required placeholder="nhập mật khẩu">
+                    <div id="PasswordError" style="color: #dc3545; display: none">Password không được để trống</div>
                 </div>
             </div>
 
@@ -233,8 +231,8 @@
             </div>
         </div>
     </footer>
-<!-- <script></script> -->
- <script src="../js/dangnhap.js"></script>
+    <!-- <script></script> -->
+    <script src="../js/dangnhap.js"></script>
 
 </body>
 

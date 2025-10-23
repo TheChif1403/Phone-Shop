@@ -6,14 +6,58 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Đăng Ký Tài Khoản</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../js/bootstrap.js">
+    <link rel="stylesheet" href="../css/style.css">
     <script src="../js/bootstrap.js"></script>
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
+        * {
+            box-sizing: border-box;
+            margin: 0 auto;
         }
-
+        /* Style cho nút đăng nhập */
+        
+        .btn-login {
+            background-color: transparent;
+            color: white;
+            border: 1px solid white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            /* bo tròn */
+            transition: 0.3s;
+        }
+        
+        .btn-login:hover {
+            background-color: white;
+            color: black;
+        }
+        /* Style cho nút đăng ký */
+        
+        .btn-register {
+            background-color: #E31E30;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            /* bo tròn */
+            margin-left: 10px;
+            /* cách nút đăng nhập 1 khoảng */
+            transition: 0.3s;
+        }
+        
+        .btn-register:hover {
+            background-color: #b71c1c;
+        }
+        /* Navigation */
+        
+        .main-nav .nav-item a {
+            display: inline-block;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+        }
+        /* Khung đăng nhập */
+        
         .register-container {
             max-width: 1200px;
             margin: 30px auto;
@@ -21,20 +65,7 @@
             background-color: white;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-
-        .header {
-            background-color: black;
-            color: white;
-            padding: 15px 0;
-            margin-bottom: 30px;
-        }
-
-        .header h1 {
-            font-size: 24px;
-            font-weight: bold;
-            text-align: center;
-        }
-
+        
         legend {
             font-size: 24px;
             font-weight: bold;
@@ -43,44 +74,35 @@
             padding-bottom: 10px;
             margin-bottom: 20px;
         }
-
-        .btn-register {
-            background-color: black;
-            color: white;
-            font-weight: bold;
-            padding: 10px;
-            border: none;
-            width: 100%;
-            margin-top: 20px;
-        }
-
-        .btn-register:hover {
-            background-color: #333;
-        }
-
+        /* Link sang trang đăng ký */
+        
         .login-link {
             margin-top: 20px;
             text-align: center;
         }
-
+        
         .login-link a {
-            color: #333;
+            color: #E31E30;
             font-weight: bold;
             text-decoration: underline;
         }
-
+        /* Footer */
+        
         .footer {
             background-color: #343a40;
             color: white;
             padding: 30px 0;
         }
 
+        
         .footer-title {
             font-weight: bold;
             margin-bottom: 15px;
         }
 
         /* Thêm style mới */
+        /* Validate form */
+        
         .error-message {
             color: #dc3545;
             font-size: 0.875em;
@@ -96,6 +118,16 @@
             border-color: #28a745 !important;
         }
 
+        
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+        
+        .is-valid {
+            border-color: #28a745 !important;
+        }
+        /* Toggle mật khẩu */
+        
         .password-toggle {
             position: absolute;
             right: 10px;
@@ -120,6 +152,15 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+        
+        .password-container {
+            position: relative;
+        }
+        /* Alert */
+        
+        .success-alert {
+            display: none;
+        }
     </style>
 </head>
 
@@ -135,6 +176,72 @@
                     <i class="fa-solid fa-house-chimney me-2"></i> TRANG CHỦ
                 </span>
             </a>
+    <div class="top-bar ">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <i class="fas fa-phone-alt me-2"></i> HOTLINE: 07661 58666 (8h - 21h30)
+                </div>
+                <div class="col-md-6 text-end auth-buttons">
+                    <a href="../html/dangnhap.html" class="btn btn-login"><i class="fas fa-sign-in-alt me-1"></i> Đăng nhập</a>
+                    <a href="../html/dangky.html" class="btn btn-register"><i class="fas fa-user-plus me-1"></i> Đăng ký</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Logo & Search -->
+    <div class="logo-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="logo">
+                        <img src="../img/download (1).png" alt="" height="50px">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="search-box">
+                        <i class="fas fa-search"></i>
+                        <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation -->
+    <div class="main-nav">
+        <div class="container nav-container">
+            <div class="d-flex justify-content-center">
+                <div class="nav-item active">
+                    <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
+                </div>
+                <div class="nav-item">
+                    <a href="apple.html">APPLE</a>
+                </div>
+                <div class="nav-item">
+                    <a href="samsung.html">SAMSUNG</a>
+                </div>
+                <div class="nav-item">
+                    <a href="honor.html">HONOR</a>
+                </div>
+                <div class="nav-item">
+                    <a href="oppo.html">OPPO</a>
+                </div>
+                <div class="nav-item">
+                    <a href="vivo.html">VIVO</a>
+                </div>
+                <div class="nav-item">
+                    <a href="xiaomi.html">XIAOMI</a>
+                </div>
+                <div class="nav-item">
+                    <a href="techno.html">TECHNO</a>
+                </div>
+                <div class="nav-item">
+                    <a href="phukien.html">PHỤ KIỆN </a>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -159,6 +266,9 @@
                         placeholder="nhập tên đăng nhập ">
                         <div id="UsernameError" style="color: #dc3545; display: none">Username không được để trống</div>
                     
+                    <input type="text" id="Username" class="form-control" required placeholder="nhập tên đăng nhập ">
+                    <div id="UsernameError" style="color: #dc3545; display: none">Username không được để trống</div>
+
                 </div>
             </div>
 
@@ -168,6 +278,8 @@
                     <input type="password"  id="Password" class="form-control" required
                         placeholder="nhập mật khẩu">
                         <div id="PasswordError" style="color: #dc3545; display: none">Password không được để trống</div>
+                    <input type="password" id="Password" class="form-control" required placeholder="nhập mật khẩu">
+                    <div id="PasswordError" style="color: #dc3545; display: none">Password không được để trống</div>
                 </div>
             </div>
 
@@ -192,6 +304,8 @@
                 <div class="col-md-4 mb-4">
                     <h5>VỀ BITTS</h5>
                     <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
+                    <h5>VỀ DIDONGVIET</h5>
+                    <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
                     <div class="mt-3">
                         <h6>ĐĂNG KÝ NHẬN TIN</h6>
                         <div class="input-group mb-3">
@@ -208,6 +322,7 @@
                         <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
                         <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
                         <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
+                        <li><a href="chinhsach.html" class="text-white">Chính sách, điều khoản</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
@@ -216,6 +331,9 @@
                         <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo, P.4, Gò Vấp, TP.HCM</li>
                         <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
                         <li><i class="fas fa-envelope me-2"></i> Email: vanchuongdeptrai@gmail.com</li>
+                        <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
+                        <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                        <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
                         <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
                     </ul>
                     <div class="mt-3">
@@ -224,6 +342,13 @@
                         <a href="#" class="text-white me-3"><i class="fab fa-tiktok"></i></a>
                         <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
                         <a href="#" class="text-white"><i class="fas fa-phone"></i></a>
+                        <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
+
+
+                        <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
+                        <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
+                        <a href="#"><i class="fa-solid fa-phone"></i></a>
+
                     </div>
                 </div>
             </div>
@@ -235,6 +360,14 @@
     </footer>
 <!-- <script></script> -->
  <script src="../js/dangnhap.js"></script>
+                <p class="mb-0">© 2025 DIDONGVIET. All rights reserved.</p>
+            </div>
+        </div>
+
+    </footer>
+    <!-- <script></script> -->
+    <script src="../js/dangnhap.js"></script>
+    <script src="../js/global-support.js"></script>
 
 </body>
 

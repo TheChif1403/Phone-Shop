@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi">
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/themtaikhoan-lienhe-chinhsach1
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -130,25 +134,25 @@
     <script src="../js/renderProducts.js"></script>
 
     <script>
-  document.addEventListener("DOMContentLoaded", () => {
-     fetch("http://localhost:5000/backend/data/product.json") // đường dẫn tới file JSON
-      .then(response => response.json())
-      .then(products => {
-        const productList = document.getElementById("product-list");
+        document.addEventListener("DOMContentLoaded", () => {
+                    fetch("http://localhost:5000/backend/data/product.json") // đường dẫn tới file JSON
+                        .then(response => response.json())
+                        .then(products => {
+                                const productList = document.getElementById("product-list");
 
-        products.forEach(product => {
-          let stars = "";
-          for (let i = 1; i <= 5; i++) {
-            if (i <= Math.floor(product.rating)) {
-              stars += `<i class="fas fa-star"></i>`;
-            } else if (i - product.rating < 1) {
-              stars += `<i class="fas fa-star-half-alt"></i>`;
-            } else {
-              stars += `<i class="far fa-star"></i>`;
-            }
-          }
+                                products.forEach(product => {
+                                            let stars = "";
+                                            for (let i = 1; i <= 5; i++) {
+                                                if (i <= Math.floor(product.rating)) {
+                                                    stars += `<i class="fas fa-star"></i>`;
+                                                } else if (i - product.rating < 1) {
+                                                    stars += `<i class="fas fa-star-half-alt"></i>`;
+                                                } else {
+                                                    stars += `<i class="far fa-star"></i>`;
+                                                }
+                                            }
 
-          const productCard = `
+                                            const productCard = `
             <div class="col-lg-3 col-md-6">
               <div class="product-card">
                 <div class="product-img-container">
@@ -177,7 +181,7 @@
   function addToCart(name) {
     alert("Đã thêm " + name + " vào giỏ hàng!");
   }
-</script>
+    </script>
 
     <script>
         document.addEventListener("DOMContentLoaded", () => {
@@ -284,18 +288,18 @@
             </div>
         </div>
 
-      
+
 
         <div class="featured-section">
-  <div class="container">
-    <div class="section-title">
-      <h2>SẢN PHẨM </h2>
-    </div>
-    <div class="row" id="product-list">
-      <!-- Sản phẩm sẽ được load tự động -->
-    </div>
-  </div>
-</div>
+            <div class="container">
+                <div class="section-title">
+                    <h2>SẢN PHẨM </h2>
+                </div>
+                <div class="row" id="product-list">
+                    <!-- Sản phẩm sẽ được load tự động -->
+                </div>
+            </div>
+        </div>
 
         <a href="giohang.html" class="cart-floating-button">
             <i class="fas fa-shopping-cart"></i>
@@ -318,11 +322,7 @@
                     <div class="col-md-4 mb-4">
                         <h5>THÔNG TIN</h5>
                         <ul class="list-unstyled">
-                            <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
-                            <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
-                            <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
-                            <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
-                            <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
+                            <li><a href="chinhsach.html" class="text-white">Chính sách, điều khoản</a></li>
                         </ul>
                     </div>
                     <div class="col-md-4 mb-4">
@@ -351,32 +351,33 @@
                 </div>
             </div>
         </footer>
-       <!-- Modal chi tiết sản phẩm -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        
-        <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
-        
-        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-        
-      </div>
-      
-      <div class="modal-body" id="modal-product-body">
-        <!-- Nội dung sản phẩm sẽ được render ở đây -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        
-        <button type="button" class="btn btn-primary" id="addToCartModalBtn">Thêm vào giỏ</button>
-      </div>
-    </div>
-  </div>
-</div>
+        <!-- Modal chi tiết sản phẩm -->
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
+
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-product-body">
+                        <!-- Nội dung sản phẩm sẽ được render ở đây -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+
+                        <button type="button" class="btn btn-primary" id="addToCartModalBtn">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/global-support.js"></script>
 </body>
 
 </html>
-

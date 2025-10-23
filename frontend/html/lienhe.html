@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shop dien thoai</title>
+    <title>Liên hệ & Hỗ trợ - Shop điện thoại</title>
     <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../js/bootstrap.js">
@@ -13,7 +13,51 @@
     <script src="../js/renderProducts.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
+    <script src="../js/renderProducts.js"></script>
     <style>
+        .support-floating-button {
+            position: fixed;
+            bottom: 95px;
+            /* Đặt cao hơn nút giỏ hàng (30px + ~50px chiều cao giỏ hàng + 15px khoảng cách) */
+            right: 30px;
+            /* Đặt ở bên phải, căn lề với giỏ hàng */
+            background-color: var(--primary-color, #E31E30);
+            /* Dùng màu đỏ chủ đạo */
+            color: white;
+            padding: 12px 16px;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 998;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .support-floating-button:hover {
+            background-color: #a01421;
+            /* Màu đỏ sậm hơn */
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        .support-floating-button i {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        /* Tùy chỉnh Modal Header cho giống chat box */
+        
+        .modal-header.support-header {
+            background-color: var(--dark-color, #1a1a1a);
+            color: white;
+        }
+        
+        .modal-header.support-header .btn-close {
+            filter: invert(1) grayscale(100%) brightness(200%);
+        }
+        
         * {
             box-sizing: border-box;
             /* width: 100%; */
@@ -128,37 +172,6 @@
             font-weight: bold;
         }
     </style>
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-            const navLinks = document.querySelectorAll('.main-nav .nav-item a');
-
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-
-                    if (this.getAttribute("href").includes("home.html")) {
-                        localStorage.removeItem("activeNav");
-                        return;
-                    }
-
-                    navLinks.forEach(l => l.classList.remove('active'));
-
-                    this.classList.add('active');
-
-                    localStorage.setItem("activeNav", this.getAttribute("href"));
-                });
-            });
-
-            const activeNav = localStorage.getItem("activeNav");
-            if (activeNav) {
-                navLinks.forEach(l => {
-                    if (l.getAttribute("href") === activeNav) {
-                        l.classList.add("active");
-                    }
-                });
-            }
-        });
-    </script>
-
 </head>
 
 <body>
@@ -233,35 +246,77 @@
             </div>
         </div>
 
-        <!-- Featured Products -->
-         <div class="featured-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>SẢN PHẨM NỔI BẬT</h2>
+        <div class="container my-5">
+            <h1 class="text-center mb-5">Liên hệ & Hỗ trợ</h1>
+
+            <div class="row g-5">
+                <div class="col-md-7">
+                    <h4>Gửi thông tin yêu cầu hỗ trợ</h4>
+                    <p>Chúng tôi sẽ phản hồi bạn trong thời gian sớm nhất.</p>
+
+                    <form id="mainContactForm">
+                        <div class="mb-3">
+                            <label for="contactName" class="form-label">Họ và tên của bạn</label>
+                            <input type="text" class="form-control" id="contactName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactEmail" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="contactEmail" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactSubject" class="form-label">Chủ đề</label>
+                            <input type="text" class="form-control" id="contactSubject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="contactMessage" class="form-label">Nội dung yêu cầu</label>
+                            <textarea class="form-control" id="contactMessage" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="background-color: var(--primary-color); border: none; padding: 10px 30px;">Gửi yêu cầu</button>
+                    </form>
+                </div>
+
+                <div class="col-md-5">
+                    <h4>Thông tin liên hệ</h4>
+                    <p>Bạn cũng có thể liên hệ trực tiếp với chúng tôi qua các thông tin dưới đây:</p>
+                    <ul class="list-unstyled" style="line-height: 2.5;">
+                        <li>
+                            <i class="fas fa-map-marker-alt me-2 text-danger"></i> 12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, TP.HCM
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt me-2 text-danger"></i> Hotline: 07661 58666
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope me-2 text-danger"></i> Email: Ngochuydz@gmail.com
+                        </li>
+                        <li>
+                            <i class="fas fa-clock me-2 text-danger"></i> Giờ làm việc: 8h - 21h30 (Tất cả các ngày)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <hr class="my-5">
+            <div class="row justify-content-center">
+                <div class="col-md-10">
+                    <div class="policy-section">
+                        <h2 class="mb-4 text-center">Chính sách đổi trả (Tóm tắt)</h2>
+                        <h5>1. Điều kiện đổi trả:</h5>
+                        <ul>
+                            <li>Sản phẩm bị lỗi do nhà sản xuất (lỗi 1 đổi 1 trong 30 ngày đầu).</li>
+                            <li>Sản phẩm không bị rơi vỡ, vào nước, cấn móp...</li>
+                        </ul>
+                        <p>Vui lòng xem chi tiết tại trang <a href="chinhsach.html#return-policy">Chính sách đổi trả đầy đủ</a>.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row" id="product-list">
-            <!-- Sản phẩm sẽ được thêm tự động ở đây -->
-        </div>
-    </div>
-</div>
-        
-        <a href="giohang.html" class="cart-floating-button">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">0</span>
-        </a>
+
         <footer class="footer">
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-4">
-                        <h5>VỀ DIDONGVIET</h5>
-                        <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
-                        <div class="mt-3">
-                            <h6>ĐĂNG KÝ NHẬN TIN</h6>
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control" placeholder="Email của bạn">
-                                <button class="btn btn-primary" type="button">Gửi</button>
-                            </div>
-                        </div>
+                        <h5>VỀ BITTS</h5>
+                        <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
                     </div>
                     <div class="col-md-4 mb-4">
                         <h5>THÔNG TIN</h5>
@@ -272,56 +327,66 @@
                     <div class="col-md-4 mb-4">
                         <h5>LIÊN HỆ</h5>
                         <ul class="list-unstyled">
-                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
+                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
                             <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
                             <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
                             <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
                         </ul>
-                        <div class="mt-3">
-                            <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
-                            <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
-
-
-                            <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
-                            <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
-                            <a href="#"><i class="fa-solid fa-phone"></i></a>
-
-                        </div>
                     </div>
                 </div>
                 <hr>
                 <div class="text-center">
-                    <p class="mb-0">© 2025 DIDONGVIET. All rights reserved.</p>
+                    <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
                 </div>
             </div>
-
         </footer>
-        <!-- Modal chi tiết sản phẩm -->
-        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered">
+
+        <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
                 <div class="modal-content">
                     <div class="modal-header">
-
-                        <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
-
-                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-
+                        <h5 class="modal-title" id="successModalLabel">Gửi thành công!</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-
-                    <div class="modal-body" id="modal-product-body">
-                        <!-- Nội dung sản phẩm sẽ được render ở đây -->
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <i class="fas fa-check-circle fa-3x text-success mb-3"></i>
+                            <p>Chúng tôi đã nhận được yêu cầu của bạn và sẽ phản hồi trong thời gian sớm nhất.</p>
+                        </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-
-                        <button type="button" class="btn btn-primary" id="addToCartModalBtn">Thêm vào giỏ</button>
+                        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" style="background-color: var(--primary-color); border: none;">Đã hiểu</button>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
+
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/global-support.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.getElementById("mainContactForm");
+
+            const successModalEl = document.getElementById("successModal");
+
+            const successModal = new bootstrap.Modal(successModalEl);
+
+            contactForm.addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                successModal.show();
+
+                contactForm.reset();
+            });
+
+            successModalEl.addEventListener('hidden.bs.modal', function(event) {
+                location.reload();
+            });
+        });
+    </script>
+
 </body>
 
 </html>

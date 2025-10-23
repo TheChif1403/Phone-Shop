@@ -196,18 +196,6 @@ body {
     padding: 30px 0;
 }
 
-
-/* Thêm vào thẻ <style> hoặc file style.css */
-
-
-/* Định nghĩa màu biến nếu chưa có (cần thiết cho các class khác) */
-
-
-/* Thêm đoạn CSS này vào thẻ <style> hiện tại của bạn */
-
-
-/* 1. Vùng chứa ảnh: Cố định kích thước để đảm bảo đồng nhất */
-
 .product-image-container {
     width: 100%;
     /* Đặt chiều cao cố định (ví dụ 200px) để tất cả thẻ sản phẩm có cùng chiều cao ảnh */
@@ -250,4 +238,112 @@ body {
 .product-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.support-floating-button {
+    position: fixed;
+    bottom: 95px;
+    right: 30px;
+    background-color: var(--primary-color, #E31E30);
+    color: white;
+    padding: 8px 12px;
+    /* --- GIẢM PADDING --- */
+    border-radius: 25px;
+    /* --- GIẢM BO GÓC --- */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 998;
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    /* --- GIẢM CỠ CHỮ --- */
+    line-height: 1.3;
+    /* Thêm để 2 dòng chữ đỡ dính nhau */
+    transition: all 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.support-floating-button:hover {
+    background-color: #a01421;
+    color: white;
+    transform: scale(1.05);
+}
+
+.support-floating-button i {
+    font-size: 18px;
+    /* --- GIẢM CỠ ICON --- */
+    margin-right: 6px;
+    /* --- GIẢM KHOẢNG CÁCH --- */
+}
+
+
+/* =================================== */
+
+
+/* CSS CHO NÚT TÀI KHOẢN SAU KHI LOGIN */
+
+
+/* =================================== */
+
+.btn-account {
+    color: white;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    float: right;
+    /* Đảm bảo nó căn phải */
+}
+
+.btn-account:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-account i {
+    font-size: 1.3em;
+    /* Icon to hơn chữ một chút */
+}
+
+
+/* =================================== */
+
+
+/* CSS CHO NÚT WISHLIST (TRÁI TIM)    */
+
+
+/* =================================== */
+
+.btn-wishlist {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* Nằm ở góc trên bên phải */
+    z-index: 10;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+    color: var(--dark-color, #333);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-wishlist:hover {
+    background-color: white;
+    color: var(--primary-color, #E31E30);
+    /* Đổi màu đỏ khi hover */
+    transform: scale(1.1);
+}
+
+.btn-wishlist.added {
+    color: var(--primary-color, #E31E30);
+    /* Màu đỏ khi đã thêm */
 }

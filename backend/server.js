@@ -116,7 +116,6 @@ const path = require("path");
 
 
 
-
 dotenv.config();
 
 const app = express();
@@ -131,6 +130,27 @@ const cartRoutes = require('./routes/cart'); // nếu file ở backend/routes/ca
 
 // ... sau đó chỗ register routes:
 app.use('/api/cart', cartRoutes);
+// admin
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.get('/admin', (req, res) => {
+    res.render('admin'); // file admin.ejs
+});
+//delivery
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.get('/delivery', (req, res) => {
+    res.render('delivery'); // file delivery.ejs
+});
+//dashboard
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');
+
+app.get('/dashboard', (req, res) => {
+    res.render('dashboard'); // file dashboard.ejs
+});
 // ===== KẾT NỐI MONGODB =====
 mongoose
     .connect(process.env.MONGO_URI, {
@@ -163,8 +183,6 @@ app.use((req, res, next) => {
         next(); // để route API tiếp tục hoạt động
     }
 });
-
-
 
 // ===== RUN SERVER =====
 const PORT = process.env.PORT || 5000;

@@ -1,5 +1,5 @@
-// backend/routes/auth.js
 const express = require("express");
+const jwt = require("jsonwebtoken");
 const router = express.Router();
 const User = require("../models/User");
 
@@ -17,7 +17,7 @@ router.post("/register", async(req, res) => {
             lastname,
             firstname,
             username,
-            password, // ⚠️ Thực tế nên hash password (dùng bcrypt)
+            password, // ⚠️ Nên mã hóa bằng bcrypt trong thực tế
             email,
             phone,
         });
@@ -35,20 +35,25 @@ router.post("/login", async(req, res) => {
     try {
         const { username, password } = req.body;
 
-        // Tìm user trong DB
+        // Tìm user
         const user = await User.findOne({ username });
         if (!user) {
             return res.status(400).json({ message: "Người dùng không tồn tại" });
         }
 
-        // ⚠️ Thực tế nên so sánh password bằng bcrypt
+        // Kiểm tra mật khẩu (chưa mã hóa)
         if (user.password !== password) {
             return res.status(400).json({ message: "Sai mật khẩu" });
         }
 
-        // Thành công
+        // ✅ Tạo JWT Token
+        const token = jwt.sign({ id: user._id, username: user.username },
+            process.env.JWT_SECRET, { expiresIn: "2h" } // thời hạn 2 tiếng
+        );
+
         res.json({
             message: "Đăng nhập thành công",
+            token,
             user: {
                 id: user._id,
                 username: user.username,
@@ -58,6 +63,22 @@ router.post("/login", async(req, res) => {
         });
     } catch (err) {
         console.error("Lỗi khi đăng nhập:", err);
+        res.status(500).json({ message: "Lỗi server" });
+    }
+});
+
+// Lấy thông tin user từ token
+const authMiddleware = require("../middleware/authMiddleware");
+
+router.get("/me", authMiddleware, async(req, res) => {
+    try {
+        const user = await User.findById(req.user.id).select("-password");
+        if (!user) {
+            return res.status(404).json({ message: "Không tìm thấy người dùng" });
+        }
+        res.json(user);
+    } catch (error) {
+        console.error("Lỗi lấy thông tin người dùng:", error);
         res.status(500).json({ message: "Lỗi server" });
     }
 });

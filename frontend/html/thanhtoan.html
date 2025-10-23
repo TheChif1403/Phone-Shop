@@ -15,10 +15,7 @@
     <script src="../js/renderProducts.js"></script>
     <script src="../js/giohang.js"></script>
     <script src="../js/addToCart.js"></script>
-
-
-
-    </script>
+    <script src="../js/thanhtoan.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // Render mặc định
@@ -222,36 +219,6 @@
             text-align: center;
             padding: 50px 0;
         }
-        
-        .user-info {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 10px;
-            margin-top: 20px;
-        }
-        
-        .user-info input,
-        .user-info select {
-            width: 100%;
-            padding: 8px;
-            margin: 5px 0 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        
-        .pay-btn {
-            background-color: #ff5722;
-            color: white;
-            border: none;
-            padding: 10px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            font-weight: bold;
-        }
-        
-        .pay-btn:hover {
-            background-color: #e64a19;
-        }
     </style>
     <script src="../js/addToCard.js"></script>
     <script>
@@ -334,7 +301,13 @@
                             <span class="cart-count-badge">0</span>
                         </a>
                     </div>
+
+
                     <div class="row g-2 align-items-center my-3">
+
+
+
+
                     </div>
                 </div>
             </div>
@@ -374,26 +347,54 @@
                 </div>
             </div>
             <div class="featured-section">
-                <div class="container my-5 cart-wrapper">
-                    <h3 class="mb-4"><i class="fa-solid fa-cart-shopping"></i> Giỏ hàng của bạn</h3>
+                <!--chỗ hiện thị phần giữa của thanh toán-->
+                <section class="checkout-section py-5 bg-light">
+                    <div class="container">
+                        <h3 class="mb-4 fw-bold">Thanh toán</h3>
 
-                    <div class="row">
-                        <div class="col-md-8">
-                            <div class="cart-container">
-                                <h3 class="cart-title">Sản phẩm</h3>
-                                <div id="cartContainer"></div>
+                        <!-- Địa chỉ giao hàng -->
+                        <div class="card mb-4">
+                            <div class="card-header bg-primary text-white fw-semibold">
+                                <i class="fas fa-map-marker-alt me-2"></i> Địa chỉ giao hàng
+                            </div>
+                            <div class="card-body">
+                                <p><strong>Nguyễn Văn A</strong> | 0909123456</p>
+                                <p>12 Nguyễn Văn Bảo, Phường 4, Gò Vấp, TP. Hồ Chí Minh</p>
+                                <button class="btn btn-outline-primary btn-sm">Thay đổi</button>
                             </div>
                         </div>
 
-                        <div class="col-md-4">
-                            <!-- Thêm địa chỉ và phương thức thanh toán -->
-                            <div id="userInfo" class="user-info"></div>
-                            <!-- Tổng tiền -->
-                            <div id="cartSummary" class="cart-summary-box"></div>
+                        <!-- Danh sách sản phẩm -->
+                        <div class="card mb-4">
+                            <div class="card-header bg-primary text-white fw-semibold">
+                                <i class="fas fa-box-open me-2"></i> Sản phẩm
+                            </div>
+                            <div class="card-body" id="checkoutItems">
+                                <!-- Các sản phẩm trong giỏ hàng sẽ render ở đây -->
+                            </div>
+                        </div>
+
+                        <!-- Tổng thanh toán -->
+                        <div class="card p-4 shadow-sm">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Tạm tính</span>
+                                <span id="subtotal">0₫</span>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <span>Phí vận chuyển</span>
+                                <span id="shipping">30,000₫</span>
+                            </div>
+                            <hr>
+                            <div class="d-flex justify-content-between fw-bold fs-5 mb-3">
+                                <span>Tổng cộng</span>
+                                <span id="totalAmount">0₫</span>
+                            </div>
+                            <button class="btn btn-danger w-100 fw-semibold" id="payBtn">
+        Đặt hàng ngay
+      </button>
                         </div>
                     </div>
-                </div>
-
+                </section>
                 <footer class="footer">
                     <div class="container">
                         <div class="row">
@@ -572,6 +573,7 @@
             </script>
 
 </body>
+
 
 </html>
 

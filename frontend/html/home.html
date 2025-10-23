@@ -12,32 +12,32 @@
     <script src="../js/bootstrap.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
-     <script src="../js/renderProducts.js"></script>
+    <script src="../js/renderProducts.js"></script>
+    <script src="../js/addToCart.js"></script>
 
-    
-  </script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    // Render mặc định
-    renderProducts('product-list', null, 20);
 
-    // Bộ lọc giá
-    const filterBtn = document.getElementById('filterPriceBtn');
-    filterBtn.addEventListener('click', () => {
-        const minPrice = document.getElementById('minPrice').value;
-        const maxPrice = document.getElementById('maxPrice').value;
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Render mặc định
+            renderProducts('product-list', null, 20);
 
-        renderProducts(
-            'product-list',
-            null, // brand
-            20,   // limit
-            minPrice ? parseInt(minPrice) : null,
-            maxPrice ? parseInt(maxPrice) : null
-        );
-    });
-});
+            // Bộ lọc giá
+            const filterBtn = document.getElementById('filterPriceBtn');
+            filterBtn.addEventListener('click', () => {
+                const minPrice = document.getElementById('minPrice').value;
+                const maxPrice = document.getElementById('maxPrice').value;
 
-  </script>
+                renderProducts(
+                    'product-list',
+                    null, // brand
+                    20, // limit
+                    minPrice ? parseInt(minPrice) : null,
+                    maxPrice ? parseInt(maxPrice) : null
+                );
+            });
+        });
+    </script>
     <style>
         * {
             box-sizing: border-box;
@@ -152,9 +152,36 @@
             color: white !important;
             font-weight: bold;
         }
+        
+        .cart-icon {
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        .cart-count-badge {
+            position: absolute;
+            top: -5px;
+            right: -10px;
+            background: red;
+            color: white;
+            font-size: 12px;
+            padding: 2px 7px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
     </style>
     <script src="../js/addToCard.js"></script>
     <script>
+        // ẩn giở hàng khi chưa đăng nhập
+        document.addEventListener("DOMContentLoaded", () => {
+            const token = localStorage.getItem("token");
+            const cartIcon = document.getElementById("cartIcon");
+
+            if (!token) {
+                cartIcon.style.display = "none"; // ẩn giỏ hàng nếu chưa đăng nhập
+            }
+        });
+
         document.addEventListener("DOMContentLoaded", () => {
             const navLinks = document.querySelectorAll('.main-nav .nav-item a');
 
@@ -213,107 +240,113 @@
                             <img src="../img/download (1).png" alt="" height="50px">
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="search-box">
+                    <div class="col-md-4 d-flex align-items-center justify-content-end">
+                        <div class="search-box flex-grow-1 me-3">
                             <i class="fas fa-search"></i>
                             <input type="text" class="form-control" placeholder="Tìm kiếm sản phẩm...">
                         </div>
+
+                        <a href="giohang.html" class="cart-icon position-relative" id="cartIcon">
+                            <i class="fas fa-shopping-cart fa-lg text-dark"></i>
+                            <span class="cart-count-badge">0</span>
+                        </a>
                     </div>
 
+
                     <div class="row g-2 align-items-center my-3">
-    
 
-                    
 
+
+
+                    </div>
                 </div>
             </div>
-        </div>
 
-    <!-- Main Navigation -->
-    <div class="main-nav">
-        <div class="container nav-container">
-            <div class="d-flex justify-content-center">
-                <div class="nav-item active">
-                    <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
-                </div>
-                <div class="nav-item">
-                    <a href="apple.html">APPLE</a>
-                </div>
-                <div class="nav-item">
-                    <a href="samsung.html">SAMSUNG</a>
-                </div>
-                <div class="nav-item">
-                    <a href="honor.html">HONOR</a>
-                </div>
-                <div class="nav-item">
-                    <a href="oppo.html">OPPO</a>
-                </div>
-                <div class="nav-item">
-                    <a href="vivo.html">VIVO</a>
-                </div>
-                <div class="nav-item">
-                    <a href="xiaomi.html">XIAOMI</a>
-                </div>
-                <div class="nav-item">
-                    <a href="techno.html">TECHNO</a>
-                </div>
-                <div class="nav-item">
-                    <a href="phukien.html">PHỤ KIỆN </a>
+            <!-- Main Navigation -->
+            <div class="main-nav">
+                <div class="container nav-container">
+                    <div class="d-flex justify-content-center">
+                        <div class="nav-item active">
+                            <a href="home.html"><i class="fa-solid fa-house-chimney"></i>TRANG CHỦ</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="apple.html">APPLE</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="samsung.html">SAMSUNG</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="honor.html">HONOR</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="oppo.html">OPPO</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="vivo.html">VIVO</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="xiaomi.html">XIAOMI</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="techno.html">TECHNO</a>
+                        </div>
+                        <div class="nav-item">
+                            <a href="phukien.html">PHỤ KIỆN </a>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-        <!-- Hero Banner -->
-        <div class="hero-section  ">
-            <img src="../img/337024049_547599220691356_1542994487405062699_n.png" alt="Bitis Collection" class="hero-image">
+            <!-- Hero Banner -->
+            <div class="hero-section  ">
+                <img src="../img/337024049_547599220691356_1542994487405062699_n.png" alt="Bitis Collection" class="hero-image">
 
-        </div>
+            </div>
 
-   <!-- Bộ lọc giá -->
-<div class="container my-3">
-    <div class="row">
-        <!-- Search theo tên -->
-    <div class="col-md-4">
-        <div class="search-box">
-            <i class="fas fa-search"></i>
-            <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm sản phẩm...">
-        </div>
-    </div>
-    <!-- Giá từ -->
-    <div class="col-md-2">
-        <input type="number" id="minPrice" class="form-control" placeholder="Giá từ">
-    </div>
-    <!-- Giá đến -->
-    <div class="col-md-2">
-        <input type="number" id="maxPrice" class="form-control" placeholder="Đến">
-    </div>
-    <div class="col-md-2">
-        <button id="filterBtn" class="btn btn-primary w-100">Lọc</button>
-    </div>
-</div>
-</div>
+            <!-- Bộ lọc giá -->
+            <div class="container my-3">
+                <div class="row">
+                    <!-- Search theo tên -->
+                    <div class="col-md-4">
+                        <div class="search-box">
+                            <i class="fas fa-search"></i>
+                            <input type="text" id="searchInput" class="form-control" placeholder="Tìm kiếm sản phẩm...">
+                        </div>
+                    </div>
+                    <!-- Giá từ -->
+                    <div class="col-md-2">
+                        <input type="number" id="minPrice" class="form-control" placeholder="Giá từ">
+                    </div>
+                    <!-- Giá đến -->
+                    <div class="col-md-2">
+                        <input type="number" id="maxPrice" class="form-control" placeholder="Đến">
+                    </div>
+                    <div class="col-md-2">
+                        <button id="filterBtn" class="btn btn-primary w-100">Lọc</button>
+                    </div>
+                </div>
+            </div>
 
-<script>
-    async function renderProducts(containerId = 'product-list', search = '', minPrice = 0, maxPrice = Infinity) {
-    try {
-        let url = 'http://localhost:5000/api/dbproducts';
-        const res = await fetch(url);
-        let products = await res.json();
+            <script>
+                async function renderProducts(containerId = 'product-list', search = '', minPrice = 0, maxPrice = Infinity) {
+                    try {
+                        let url = 'http://localhost:5000/api/dbproducts';
+                        const res = await fetch(url);
+                        let products = await res.json();
 
-        // Filter tên sản phẩm
-        if (search) {
-            const key = search.toLowerCase();
-            products = products.filter(p => p.name.toLowerCase().includes(key));
-        }
+                        // Filter tên sản phẩm
+                        if (search) {
+                            const key = search.toLowerCase();
+                            products = products.filter(p => p.name.toLowerCase().includes(key));
+                        }
 
-        // Filter giá
-        products = products.filter(p => p.price >= minPrice && p.price <= maxPrice);
+                        // Filter giá
+                        products = products.filter(p => p.price >= minPrice && p.price <= maxPrice);
 
-        const container = document.getElementById(containerId);
-        if (!container) return;
+                        const container = document.getElementById(containerId);
+                        if (!container) return;
 
-        container.innerHTML = products.map(p => `
+                        container.innerHTML = products.map(p => `
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div class="card product-card h-100 position-relative">
                     <div class="product-image-container">
@@ -329,7 +362,7 @@
                         <div class="mt-auto">
                             <span class="product-price">${p.price.toLocaleString('vi-VN')}₫</span>
                             <button class="btn btn-product mt-2"
-                                onclick="addToCart('${p._id}', '${p.name}', '${p.image}', ${p.price})">
+                                onclick="handleAddToCart('${p._id}', '${p.name}', '${p.image}', ${p.price})">
                                 <i class="fas fa-shopping-cart me-1"></i> THÊM VÀO GIỎ
                             </button>
                         </div>
@@ -338,132 +371,172 @@
             </div>
         `).join('');
 
-    } catch (err) {
-        console.error('⚠️ Lỗi khi tải dữ liệu sản phẩm:', err);
-    }
-}
+                    } catch (err) {
+                        console.error('⚠️ Lỗi khi tải dữ liệu sản phẩm:', err);
+                    }
+                }
 
-// DOM Ready
-document.addEventListener('DOMContentLoaded', () => {
-    const searchInput = document.getElementById('searchInput');
-    const minInput = document.getElementById('minPrice');
-    const maxInput = document.getElementById('maxPrice');
-    const filterBtn = document.getElementById('filterBtn');
+                // DOM Ready
+                document.addEventListener('DOMContentLoaded', () => {
+                    const searchInput = document.getElementById('searchInput');
+                    const minInput = document.getElementById('minPrice');
+                    const maxInput = document.getElementById('maxPrice');
+                    const filterBtn = document.getElementById('filterBtn');
 
-    // Render mặc định tất cả sản phẩm
-    renderProducts();
+                    // Render mặc định tất cả sản phẩm
+                    renderProducts();
 
-    // Khi nhấn nút Lọc
-    filterBtn.addEventListener('click', () => {
-        const search = searchInput.value.trim();
-        const minPrice = parseInt(minInput.value) || 0;
-        const maxPrice = parseInt(maxInput.value) || Infinity;
-        renderProducts('product-list', search, minPrice, maxPrice);
-    });
+                    // Khi nhấn nút Lọc
+                    filterBtn.addEventListener('click', () => {
+                        const search = searchInput.value.trim();
+                        const minPrice = parseInt(minInput.value) || 0;
+                        const maxPrice = parseInt(maxInput.value) || Infinity;
+                        renderProducts('product-list', search, minPrice, maxPrice);
+                    });
 
-    // Nhấn Enter ở ô tìm kiếm cũng lọc
-    searchInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') filterBtn.click();
-    });
-});
-
-</script>
-
-
-<!-- Featured Products -->
-<div class="featured-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>SẢN PHẨM NỔI BẬT</h2>
-            <div class="container my-3">
-        </div>
-        <div class="row" id="product-list">
-            <!-- Sản phẩm sẽ được thêm tự động ở đây -->
-        </div>
-    </div>
-</div>
+                    // Nhấn Enter ở ô tìm kiếm cũng lọc
+                    searchInput.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') filterBtn.click();
+                    });
+                });
+            </script>
 
 
+            <!-- Featured Products -->
+            <div class="featured-section">
+                <div class="container">
+                    <div class="section-title">
+                        <h2>SẢN PHẨM NỔI BẬT</h2>
+                        <div class="container my-3">
+                        </div>
+                        <div class="row" id="product-list">
+                            <!-- Sản phẩm sẽ được thêm tự động ở đây -->
+                        </div>
+                    </div>
+                </div>
 
-        <a href="giohang.html" class="cart-floating-button">
-            <i class="fas fa-shopping-cart"></i>
-            <span class="cart-count">0</span>
-        </a>
-        <footer class="footer">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4 mb-4">
-                        <h5>VỀ BITTS</h5>
-                        <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
-                        <div class="mt-3">
-                            <h6>ĐĂNG KÝ NHẬN TIN</h6>
-                            <div class="input-group mb-3">
-                                <input type="email" class="form-control" placeholder="Email của bạn">
-                                <button class="btn btn-primary" type="button">Gửi</button>
+
+
+                <a href="giohang.html" class="cart-floating-button">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="cart-count">0</span>
+                </a>
+                <footer class="footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4 mb-4">
+                                <h5>VỀ BITTS</h5>
+                                <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
+                                <div class="mt-3">
+                                    <h6>ĐĂNG KÝ NHẬN TIN</h6>
+                                    <div class="input-group mb-3">
+                                        <input type="email" class="form-control" placeholder="Email của bạn">
+                                        <button class="btn btn-primary" type="button">Gửi</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <h5>THÔNG TIN</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
+                                    <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
+                                    <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
+                                    <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
+                                    <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 mb-4">
+                                <h5>LIÊN HỆ</h5>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
+                                    <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
+                                    <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
+                                    <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
+                                </ul>
+                                <div class="mt-3">
+                                    <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
+                                    <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
+
+
+                                    <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
+                                    <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
+                                    <a href="#"><i class="fa-solid fa-phone"></i></a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="text-center">
+                            <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
+                        </div>
+                    </div>
+                </footer>
+                <!-- Modal chi tiết sản phẩm -->
+                <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-lg modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+
+                                <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
+
+                                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                            </div>
+
+                            <div class="modal-body" id="modal-product-body">
+                                <!-- Nội dung sản phẩm sẽ được render ở đây -->
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+
+                                <button type="button" class="btn btn-primary" id="addToCartModalBtn">Thêm vào giỏ</button>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4 mb-4">
-                        <h5>THÔNG TIN</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="gioithieu.html" class="text-white">Giới thiệu</a></li>
-                            <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
-                            <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
-                            <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
-                            <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-md-4 mb-4">
-                        <h5>LIÊN HỆ</h5>
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảoo Phường 4 Gò Vấp TP.HCM </li>
-                            <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
-                            <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
-                            <li><i class="fas fa-clock me-2"></i> Giờ làm việc: 8h - 21h30</li>
-                        </ul>
-                        <div class="mt-3">
-                            <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
-                            <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
-
-
-                            <a href="#"><i class="fa-brands fa-tiktok">&nbsp</i></a>
-                            <a href="#"><i class="fa-brands fa-instagram">&nbsp</i></a>
-                            <a href="#"><i class="fa-solid fa-phone"></i></a>
-
-                        </div>
-                    </div>
-                </div>
-                <hr>
-                <div class="text-center">
-                    <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
                 </div>
             </div>
-        </footer>
-            <!-- Modal chi tiết sản phẩm -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        
-        <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
-        
-        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-        
-      </div>
-      
-      <div class="modal-body" id="modal-product-body">
-        <!-- Nội dung sản phẩm sẽ được render ở đây -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        
-        <button type="button" class="btn btn-primary" id="addToCartModalBtn">Thêm vào giỏ</button>
-      </div>
-    </div>
-  </div>
-</div>
-    </div>
-   
+            <script>
+                document.addEventListener("DOMContentLoaded", () => {
+                    const userData = localStorage.getItem("user");
+                    const authButtons = document.querySelector(".auth-buttons");
+                    // 👆 phần chứa 2 nút đăng nhập / đăng ký của bạn
+
+                    if (userData) {
+                        const user = JSON.parse(userData);
+
+                        // Ẩn 2 nút đăng nhập & đăng ký
+                        if (authButtons) {
+                            authButtons.innerHTML = `
+        <div class="d-flex align-items-center">
+          <span class="me-2">👋 Xin chào, <b>${user.username}</b></span>
+          <button id="logoutBtn" class="btn btn-outline-danger btn-sm">Đăng xuất</button>
+        </div>
+      `;
+                        }
+
+                        // Xử lý đăng xuất
+                        document.getElementById("logoutBtn").addEventListener("click", () => {
+                            localStorage.removeItem("user");
+                            localStorage.removeItem("token");
+                            location.reload();
+                        });
+                    }
+                });
+            </script>
+            <script>
+                function handleAddToCart(productId, name, image, price) {
+                    const token = localStorage.getItem("token");
+
+                    if (token) {
+                        // Người dùng đã đăng nhập → dùng API thật
+                        addToCart(productId, name, image, price);
+                    } else {
+                        // Chưa đăng nhập → dùng localStorage tạm
+                        addToCartLocal(name, image, price);
+                    }
+                }
+            </script>
+
 </body>
 
 

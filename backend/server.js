@@ -112,6 +112,10 @@ const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
+const path = require("path");
+
+
+
 
 dotenv.config();
 
@@ -119,14 +123,22 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+// 👉 Cho phép Express phục vụ file tĩnh trong thư mục frontend
+app.use(express.static(path.join(__dirname, "../frontend")));
+
+// ở chỗ import routes
+const cartRoutes = require('./routes/cart'); // nếu file ở backend/routes/cart.js
+
+// ... sau đó chỗ register routes:
+app.use('/api/cart', cartRoutes);
 // ===== KẾT NỐI MONGODB =====
 mongoose
-  .connect(process.env.MONGO_URI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("✅ Kết nối MongoDB thành công"))
-  .catch((err) => console.error("❌ Lỗi kết nối MongoDB:", err));
+    .connect(process.env.MONGO_URI, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
+    .then(() => console.log("✅ Kết nối MongoDB thành công"))
+    .catch((err) => console.error("❌ Lỗi kết nối MongoDB:", err));
 
 // ===== IMPORT ROUTES =====
 const authRoutes = require("./routes/auth");
@@ -138,6 +150,21 @@ app.use("/api/dbproducts", productRoutes); // RESTful API sản phẩm
 // ===== MIDDLEWARE XỬ LÝ LỖI =====
 const errorHandler = require("./middleware/errorHandler");
 app.use(errorHandler);
+
+// Nếu không trùng route API nào, trả về file tĩnh tương ứng trong frontend
+app.use((req, res, next) => {
+    // Nếu không phải API thì trả về file trong frontend
+    if (!req.path.startsWith('/api')) {
+        const filePath = path.join(__dirname, '../frontend', req.path);
+        res.sendFile(filePath, (err) => {
+            if (err) res.status(404).send('❌ Không tìm thấy file yêu cầu');
+        });
+    } else {
+        next(); // để route API tiếp tục hoạt động
+    }
+});
+
+
 
 // ===== RUN SERVER =====
 const PORT = process.env.PORT || 5000;

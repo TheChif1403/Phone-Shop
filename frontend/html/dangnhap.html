@@ -93,14 +93,11 @@
             color: white;
             padding: 30px 0;
         }
-
         
         .footer-title {
             font-weight: bold;
             margin-bottom: 15px;
         }
-
-        /* Thêm style mới */
         /* Validate form */
         
         .error-message {
@@ -109,15 +106,6 @@
             margin-top: 0.25rem;
             display: none;
         }
-
-        .is-invalid {
-            border-color: #dc3545 !important;
-        }
-
-        .is-valid {
-            border-color: #28a745 !important;
-        }
-
         
         .is-invalid {
             border-color: #dc3545 !important;
@@ -136,22 +124,6 @@
             cursor: pointer;
             z-index: 5;
         }
-
-        .password-container {
-            position: relative;
-        }
-
-        .success-alert {
-            display: none;
-        }
-    
-        .trang-chu-style {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 28px;
-    color: #d63384;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-}
         
         .password-container {
             position: relative;
@@ -166,16 +138,6 @@
 
 <body>
     <!-- Header -->
-    <div class="header">
-        <div class="container">
-            <h1>ĐĂNG NHẬP TÀI KHOẢN</h1>
-        </div>
-        <div class="container d-flex justify-content-end">
-            <a class="navbar-brand fw-bold" href="home.html">
-                <span class="trang-chu-style">
-                    <i class="fa-solid fa-house-chimney me-2"></i> TRANG CHỦ
-                </span>
-            </a>
     <div class="top-bar ">
         <div class="container">
             <div class="row align-items-center">
@@ -262,10 +224,6 @@
             <div class="form-group row mb-3">
                 <label for="Username" class="col-sm-2 col-form-label">TÊN ĐĂNG NHẬP:</label>
                 <div class="col-sm-10">
-                    <input type="text" id="Username" class="form-control" required
-                        placeholder="nhập tên đăng nhập ">
-                        <div id="UsernameError" style="color: #dc3545; display: none">Username không được để trống</div>
-                    
                     <input type="text" id="Username" class="form-control" required placeholder="nhập tên đăng nhập ">
                     <div id="UsernameError" style="color: #dc3545; display: none">Username không được để trống</div>
 
@@ -275,9 +233,6 @@
             <div class="form-group row mb-3">
                 <label for="Password" class="col-sm-2 col-form-label">MẬT KHẨU: </label>
                 <div class="col-sm-10 password-container">
-                    <input type="password"  id="Password" class="form-control" required
-                        placeholder="nhập mật khẩu">
-                        <div id="PasswordError" style="color: #dc3545; display: none">Password không được để trống</div>
                     <input type="password" id="Password" class="form-control" required placeholder="nhập mật khẩu">
                     <div id="PasswordError" style="color: #dc3545; display: none">Password không được để trống</div>
                 </div>
@@ -302,8 +257,6 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <h5>VỀ BITTS</h5>
-                    <p>BITTS - Thương hiệu giày dép thời trang chất lượng cao với giá cả hợp lý.</p>
                     <h5>VỀ DIDONGVIET</h5>
                     <p>DIDONGVIET - Mua bán các dòng điện thoại thông minh.</p>
                     <div class="mt-3">
@@ -317,20 +270,12 @@
                 <div class="col-md-4 mb-4">
                     <h5>THÔNG TIN</h5>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Giới thiệu</a></li>
-                        <li><a href="#" class="text-white">Chính sách bảo mật</a></li>
-                        <li><a href="#" class="text-white">Điều khoản dịch vụ</a></li>
-                        <li><a href="#" class="text-white">Hướng dẫn mua hàng</a></li>
-                        <li><a href="#" class="text-white">Chính sách đổi trả</a></li>
                         <li><a href="chinhsach.html" class="text-white">Chính sách, điều khoản</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4 mb-4">
                     <h5>LIÊN HỆ</h5>
                     <ul class="list-unstyled">
-                        <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo, P.4, Gò Vấp, TP.HCM</li>
-                        <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
-                        <li><i class="fas fa-envelope me-2"></i> Email: vanchuongdeptrai@gmail.com</li>
                         <li><i class="fas fa-map-marker-alt me-2"></i> 12 Nguyễn Văn Bảo Phường 4 Gò Vấp TP.HCM </li>
                         <li><i class="fas fa-phone-alt me-2"></i> Hotline: 07661 58666</li>
                         <li><i class="fas fa-envelope me-2"></i> Email:Ngochuydz@gmail.com</li>
@@ -338,10 +283,6 @@
                     </ul>
                     <div class="mt-3">
                         <h5>KẾT NỐI VỚI CHÚNG TÔI</h5>
-                        <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-tiktok"></i></a>
-                        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fas fa-phone"></i></a>
                         <a href="#"> <i class="fa-brands fa-facebook">&nbsp</i></a>
 
 
@@ -354,12 +295,6 @@
             </div>
             <hr>
             <div class="text-center">
-                <p class="mb-0">© 2023 BITTS. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-<!-- <script></script> -->
- <script src="../js/dangnhap.js"></script>
                 <p class="mb-0">© 2025 DIDONGVIET. All rights reserved.</p>
             </div>
         </div>

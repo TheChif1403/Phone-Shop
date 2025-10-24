@@ -1,0 +1,111 @@
+<div class="page-title">
+    <h1>Dashboard</h1>
+    <ul class="breadcrumb">
+        <li>Trang chủ</li>
+        <li>Dashboard</li>
+    </ul>
+</div>
+
+<div class="dashboard-cards">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Tổng doanh thu</div>
+            <div class="card-icon" style="background-color: var(--primary)">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+        <div class="card-content">
+            <h3>
+                <%= totalRevenue.toLocaleString("vi-VN") %> ₫</h3>
+            <p>Tháng này</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Tổng đơn hàng</div>
+            <div class="card-icon" style="background-color: var(--success)">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+        <div class="card-content">
+            <h3>
+                <%= totalOrders %>
+            </h3>
+            <p>Đơn hàng</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Tổng khách hàng</div>
+            <div class="card-icon" style="background-color: var(--warning)">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+        <div class="card-content">
+            <h3>
+                <%= totalCustomers %>
+            </h3>
+            <p>Khách hàng</p>
+        </div>
+    </div>
+</div>
+
+<div class="recent-orders">
+    <h2>5 đơn hàng gần nhất</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Khách hàng</th>
+                <th>Ngày</th>
+                <th>Tổng tiền</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% recentOrders.forEach(o => { %>
+                <tr>
+                    <td>
+                        <%= o.userId ? o.userId.firstname + ' ' + o.userId.lastname : 'Khách' %>
+                    </td>
+                    <td>
+                        <%= new Date(o.createdAt).toLocaleDateString('vi-VN') %>
+                    </td>
+                    <td>
+                        <%= (o.totalPrice || 0).toLocaleString('vi-VN') %> ₫</td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</div>
+
+<div class="top-products">
+    <h2>Top sản phẩm bán chạy</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sản phẩm</th>
+                <th>Số lượng</th>
+                <th>Doanh thu</th>
+                <th>Tồn kho</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% topProducts.forEach(p => { %>
+                <tr>
+                    <td>
+                        <%= p.name %>
+                    </td>
+                    <td>
+                        <%= p.quantity %>
+                    </td>
+                    <td>
+                        <%= p.revenue.toLocaleString('vi-VN') %> ₫</td>
+                    <td>
+                        <%= p.stock %>
+                    </td>
+                </tr>
+                <% }) %>
+        </tbody>
+    </table>
+</div>

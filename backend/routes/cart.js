@@ -7,7 +7,8 @@ const {
     getCart,
     updateItem,
     removeItem,
-    checkout
+    checkout,
+    clearCart
 } = require('../controllers/cartController');
 
 router.post('/add', auth, addToCart);
@@ -15,5 +16,6 @@ router.get('/', auth, getCart);
 router.put('/update/:productId', auth, updateItem);
 router.delete('/remove/:productId', auth, removeItem);
 router.post('/checkout', auth, checkout);
-
+// Route mới để clear giỏ hàng
+router.post('/clear', auth, clearCart);
 module.exports = router;

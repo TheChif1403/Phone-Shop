@@ -1,0 +1,103 @@
+<div class="page-title">
+    <h1>Đơn hàng</h1>
+    <ul class="breadcrumb">
+        <li>Trang chủ</li>
+        <li>Đơn hàng</li>
+    </ul>
+</div>
+
+<!-- Dashboard Cards -->
+<div class="dashboard-cards">
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Tổng doanh thu</div>
+            <div class="card-icon" style="background-color: var(--primary)">
+                <i class="fas fa-dollar-sign"></i>
+            </div>
+        </div>
+        <div class="card-content">
+            <h3>
+                <%= totalRevenue.toLocaleString("vi-VN") %> ₫</h3>
+            <p>Tổng đơn hàng</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Đơn hàng</div>
+            <div class="card-icon" style="background-color: var(--success)">
+                <i class="fas fa-shopping-cart"></i>
+            </div>
+        </div>
+        <div class="card-content">
+            <h3>
+                <%= totalOrders %>
+            </h3>
+            <p>Tháng này</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Khách hàng</div>
+            <div class="card-icon" style="background-color: var(--warning)">
+                <i class="fas fa-users"></i>
+            </div>
+        </div>
+        <div class="card-content">
+            <h3>
+                <%= totalCustomers %>
+            </h3>
+            <p>Khách hàng đăng ký</p>
+        </div>
+    </div>
+</div>
+
+<!-- Tables -->
+<div class="tables">
+    <div class="table-container">
+        <div class="table-header">
+            <div class="table-title">Đơn hàng gần đây</div>
+            <div class="table-actions">
+                <a href="/orders">Xem tất cả</a>
+            </div>
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Mã đơn</th>
+                    <th>Khách hàng</th>
+                    <th>Ngày đặt</th>
+                    <th>Tổng tiền</th>
+                    <th>Trạng thái</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (orders && orders.length > 0) { %>
+                    <% orders.forEach(order => { %>
+                        <tr>
+                            <td>#
+                                <%= order._id %>
+                            </td>
+                            <td>
+                                <%= order.userId ? order.userId.lastname + ' ' + order.userId.firstname : "Unknown" %>
+                            </td>
+                            <td>
+                                <%= order.createdAt.toLocaleDateString("vi-VN") %>
+                            </td>
+                            <td>
+                                <%= order.totalPrice.toLocaleString("vi-VN") %> ₫</td>
+                            <td>
+                                <span class="status status-<%= order.status %>"><%= order.status %></span>
+                            </td>
+                        </tr>
+                        <% }) %>
+                            <% } else { %>
+                                <tr>
+                                    <td colspan="5" style="text-align:center;">Không có đơn hàng nào</td>
+                                </tr>
+                                <% } %>
+            </tbody>
+        </table>
+    </div>
+</div>

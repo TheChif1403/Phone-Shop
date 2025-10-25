@@ -5,7 +5,7 @@
         "price": 37990000,
         "stock": 100,
         "description": "Màn hình Super Retina XDR 6.7 inch, chip A17 Pro mạnh mẽ, khung titanium sang trọng, camera cải tiến cho ảnh sắc nét.",
-        "image": "http://127.0.0.1:5500/backend/imgs/apple/17pro.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/342679/iphone-17-pro-max-xanh-duong-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -336,7 +336,7 @@
         "price": 8990000,
         "stock": 180,
         "description": "Chip Snapdragon 6 Gen 1, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 40W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/honor/Honor-H400-5G.Gld1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/339245/honor-400-lite-xam-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -346,7 +346,7 @@
         "price": 35990000,
         "stock": 60,
         "description": "Điện thoại gập, chip Snapdragon 8 Gen 2, màn hình OLED kép 120Hz, pin 5000mAh, sạc nhanh 66W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/honor/HONOR-Magic-V5-Gld1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/344641/honor-magic-v5-gold-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -356,7 +356,7 @@
         "price": 4990000,
         "stock": 250,
         "description": "Chip Helio G88, màn hình LCD 90Hz, pin 5000mAh, camera kép 50MP, sạc nhanh 22.5W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/honor/X5b-Plus.blk1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/333770/honor-x5b-plus-blue-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -366,7 +366,7 @@
         "price": 4690000,
         "stock": 220,
         "description": "Chip Helio G85, màn hình LCD 6.7 inch, camera 50MP, pin 5000mAh, sạc nhanh 22.5W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/honor/X5B.Ble1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/333770/honor-x5b-plus-blue-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -376,7 +376,7 @@
         "price": 4290000,
         "stock": 240,
         "description": "Chip MediaTek Helio G37, màn hình LCD 6.56 inch, camera 50MP, pin 5000mAh.",
-        "image": "http://127.0.0.1:5500/backend/imgs/honor/X6C.blk1.jpg",
+        "image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/42/340220/honor-x6c-8gb-128gb-070725-020637-772-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -386,7 +386,7 @@
         "price": 6490000,
         "stock": 210,
         "description": "Chip Snapdragon 680, màn hình AMOLED 90Hz, camera 108MP, pin 4500mAh, sạc nhanh 35W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/honor/X8C.grn1.jpg",
+        "image": "https://cdnv2.tgdd.vn/mwg-static/tgdd/Products/Images/42/335792/honor-x8c-green-thumb-638778940941716593-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -396,16 +396,17 @@
         "price": 8990000,
         "stock": 190,
         "description": "Chip Snapdragon 6 Gen 1, màn hình AMOLED 120Hz, pin 5100mAh, sạc nhanh 40W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/honor/X9C.blk1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/333480/honor-x9c-smart-xanh-thumb-600x600.jpg",
         "category": "Smartphone"
-    }, {
+    },
+    {
         "id": "41",
         "name": "Điện thoại OPPO A3X 8GB/128GB",
         "brand": "OPPO",
         "price": 5490000,
         "stock": 240,
         "description": "Chip Snapdragon 680, màn hình AMOLED 90Hz, camera 50MP, pin 5000mAh, sạc nhanh 33W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/oppo/A3X.ble1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/337846/dien-thoai-oppo-a5x-blue-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -415,7 +416,7 @@
         "price": 19990000,
         "stock": 120,
         "description": "Chip Snapdragon 8 Gen 3, màn hình OLED LTPO 120Hz, camera 50MP, pin 5000mAh, sạc nhanh 100W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/oppo/Find-X8.UI.Blk1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/322129/oppo-find-x8-pro-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -425,7 +426,7 @@
         "price": 3990000,
         "stock": 260,
         "description": "Chip Helio G35, màn hình LCD 6.56 inch, camera kép 50MP, pin 5000mAh, sạc 10W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i.all1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/340255/oppo-a5i-pro-purple-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -435,7 +436,7 @@
         "price": 4090000,
         "stock": 250,
         "description": "Chip Helio G35, thiết kế mặt lưng mới, camera kép 50MP, pin 5000mAh.",
-        "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i.all2.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/340255/oppo-a5i-pro-purple-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -445,7 +446,7 @@
         "price": 5290000,
         "stock": 230,
         "description": "Chip Dimensity 6100+, màn hình AMOLED 90Hz, camera 64MP, pin 5000mAh, sạc nhanh 33W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/oppo/OPPO-A5i-Pro.Pur1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/340255/oppo-a5i-pro-purple-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -455,7 +456,7 @@
         "price": 8690000,
         "stock": 180,
         "description": "Chip Dimensity 6300, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 67W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/oppo/Reno12F-AI-org.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/322124/oppo-reno12-pro-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -465,7 +466,7 @@
         "price": 9490000,
         "stock": 160,
         "description": "Chip Dimensity 7050, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 67W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/oppo/Reno13-F.pur-AI-v1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/327190/oppo-reno12-f-5g-cam-thumbai-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -475,7 +476,7 @@
         "price": 10990000,
         "stock": 140,
         "description": "Chip Snapdragon 7 Gen 3, màn hình AMOLED 120Hz, camera 64MP, pin 5000mAh, sạc nhanh 80W.",
-        "image": "http://127.0.0.1:5500/backend/imgs/honor/X9C.blk1.jpg",
+        "image": "https://cdn.tgdd.vn/Products/Images/42/339174/oppo-reno14-5g-green-thumb-600x600.jpg",
         "category": "Smartphone"
     },
     {
@@ -638,5 +639,4 @@
         "image": "https://cdn.hoanghamobile.vn/i/preview-h-V2/Uploads/2021/01/14/de-tan-nhiet.png",
         "category": "Smartphone"
     }
-
 ]

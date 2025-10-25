@@ -6,7 +6,7 @@ const productController = require('../controllers/productController');
 router.get('/products', productController.getProductsPage);
 
 // Thêm sản phẩm
-router.post('/products/add', productController.addProduct);
+router.post('/products/add', productController.createProduct);
 
 // Cập nhật sản phẩm
 router.put('/products/:id', productController.updateProduct);
@@ -15,6 +15,6 @@ router.put('/products/:id', productController.updateProduct);
 router.delete('/products/:id', productController.deleteProduct);
 
 // Lịch sử nhập stock
-router.get('/products/history/:id', productController.getStockHistory);
+router.get('/products/history', productController.getStockHistory);
 
 module.exports = router

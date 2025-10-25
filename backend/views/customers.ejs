@@ -1,18 +1,5 @@
 <%- include('layout', {
-  page: 'customers',
-  pageTitle: 'Khách hàng | Admin',
-  body: `
-    <div class="page-title">
-        <h1>Khách hàng</h1>
-        <ul class="breadcrumb">
-            <li>Trang chủ</li>
-            <li>Khách hàng</li>
-        </ul>
-    </div>
-
-    <div class="placeholder-box" style="background:white;padding:30px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.05);text-align:center;">
-        <i class="fas fa-file-alt" style="font-size:48px;color:var(--gray);margin-bottom:10px;"></i>
-        <h3>Chức năng đang phát triển...</h3>
-        <p>Trang Khách hàng sẽ hiển thị danh sách khách, chi tiết và quản lý.</p>
-    </div>
-  ` }) %>
+    page: page,
+    pageTitle: pageTitle,
+    body: include('customersContent', { customersData })
+}) %>

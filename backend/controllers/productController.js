@@ -4,17 +4,15 @@ const StockHistory = require("../models/StockHistory");
 exports.getProductsPage = async(req, res) => {
     try {
         const products = await Product.find();
-        const stockHistory = await StockHistory.find()
-            .populate('productId')
-            .sort({ createdAt: -1 });
+        const stockHistory = await StockHistory.find().populate('productId').sort({ createdAt: -1 });
 
-        // Truyền dữ liệu trực tiếp vào EJS
+        // Truyền dữ liệu cho products.ejs
         res.render('layout', {
             page: 'products',
             pageTitle: 'Quản lý sản phẩm | Admin',
             products,
             stockHistory,
-            contentPage: 'products' // tên file content nằm trong views/
+            contentPage: 'productsContent'
         });
     } catch (err) {
         res.status(500).send(err.message);

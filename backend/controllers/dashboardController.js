@@ -37,7 +37,8 @@ exports.renderDashboard = async(req, res) => {
             totalOrders,
             totalCustomers,
             recentOrders,
-            topProducts
+            topProducts,
+            contentPage: 'dashboardContent' // đây là file chứa HTML chính
         });
     } catch (error) {
         console.error(error);

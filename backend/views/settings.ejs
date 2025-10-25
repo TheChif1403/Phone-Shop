@@ -1,18 +1,5 @@
 <%- include('layout', {
-  page: 'settings',
-  pageTitle: 'Cài đặt | Admin',
-  body: `
-    <div class="page-title">
-        <h1>Cài đặt</h1>
-        <ul class="breadcrumb">
-            <li>Trang chủ</li>
-            <li>Cài đặt</li>
-        </ul>
-    </div>
-
-    <div class="placeholder-box" style="background:white;padding:30px;border-radius:10px;box-shadow:0 5px 15px rgba(0,0,0,0.05);text-align:center;">
-        <i class="fas fa-file-alt" style="font-size:48px;color:var(--gray);margin-bottom:10px;"></i>
-        <h3>Chức năng đang phát triển...</h3>
-        <p>Trang Cài đặt sẽ cho phép cấu hình hệ thống và các tùy chọn.</p>
-    </div>
-  ` }) %>
+    page: page,
+    pageTitle: pageTitle,
+    body: include('settingsContent', { settingsData })
+}) %>

@@ -98,6 +98,7 @@ exports.renderOrdersPage = async(req, res) => {
             totalRevenue,
             totalOrders,
             totalCustomers,
+            contentPage: 'ordersBody' // đây là file chứa HTML chính
         });
     } catch (error) {
         res.status(500).send("Lỗi khi load trang Orders: " + error.message);

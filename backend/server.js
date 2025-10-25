@@ -39,14 +39,13 @@ const orderApiRoutes = require("./routes/orders");
 app.use("/orders", orderPageRoutes); // EJS Page
 app.use("/api/orders", orderApiRoutes); // API JSON
 
-app.use("/api/orders", orderApiRoutes);
-app.get('/customers', (req, res) => res.render('customers'));
-app.get('/products', (req, res) => res.render('products'));
-app.get('/revenue', (req, res) => res.render('revenue'));
-app.get('/performance', (req, res) => res.render('performance'));
-app.get('/ads', (req, res) => res.render('ads'));
-app.get('/finance', (req, res) => res.render('finance'));
-app.get('/settings', (req, res) => res.render('settings'));
+//products.ejs
+const productController = require("./controllers/productController");
+app.get('/products', productController.getProductsPage);
+
+const adminPagesRoutes = require("./routes/adminPages");
+app.use("/", adminPagesRoutes);
+
 // ===== KẾT NỐI MONGODB =====
 mongoose
     .connect(process.env.MONGO_URI, {
@@ -62,7 +61,7 @@ const productRoutes = require("./routes/products");
 
 // ===== SỬ DỤNG ROUTES =====
 app.use("/api/auth", authRoutes);
-app.use("/api/dbproducts", productRoutes); // RESTful API sản phẩm
+app.use("/api/products", productRoutes); // RESTful API sản phẩm
 app.use("/api/cart", cartRoutes); // Giỏ hàng
 
 // ===== MIDDLEWARE XỬ LÝ LỖI =====

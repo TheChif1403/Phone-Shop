@@ -22,7 +22,6 @@ app.use("/dashboard", dashboardRouter); // dùng chung dashboardRouter
 
 // ở chỗ import routes
 const cartRoutes = require('./routes/cart'); // nếu file ở backend/routes/cart.js
-
 // ... sau đó chỗ register routes:
 app.use('/api/cart', cartRoutes);
 app.set("view engine", "ejs");
@@ -58,10 +57,10 @@ mongoose
 // ===== IMPORT ROUTES =====
 const authRoutes = require("./routes/auth");
 const productRoutes = require("./routes/products");
-
 // ===== SỬ DỤNG ROUTES =====
 app.use("/api/auth", authRoutes);
-app.use("/api/products", productRoutes); // RESTful API sản phẩm
+app.use("/api/products", productRoutes);
+app.use("/api/dbproducts", productRoutes); // RESTful API sản phẩm
 app.use("/api/cart", cartRoutes); // Giỏ hàng
 
 // ===== MIDDLEWARE XỬ LÝ LỖI =====

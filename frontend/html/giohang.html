@@ -8,7 +8,7 @@
     <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../js/bootstrap.js">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style1.css">
     <script src="../js/bootstrap.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
@@ -47,7 +47,7 @@
             margin: 0 auto;
         }
         
-ss        .product-badge {
+        ss .product-badge {
             position: absolute;
             top: 15px;
             right: 15px;
@@ -508,67 +508,6 @@ ss        .product-badge {
                         addToCartLocal(name, image, price);
                     }
                 }
-            </script>
-            <script>
-                document.addEventListener("DOMContentLoaded", async() => {
-                    const token = localStorage.getItem("token");
-                    const cartContainer = document.getElementById("cartContainer");
-                    const cartSummary = document.getElementById("cartSummary");
-
-                    if (!token) {
-                        cartContainer.innerHTML = `<p class="cart-empty">Vui lòng đăng nhập để xem giỏ hàng.</p>`;
-                        return;
-                    }
-
-                    try {
-                        const res = await fetch("/api/cart", {
-                            headers: {
-                                "Authorization": "Bearer " + token
-                            }
-                        });
-
-                        if (!res.ok) {
-                            cartContainer.innerHTML = `<p class="cart-empty">Không thể tải giỏ hàng.</p>`;
-                            return;
-                        }
-
-                        const cart = await res.json();
-                        const items = cart.items || [];
-
-                        if (items.length === 0) {
-                            cartContainer.innerHTML = `<p class="cart-empty">Giỏ hàng của bạn đang trống.</p>`;
-                            cartSummary.innerHTML = "";
-                            return;
-                        }
-
-                        // Render danh sách sản phẩm
-                        cartContainer.innerHTML = items.map(item => `
-            <div class="product-row d-flex align-items-center justify-content-between">
-                <div class="d-flex align-items-center">
-                    <img src="${item.image}" alt="${item.name}" width="70" class="me-3">
-                    <div>
-                        <h6>${item.name}</h6>
-                        <p class="mb-0 text-muted">${item.price.toLocaleString()}₫</p>
-                    </div>
-                </div>
-                <div>
-                    <span>Số lượng: ${item.quantity}</span>
-                </div>
-            </div>
-        `).join("");
-
-                        // Render tổng kết
-                        const total = items.reduce((s, i) => s + i.price * i.quantity, 0);
-                        cartSummary.innerHTML = `
-            <h5>Tổng tiền</h5>
-            <p><strong>${total.toLocaleString()}₫</strong></p>
-            <button class="btn btn-primary w-100">Thanh toán</button>
-        `;
-                    } catch (err) {
-                        console.error(err);
-                        cartContainer.innerHTML = `<p class="cart-empty">Lỗi tải dữ liệu.</p>`;
-                    }
-                });
             </script>
 
 </body>

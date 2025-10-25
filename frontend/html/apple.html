@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
-<<<<<<< HEAD
-=======
 
->>>>>>> origin/themtaikhoan-lienhe-chinhsach1
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,8 +9,9 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css">
 
     <link rel="stylesheet" href="../js/bootstrap.js">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style1.css">
     <script src="../js/bootstrap.js"></script>
+    <script src="../js/addToCart.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
@@ -376,6 +374,49 @@
         </div>
 
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const userData = localStorage.getItem("user");
+            const authButtons = document.querySelector(".auth-buttons");
+            // 👆 phần chứa 2 nút đăng nhập / đăng ký của bạn
+
+            if (userData) {
+                const user = JSON.parse(userData);
+
+                // Ẩn 2 nút đăng nhập & đăng ký
+                if (authButtons) {
+                    authButtons.innerHTML = `
+        <div class="d-flex align-items-center">
+          <span class="me-2">👋 Xin chào, <b>${user.username}</b></span>
+          <button id="logoutBtn" class="btn btn-outline-danger btn-sm">Đăng xuất</button>
+        </div>
+      `;
+                }
+
+                // Xử lý đăng xuất
+                document.getElementById("logoutBtn").addEventListener("click", () => {
+                    localStorage.removeItem("user");
+                    localStorage.removeItem("token");
+                    location.reload();
+                });
+            }
+        });
+    </script>
+    <script>
+        function handleAddToCart(productId, name, image, price) {
+            const token = localStorage.getItem("token");
+
+            if (token) {
+                // Người dùng đã đăng nhập → dùng API thật
+                addToCart(productId, name, image, price);
+            } else {
+                // Chưa đăng nhập → dùng localStorage tạm
+                addToCartLocal(name, image, price);
+            }
+        }
+    </script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/global-support.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../js/global-support.js"></script>
 </body>

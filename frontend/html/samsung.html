@@ -9,10 +9,11 @@
     <!-- Bootstrap 5 CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css">
     <link rel="stylesheet" href="../js/bootstrap.js">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style1.css">
     <script src="../js/bootstrap.js"></script>
     <script src="../js/dangnhap.js"></script>
     <script src="../js/renderProducts.js"></script>
+    <script src="../js/addToCart.js"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="../font/fontawesome-free-6.7.2-web/fontawesome-free-6.7.2-web/css/all.min.css">
     <style>
@@ -236,16 +237,16 @@
         </div>
 
         <!-- Featured Products -->
-<div class="featured-section">
-    <div class="container">
-        <div class="section-title">
-            <h2>SẢN PHẨM NỔI BẬT</h2>
+        <div class="featured-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>SẢN PHẨM NỔI BẬT</h2>
+                </div>
+                <div class="row" id="product-list">
+                    <!-- Sản phẩm sẽ được thêm tự động ở đây -->
+                </div>
+            </div>
         </div>
-        <div class="row" id="product-list">
-            <!-- Sản phẩm sẽ được thêm tự động ở đây -->
-        </div>
-    </div>
-</div>
 
         <a href="giohang.html" class="cart-floating-button">
             <i class="fas fa-shopping-cart"></i>
@@ -301,30 +302,71 @@
                 </div>
             </div>
         </footer>
-              <!-- Modal chi tiết sản phẩm -->
-<div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-lg modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        
-        <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
-        
-        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
-        
-      </div>
-      
-      <div class="modal-body" id="modal-product-body">
-        <!-- Nội dung sản phẩm sẽ được render ở đây -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-        
-        <button type="button" class="btn btn-primary" id="addToCartModalBtn">Thêm vào giỏ</button>
-      </div>
+        <!-- Modal chi tiết sản phẩm -->
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+                <div class="modal-content">
+                    <div class="modal-header">
+
+                        <h5 class="modal-title" id="productModalLabel">Chi tiết sản phẩm</h5>
+
+                        <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                    </div>
+
+                    <div class="modal-body" id="modal-product-body">
+                        <!-- Nội dung sản phẩm sẽ được render ở đây -->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+
+                        <button type="button" class="btn btn-primary" id="addToCartModalBtn">Thêm vào giỏ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
-    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const userData = localStorage.getItem("user");
+            const authButtons = document.querySelector(".auth-buttons");
+            // 👆 phần chứa 2 nút đăng nhập / đăng ký của bạn
+
+            if (userData) {
+                const user = JSON.parse(userData);
+
+                // Ẩn 2 nút đăng nhập & đăng ký
+                if (authButtons) {
+                    authButtons.innerHTML = `
+        <div class="d-flex align-items-center">
+          <span class="me-2">👋 Xin chào, <b>${user.username}</b></span>
+          <button id="logoutBtn" class="btn btn-outline-danger btn-sm">Đăng xuất</button>
+        </div>
+      `;
+                }
+
+                // Xử lý đăng xuất
+                document.getElementById("logoutBtn").addEventListener("click", () => {
+                    localStorage.removeItem("user");
+                    localStorage.removeItem("token");
+                    location.reload();
+                });
+            }
+        });
+    </script>
+    <script>
+        function handleAddToCart(productId, name, image, price) {
+            const token = localStorage.getItem("token");
+
+            if (token) {
+                // Người dùng đã đăng nhập → dùng API thật
+                addToCart(productId, name, image, price);
+            } else {
+                // Chưa đăng nhập → dùng localStorage tạm
+                addToCartLocal(name, image, price);
+            }
+        }
+    </script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/global-support.js"></script>
 </body>
-
-

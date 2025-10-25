@@ -33,23 +33,26 @@ document
             const data = await res.json();
 
             if (res.ok) {
-                // Nếu đăng nhập thành công
-                alert(" Đăng nhập thành công!");
-                document.querySelector(".success-alert").style.display = "block";
+                // Chuẩn bị object user để lưu localStorage
+                const userData = {
+                    _id: data.user.id, // ID thực từ backend
+                    firstname: data.user.firstname,
+                    lastname: data.user.lastname,
+                    username: data.user.username,
+                    phone: data.user.phone || "" // nếu không có, để trống
+                };
 
-                // Lưu user vào localStorage (nếu cần dùng sau)
-                localStorage.setItem("user", JSON.stringify(data.user));
-                // lưu sản phẩm được thêm vào giỏ hàng trong mongoDB vào local
+                localStorage.setItem("user", JSON.stringify(userData));
                 localStorage.setItem("token", data.token);
 
-                // Chuyển hướng sang trang chủ
+                alert("Đăng nhập thành công!");
                 setTimeout(() => {
                     window.location.href = "home.html";
                 }, 1500);
             } else {
-                //  Nếu sai tài khoản hoặc mật khẩu
                 alert("Thất bại " + data.message);
             }
+
         } catch (error) {
             console.error("Lỗi khi đăng nhập:", error);
             alert("Không thể kết nối đến server!");
